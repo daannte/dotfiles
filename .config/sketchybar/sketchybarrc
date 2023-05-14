@@ -1,0 +1,59 @@
+#!/usr/bin/env sh
+
+##### Paths #####
+DIR="$HOME/.config/sketchybar/"
+PLUGIN_DIR="$DIR/plugins"
+ITEMS_DIR="$DIR/items"
+
+##### Set Fonts #####
+FONT="JetBrainsMono Nerd Font Mono:Regular:13.0"
+FONT_ICON="JetBrainsMono Nerd Font Mono:Regular:15.0"
+
+##### Source Colours and Icons #####
+source "$DIR/colours.sh"
+source "$DIR/icons.sh"
+
+##### Bar Appearance #####
+BAR_APP=(
+    color=$BAR_BACKGROUND
+    position=top
+    sticky=on
+    height=30
+    margin=35
+    padding_right=-15
+    padding_left=-15
+    y_offset=15
+    corner_radius=10
+    font_smoothing=on
+    shadow=on
+)
+
+DEFAULT_APP=(
+    icon.font="$FONT_ICON"
+    icon.color=$WHITE
+    icon.padding_right=5
+    icon.padding_left=5
+    label.font="$FONT"
+    label.color=$WHITE
+    label.padding_right=5
+    label.padding_left=5
+)
+
+
+##### Set Bar and Default Appearance #####
+sketchybar --bar "${BAR_APP[@]}"
+sketchybar --default "${DEFAULT_APP[@]}" 
+
+##### Left Items #####
+source "$ITEMS_DIR/spaces.sh"
+
+##### Center Items #####
+source "$ITEMS_DIR/music.sh"
+
+##### Right Items #####
+source "$ITEMS_DIR/time.sh"
+source "$ITEMS_DIR/volume.sh"
+source "$ITEMS_DIR/battery.sh"
+
+##### Finalizing Setup #####
+sketchybar --update

@@ -1,0 +1,5 @@
+require('dante.options')
+require('dante.highlights')
+require('dante.keymaps')
+require('dante.plugins')
+require('dante.plugin_config')

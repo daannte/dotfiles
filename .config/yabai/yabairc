@@ -1,0 +1,38 @@
+# bsp (yabai) or float (leave alone)
+yabai -m config layout bsp
+
+# Set padding to 12px
+yabai -m config top_padding                  12
+yabai -m config bottom_padding               12
+yabai -m config left_padding                 12
+yabai -m config right_padding                12
+yabai -m config window_gap                   12
+
+yabai -m config window_shadow               off
+
+# New window will go right on vert split and
+# go down on horiz split
+yabai -m config window_placement             second_child
+
+# Mouse settings
+yabai -m config mouse_follows_focus          off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+# Disabled apps
+yabai -m rule --add app="^System Settings$"  manage=off
+yabai -m rule --add app="^Finder"            manage=off
+yabai -m rule --add app="^OpenEmu"           manage=off
+yabai -m rule --add app="^Shottr"            manage=off
+
+# Respect the bar at the top
+yabai -m config external_bar                 all:50:0
+
+# Window border
+yabai -m config window_border_width          4
+yabai -m config window_border                on
+yabai -m config window_border_hidpi          on
+yabai -m config window_border_blur           off
+yabai -m config active_window_border_color   0xFFFFFFFF
+yabai -m config normal_window_border_color   0x002D4342
