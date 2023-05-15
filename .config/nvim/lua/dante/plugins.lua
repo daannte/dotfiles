@@ -31,7 +31,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Colorscheme
-  use({ "catppuccin/nvim", name = "catppuccin" })
+  use 'Shatur/neovim-ayu'
 
   -- File Explorer
   use({
@@ -116,7 +116,6 @@ return packer.startup(function(use)
   use 'lervag/vimtex'
 
   -- use 'github/copilot.vim'
-
 
   if packer_bootstrap then
     require("packer").sync()
