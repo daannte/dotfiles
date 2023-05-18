@@ -52,7 +52,6 @@ source "$ITEMS_DIR/music.sh"
 
 ##### Right Items #####
 source "$ITEMS_DIR/time.sh"
-source "$ITEMS_DIR/volume.sh"
 source "$ITEMS_DIR/battery.sh"
 
 ##### Finalizing Setup #####

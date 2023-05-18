@@ -9,7 +9,7 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 
 -- Line numbers
-vim.opt.number = true
+vim.opt.number = false
 vim.opt.relativenumber = false
 
 -- Line wrap

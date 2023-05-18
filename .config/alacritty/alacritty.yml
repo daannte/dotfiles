@@ -37,7 +37,7 @@ font:
 ##### Set Themes #####
 breeze: &breeze
   primary:
-    background: "0x1a1b26"
+    background: "0x1e1e1e"
     foreground: "0xfcfcfc"
     dim_foreground: "0xeff0f1"
     bright_foreground: "0xffffff"
@@ -174,4 +174,4 @@ ayuDark: &ayuDark
     magenta: "0xFFEE99"
     cyan: "0x95E6CB"
     white: "0xFFFFFF"
-colors: *ayuDark
+colors: *breeze
