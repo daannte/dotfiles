@@ -26,9 +26,6 @@ yabai -m rule --add app="^Finder"            manage=off
 yabai -m rule --add app="^OpenEmu"           manage=off
 yabai -m rule --add app="^Shottr"            manage=off
 
-# Respect the bar at the top
-yabai -m config external_bar                 all:50:0
-
 # Window border
 # yabai -m config window_border_width          4
 # yabai -m config window_border                on

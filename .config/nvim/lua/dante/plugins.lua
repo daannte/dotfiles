@@ -1,123 +1,102 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
--- Refresh neovim on save when a new package is added
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
-
-local status, packer = pcall(require, "packer")
-if (not status) then
-  print("Packer is not installed")
-  return
-end
-
-return packer.startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
+local plugins = {
   -- Colorscheme
-  use 'Shatur/neovim-ayu'
+  'Shatur/neovim-ayu',
 
   -- File Explorer
-  use({
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  })
+  'nvim-tree/nvim-tree.lua',
 
   -- Split Window Navigation
-  use "christoomey/vim-tmux-navigator"
+  "christoomey/vim-tmux-navigator",
 
   -- Fuzzy Finder
-  use 'nvim-telescope/telescope.nvim'
-  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  'nvim-telescope/telescope.nvim',
 
   -- Comment
-  use({
+  ({
     'numToStr/Comment.nvim',
-    requires = {
+    dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
-  })
+  }),
 
   -- Plugin that many other plugins use
-  use 'nvim-lua/plenary.nvim'
+  'nvim-lua/plenary.nvim',
 
   -- Discord Presence
-  use 'andweeb/presence.nvim'
+  'andweeb/presence.nvim',
 
   -- Icons
-  use 'kyazdani42/nvim-web-devicons'
+  'kyazdani42/nvim-web-devicons',
 
   -- Status Line
-  use 'nvim-lualine/lualine.nvim'
+  'nvim-lualine/lualine.nvim',
 
   -- LSP
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'glepnir/lspsaga.nvim'
-  use 'onsails/lspkind-nvim'
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'glepnir/lspsaga.nvim',
+  'onsails/lspkind-nvim',
 
   -- Autocompletion
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/nvim-cmp',
 
   -- Diagnostics, formatting, linting
-  use 'jose-elias-alvarez/null-ls.nvim'
+  'jose-elias-alvarez/null-ls.nvim',
 
   -- Proper syntax highlighting
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
+    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  },
 
   -- Auto Closing Tags
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
+  'windwp/nvim-autopairs',
+  'windwp/nvim-ts-autotag',
 
   -- Git Integration
-  use 'lewis6991/gitsigns.nvim'
+  'lewis6991/gitsigns.nvim',
 
   -- Zen Mode
-  use 'folke/zen-mode.nvim'
+  'folke/zen-mode.nvim',
 
   -- Color Highlighter
-  use 'norcalli/nvim-colorizer.lua'
+  'norcalli/nvim-colorizer.lua',
 
   -- Tab Line Customization
-  use 'akinsho/nvim-bufferline.lua'
+  'akinsho/nvim-bufferline.lua',
 
   -- Snippets
-  use 'L3MON4D3/LuaSnip'
+  'L3MON4D3/LuaSnip',
 
   -- Markdown Preview
-  use({
+  ({
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+    build = function() vim.fn["mkdp#util#install"]() end,
+  }),
 
   -- LaTeX Support
-  use 'lervag/vimtex'
+  'lervag/vimtex',
 
   -- use 'github/copilot.vim'
 
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
