@@ -38,3 +38,6 @@ keymap('n', '<leader>fd', ':Telescope diagnostics<CR>')
 
 -- Zen Mode
 keymap('n', '<leader>zm', ':ZenMode<CR>', { silent = true })
+
+-- Toggle Term
+keymap('n', '<leader>tt', ':ToggleTerm<CR>', { silent = true })

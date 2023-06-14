@@ -13,7 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   -- Colorscheme
-  'Shatur/neovim-ayu',
+  -- 'Shatur/neovim-ayu',
+  ({ 'jesseleite/nvim-noirbuddy',
+    dependencies = {
+      'tjdevries/colorbuddy.nvim',
+      branch = "dev"
+    }
+  }),
 
   -- File Explorer
   'nvim-tree/nvim-tree.lua',

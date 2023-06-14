@@ -23,11 +23,13 @@ alias home="cd ~ && clear"
 alias n="nvim"
 alias ls="exa --icons"
 alias cat="bat"
+alias fetch="neofetch"
 alias ga="git add -A"
 alias gs="git status"
 alias gcm="git commit -m"
 alias gc="git clone"
 alias lg="lazygit"
+alias gcz="git cz --disable-emoji"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 

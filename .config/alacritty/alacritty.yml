@@ -4,7 +4,7 @@ env:
 ##### Set Window Preferences #####
 window:
   dynamic_padding: true
-  opacity: 0.95
+  opacity: 1.0
   decorations: Buttonless
 
 ##### Scrolling #####
@@ -150,14 +150,14 @@ tokyoNight: &tokyoNight
 
 ayuDark: &ayuDark
   primary:
-    background: "0x1e1e1e"
+    background: "0x121212"
     foreground: "0xB3B1AD"
 
   # Normal colors
   normal:
     black: "0x01060E"
-    red: "0xEA6C73"
-    green: "0x91B362"
+    red: "0xed1515"
+    green: "0x11d116"
     yellow: "0xF9AF4F"
     blue: "0x53BDFA"
     magenta: "0xFAE994"
@@ -174,4 +174,4 @@ ayuDark: &ayuDark
     magenta: "0xFFEE99"
     cyan: "0x95E6CB"
     white: "0xFFFFFF"
-colors: *breeze
+colors: *ayuDark
