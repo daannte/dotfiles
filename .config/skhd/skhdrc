@@ -18,8 +18,8 @@ shift + ctrl - e : yabai -m space --balance
 
 # Open Alacritty
 ctrl - return : open -na /Applications/Alacritty.app 
-# Open Firefox
-ctrl + shift - return : open -na /Applications/Firefox.app
+# Open Arc
+ctrl + shift - return : open -na /Applications/Arc.app
 
 # Open VSCode 
 ctrl + fn - v : open -na /Applications/Visual\ Studio\ Code.app

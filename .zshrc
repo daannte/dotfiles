@@ -28,6 +28,7 @@ alias ga="git add -A"
 alias gs="git status"
 alias gcm="git commit -m"
 alias gc="git clone"
+alias gch="git checkout"
 alias lg="lazygit"
 alias gcz="git cz --disable-emoji"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
