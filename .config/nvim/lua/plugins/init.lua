@@ -53,7 +53,6 @@ local plugins = {
   {
     'williamboman/mason.nvim',
     dependencies = 'williamboman/mason-lspconfig.nvim',
-    cmd = 'Mason',
     config = function() require('plugins.lsp.mason') end
   },
   {
@@ -105,8 +104,10 @@ local plugins = {
   {
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     config = function() require('plugins.ts.treesitter') end,
+  },
+  {
+    'nvim-treesitter/playground'
   },
 
   -- Auto Closing Tags
@@ -154,10 +155,6 @@ local plugins = {
     ft = "tex",
     config = function() require('plugins.others.latex') end,
   },
-  {
-    "ellisonleao/gruvbox.nvim",
-    config = function() require('plugins.colourscheme') end,
-  }
 }
 
 local opts = {}

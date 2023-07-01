@@ -1,53 +1,64 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.opt.timeoutlen = 500
+local g = vim.g
+local o = vim.opt
+
+-- Set leader
+g.mapleader = " "
+g.maplocalleader = " "
+
+-- Timing stuff
+o.timeoutlen = 500
+o.updatetime = 300
+o.timeout = true
+o.ttimeoutlen = 10
 
 -- Tabs
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
+o.autoindent = true
+o.smartindent = true
 
 -- Line numbers
-vim.opt.number = true
-vim.opt.relativenumber = false
+o.number = true
+o.numberwidth = 4
 
 -- Line wrap
-vim.opt.wrap = false
+o.wrap = false
 
 -- Search Settings
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+o.ignorecase = true
+o.smartcase = true
 
 -- Appearance
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
+o.termguicolors = true
+o.background = "dark"
 
 -- Use System Clipboard
-vim.opt.clipboard:append("unnamedplus")
+o.clipboard = "unnamedplus"
 
 -- Split Windows
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+o.splitright = true
+o.splitbelow = true
 
 -- Set scrolloff
-vim.opt.scrolloff = 5
+o.scrolloff = 5
 
 -- Disable Default Status Line
-vim.opt.laststatus = 0
-vim.opt.ruler = false
-vim.opt.cmdheight = 0
+o.laststatus = 0
+o.ruler = false
+
+-- Mouse
+o.mouse = 'a'
 
 -- Cursor line
-vim.opt.cursorline = true
+o.cursorline = true
 
--- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd [[
-   augroup highlight_yank
-   autocmd!
-   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
-   augroup END
-]]
+-- Always show signcolumn
+o.signcolumn = "yes"
+
+-- Command line height
+o.cmdheight = 1
+
 
 -- Disable built in plugins
 local builtins = {
@@ -60,8 +71,6 @@ local builtins = {
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
-  "matchit",
-  "matchparen",
   "tar",
   "tarPlugin",
   "rrhelper",
@@ -71,7 +80,6 @@ local builtins = {
   "zip",
   "zipPlugin",
   "logipat",
-  "matchit",
   "tutor",
   "rplugin",
   "syntax",
@@ -88,5 +96,9 @@ local builtins = {
 }
 
 for _, plugin in ipairs(builtins) do
-  vim.g["loaded_" .. plugin] = 1
+  g["loaded_" .. plugin] = 1
 end
+
+-- Set colour scheme
+local colour = require("core.cfg").colourscheme
+vim.cmd.colorscheme(colour)

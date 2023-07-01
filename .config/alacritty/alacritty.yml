@@ -4,8 +4,17 @@ env:
 ##### Set Window Preferences #####
 window:
   dynamic_padding: true
-  opacity: 1.00
-  decorations: Buttonless
+  opacity: 1
+  decorations: buttonless
+  startup_mode: Windowed
+
+  dimensions:
+    columns: 82
+    lines: 23
+
+  padding:
+    x: 20
+    y: 20
 
 ##### Scrolling #####
 scrolling:
@@ -17,22 +26,22 @@ scrolling:
 ##### Set Font #####
 font:
   normal:
-    family: FantasqueSansM Nerd Font
+    family: CartographCF Nerd Font
     style: Regular
 
   bold:
-    family: FantasqueSansM Nerd Font
+    family: CartographCF Nerd Font
     style: Bold
 
   italic:
-    family: FantasqueSansM Nerd Font
+    family: CartographCF Nerd Font
     style: Italic
 
   bold_italic:
-    family: FantasqueSansM Nerd Font
+    family: CartographCF Nerd Font
     style: Bold Italic
 
-  size: 18.0
+  size: 16.0
 
 ##### Set Themes #####
 breeze: &breeze
@@ -174,4 +183,30 @@ ayuDark: &ayuDark
     magenta: "0xFFEE99"
     cyan: "0x95E6CB"
     white: "0xFFFFFF"
-colors: *ayuDark
+
+gruvbox: &gruvbox
+  primary:
+    background: "#282828"
+    foreground: "#ae9d83"
+
+  normal:
+    black: "#525252"
+    red: "#cc241d"
+    green: "#98971a"
+    yellow: "#d79921"
+    blue: "#458588"
+    magenta: "#b16286"
+    cyan: "#689d6a"
+    white: "#928374"
+
+  bright:
+    black: "#525252"
+    red: "#fb4934"
+    green: "#b8bb26"
+    yellow: "#fabd2f"
+    blue: "#83a598"
+    magenta: "#d3869b"
+    cyan: "#8ec07c"
+    white: "#fbf1c7"
+
+colors: *gruvbox

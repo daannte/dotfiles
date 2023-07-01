@@ -11,15 +11,20 @@ shift + alt - j : yabai -m window --swap south
 shift + alt - h : yabai -m window --swap west
 
 # Maximize app
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
+shift + ctrl - m : yabai -m window --toggle zoom-fullscreen
 
 # Balance apps
 shift + ctrl - e : yabai -m space --balance
 
+# Toggle if the window should be tiled and center it
+shift + ctrl - f : yabai -m window --toggle float;\
+                   yabai -m window --grid 4:4:1:1:2:2
+
 # Open Alacritty
 ctrl - return : open -na /Applications/Alacritty.app 
-# Open Arc
-ctrl + shift - return : open -na /Applications/Arc.app
+
+# Open Firefox
+ctrl + shift - return : open -na /Applications/Firefox.app 
 
 # Open VSCode 
 ctrl + fn - v : open -na /Applications/Visual\ Studio\ Code.app
