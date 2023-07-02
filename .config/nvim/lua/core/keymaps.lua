@@ -1,43 +1,53 @@
-local keymap = vim.keymap.set
+function Map(mode, keys, cmd, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, keys, cmd, options)
+end
 
-keymap('i', 'jk', '<ESC>')
-keymap('i', 'kj', '<ESC>')
-keymap('n', '<leader>nh', ':nohl<CR>')
-keymap('n', 'x', '"_x')
+-- map Insert mode to Normal mode to jk and kj
+Map('i', 'jk', '<ESC>')
+Map('i', 'kj', '<ESC>')
+
+-- Remove highlight after searching
+Map('n', '<leader>nh', ':nohl<CR>')
+
+-- Deleting a character won't copy it
+Map('n', 'x', '"_x')
 
 -- Increment and Decrement Numbers
-keymap('n', '+', '<C-a>')
-keymap('n', '-', '<C-x>')
+Map('n', '+', '<C-a>')
+Map('n', '-', '<C-x>')
 
 -- Delete a word backwards
-keymap('n', 'dw', 'vb"_d')
+Map('n', 'dw', 'vb"_d')
 
 -- Split Windows
-keymap('n', '<leader>sh', '<C-w>s')
-keymap('n', '<leader>sv', '<C-w>v')
-keymap('n', '<leader>se', '<C-w>=')
-keymap('n', '<leader>sx', ':close<CR>')
+Map('n', '<leader>sh', '<C-w>s')
+Map('n', '<leader>sv', '<C-w>v')
+Map('n', '<leader>se', '<C-w>=')
+Map('n', '<leader>sx', ':close<CR>')
 
 -- Tabs
-keymap('n', '<leader>tn', ':tabnew<CR>', { silent = true })
-keymap('n', '<leader>tx', ':tabclose<CR>', { silent = true })
-keymap('n', '<Tab>', ':tabn<CR>', { silent = true })
-keymap('n', '<S-Tab>', ':tabp<CR>', { silent = true })
+Map('n', '<leader>tn', ':tabnew<CR>')
+Map('n', '<leader>tx', ':tabclose<CR>')
+Map('n', '<Tab>', ':tabn<CR>')
+Map('n', '<S-Tab>', ':tabp<CR>')
 
 -- Select All
-keymap('n', '<C-a>', 'gg<S-v>G')
+Map('n', '<C-a>', 'gg<S-v>G')
+
+-- Plugin keymaps
 
 -- NvimTree Toggle
-keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+Map('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- Telescope
-keymap('n', '<leader>ff', ':Telescope find_files<CR>')
-keymap('n', '<leader>fr', ':Telescope live_grep<CR>')
-keymap('n', '<leader>fc', ':Telescope grep_string<CR>')
-keymap('n', '<leader>fd', ':Telescope diagnostics<CR>')
+Map('n', '<leader>ff', ':Telescope find_files<CR>')
+Map('n', '<leader>fr', ':Telescope live_grep<CR>')
+Map('n', '<leader>fc', ':Telescope grep_string<CR>')
+Map('n', '<leader>fd', ':Telescope diagnostics<CR>')
 
 -- Zen Mode
-keymap('n', '<leader>zm', ':ZenMode<CR>', { silent = true })
-
--- Toggle Term
-keymap('n', '<leader>tt', ':ToggleTerm<CR>', { silent = true })
+Map('n', '<leader>zm', ':ZenMode<CR>')

@@ -15,8 +15,6 @@ M.colours = {
   cyan = '#3B8992',
 }
 
-M.colours.visual = util.darken(M.colours.bg, 0.9)
-
 return M
 
 

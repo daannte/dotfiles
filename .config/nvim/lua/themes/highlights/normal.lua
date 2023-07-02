@@ -1,56 +1,56 @@
 return function(colours)
   return {
-    Normal = { fg = colours.fg, bg = colours.bg },             -- normal Text
-    NormalNC = { fg = colours.fg, bg = colours.bg },           -- normal text in non-current window
-    NormalSB = { fg = colours.fg, bg = colours.bg },           -- normal text in sidebar
-    NormalFloat = { fg = colours.fg, bg = colours.bg_float },  -- normal text in floating windows
-    Visual = { bg = colours.visual },                          -- visual mode selection
-    VisualNOS = { bg = colours.bg },                           -- visual mode selection when vim is "Not Owning the Selection"
-    Comment = { fg = colours.fg_faded, italic = true },        -- self-explanatory
-    Cursor = { fg = colours.bg, bg = colours.fg },             -- character under cursornrnr
-    lCursor = { fg = colours.bg, bg = colours.fg },            -- character under cursor for each mode
-    CursorIM = { fg = colours.bg, bg = colours.fg },           -- like Cursor, but used in IME mode
-    CursorColumn = { bg = colours.bg_highlight },              -- cursor column highlight when 'cursorcolumn' opt is set
-    CursorLine = { bg = colours.bg_highlight },                -- cursor line highlight when 'cursorline' opt is set
-    LineNr = { fg = colours.fg_faded, bg = colours.bg },       -- colour of the numbers when 'number' or 'relativenumber' opt is set
-    CursorLineNr = { fg = colours.black },                     -- like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line
-    SignColumn = { bg = colours.bg, fg = colours.fg },         -- column where signs are displayed, for example git signs
-    MsgArea = { fg = colours.fg, bg = colours.bg },            -- area for messaged and commands
-    ModeMsg = { fg = colours.fg, bg = colours.bg },            -- mode, stuff like insert, normal, etc.
-    EndOfBuffer = { fg = colours.bg },                         -- Background of the lines with the '~'
-    VertSplit = { fg = colours.black },                        -- the vertical line when you split vertically
-    WinSeparator = { fg = colours.black, bold = true },        -- the vertical line when you split vertically
-    TabLine = { fg = colours.fg_faded, bg = colours.bg },      -- tab pages line, not selected tab
-    TabLineSel = { fg = colours.black, bg = colours.bg },      -- tab pages line, selected tab
-    TabLineFill = { fg = colours.fg, bg = colours.bg },        -- tab pages line when there are no tabs
-    WildMenu = { bg = colours.visual },                        -- current match in 'wildmenu' completion
-    Folded = { fg = colours.fg_faded, bg = colours.bg },       -- line used for closed folds
-    FoldColumn = { fg = colours.fg_faded, bg = colours.bg },   -- foldcolumn
+    Normal = { fg = colours.fg, bg = colours.bg },               -- normal Text
+    NormalNC = { fg = colours.fg, bg = colours.bg },             -- normal text in non-current window
+    NormalSB = { fg = colours.fg, bg = colours.bg },             -- normal text in sidebar
+    NormalFloat = { fg = colours.fg, bg = colours.bg_float },    -- normal text in floating windows
+    Visual = { bg = colours.visual },                            -- visual mode selection
+    VisualNOS = { bg = colours.bg },                             -- visual mode selection when vim is "Not Owning the Selection"
+    Comment = { fg = colours.fg_faded, italic = true },          -- self-explanatory
+    Cursor = { fg = colours.bg, bg = colours.fg },               -- character under cursornrnr
+    lCursor = { fg = colours.bg, bg = colours.fg },              -- character under cursor for each mode
+    CursorIM = { fg = colours.bg, bg = colours.fg },             -- like Cursor, but used in IME mode
+    CursorColumn = { bg = colours.bg_highlight },                -- cursor column highlight when 'cursorcolumn' opt is set
+    CursorLine = { bg = colours.bg_highlight },                  -- cursor line highlight when 'cursorline' opt is set
+    LineNr = { fg = colours.fg_faded, bg = colours.bg },         -- colour of the numbers when 'number' or 'relativenumber' opt is set
+    CursorLineNr = { fg = colours.black },                       -- like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line
+    SignColumn = { bg = colours.bg, fg = colours.fg },           -- column where signs are displayed, for example git signs
+    MsgArea = { fg = colours.fg, bg = colours.bg },              -- area for messaged and commands
+    ModeMsg = { fg = colours.fg, bg = colours.bg },              -- mode, stuff like insert, normal, etc.
+    EndOfBuffer = { fg = colours.bg },                           -- Background of the lines with the '~'
+    VertSplit = { fg = colours.black },                          -- the vertical line when you split vertically
+    WinSeparator = { fg = colours.black, bold = true },          -- the vertical line when you split vertically
+    TabLine = { fg = colours.fg_faded, bg = colours.bg },        -- tab pages line, not selected tab
+    TabLineSel = { fg = colours.fg, bg = colours.bg_highlight }, -- tab pages line, selected tab
+    TabLineFill = { fg = colours.fg, bg = colours.bg },          -- tab pages line when there are no tabs
+    WildMenu = { bg = colours.visual },                          -- current match in 'wildmenu' completion
+    Folded = { fg = colours.fg_faded, bg = colours.bg },         -- line used for closed folds
+    FoldColumn = { fg = colours.fg_faded, bg = colours.bg },     -- foldcolumn
     FloatBorder = { fg = colours.fg_faded, bg = colours.bg_float },
-    Whitespace = { fg = colours.fg_faded },                    -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    ColorColumn = { bg = colours.bg },                         -- used for the columns set with 'colorcolumn'
-    WarningMsg = { fg = colours.colour6 },                     -- warning messages
-    ErrorMsg = { fg = colours.red },                           -- error messages on command line
-    MoreMsg = { fg = colours.colour6 },                        -- |more-prompt|
-    DiffAdd = { bg = colours.bg },                             -- diff mode: Added line
-    DiffChange = { bg = colours.bg },                          -- diff mode: Changed line
-    DiffDelete = { bg = colours.bg },                          -- diff mode: removed line
-    QuickFixLine = { bg = colours.visual, bold = true },       -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    MatchParen = { fg = colours.colour1, bold = true },        -- The character under the cursor or just before it, if it is a paired bracket, and its match.
-    Conceal = { fg = colours.colour7 },                        -- placeholder characters substituted for concealed text (see 'conceallevel')
-    Directory = { fg = colours.colour2 },                      -- Directory names (and other special names in listing)
-    SpecialKey = { fg = colours.bg },                          -- Unprintable characters
-    Title = { fg = colours.colour1, bold = true },             -- titles for output from ":set all", ":autocmd" etc.
-    Search = { fg = colours.fg, bg = colours.colour0 },        -- last search pattern highlighting
-    IncSearch = { fg = colours.fg, bg = colours.colour2 },     -- 'incsearch' highlighting
+    Whitespace = { fg = colours.fg_faded },                      -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    ColorColumn = { bg = colours.bg },                           -- used for the columns set with 'colorcolumn'
+    WarningMsg = { fg = colours.colour6 },                       -- warning messages
+    ErrorMsg = { fg = colours.red },                             -- error messages on command line
+    MoreMsg = { fg = colours.colour6 },                          -- |more-prompt|
+    DiffAdd = { bg = colours.bg },                               -- diff mode: Added line
+    DiffChange = { bg = colours.bg },                            -- diff mode: Changed line
+    DiffDelete = { bg = colours.bg },                            -- diff mode: removed line
+    QuickFixLine = { bg = colours.visual, bold = true },         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    MatchParen = { fg = colours.colour1, bold = true },          -- The character under the cursor or just before it, if it is a paired bracket, and its match.
+    Conceal = { fg = colours.colour7 },                          -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Directory = { fg = colours.colour2 },                        -- Directory names (and other special names in listing)
+    SpecialKey = { fg = colours.bg },                            -- Unprintable characters
+    Title = { fg = colours.colour1, bold = true },               -- titles for output from ":set all", ":autocmd" etc.
+    Search = { fg = colours.fg, bg = colours.colour0 },          -- last search pattern highlighting
+    IncSearch = { fg = colours.fg, bg = colours.colour2 },       -- 'incsearch' highlighting
     CurSearch = { link = 'IncSearch' },
-    Substitute = { fg = colours.bg, bg = colours.colour6 },    -- :substitute replacement text highlighting
-    Question = { fg = colours.colour6 },                       -- |hit-enter| prompt and yes/no questions
-    NonText = { fg = colours.bg },                             -- see :h hl-NonText
-    Pmenu = { fg = colours.fg, bg = colours.bg },              -- popup menu: normal item
-    PmenuSel = { fg = colours.fg, bg = colours.bg_highlight }, -- popup menu: selected item
-    PmenuSbar = { bg = colours.bg_float },                     -- popup menu: scrollbar
-    PmenuThumb = { bg = colours.fg_faded },                    -- popup menu: thumb of the scrollbar
+    Substitute = { fg = colours.bg, bg = colours.colour6 },      -- :substitute replacement text highlighting
+    Question = { fg = colours.colour6 },                         -- |hit-enter| prompt and yes/no questions
+    NonText = { fg = colours.bg },                               -- see :h hl-NonText
+    Pmenu = { fg = colours.fg, bg = colours.bg },                -- popup menu: normal item
+    PmenuSel = { fg = colours.fg, bg = colours.bg_highlight },   -- popup menu: selected item
+    PmenuSbar = { bg = colours.bg_float },                       -- popup menu: scrollbar
+    PmenuThumb = { bg = colours.fg_faded },                      -- popup menu: thumb of the scrollbar
 
     -- Commented out groups chain up to the 'preferred' group by default
 
