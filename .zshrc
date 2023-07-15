@@ -31,6 +31,8 @@ alias gc="git clone"
 alias gch="git checkout"
 alias lg="lazygit"
 alias gcz="git cz --disable-emoji"
+alias clock="tty-clock -c -s"
+alias ani="ani-cli"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
