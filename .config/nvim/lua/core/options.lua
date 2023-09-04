@@ -99,6 +99,3 @@ for _, plugin in ipairs(builtins) do
   g["loaded_" .. plugin] = 1
 end
 
--- Set colour scheme
-local colour = require("core.cfg").colourscheme
-vim.cmd.colorscheme(colour)

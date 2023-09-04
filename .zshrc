@@ -19,11 +19,10 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init zsh)"
 alias zsh="nvim ~/.zshrc"
-alias home="cd ~ && clear"
 alias n="nvim"
 alias ls="exa --icons"
 alias cat="bat"
-alias fetch="neofetch"
+alias fetch="pfetch"
 alias ga="git add -A"
 alias gs="git status"
 alias gcm="git commit -m"
@@ -33,8 +32,17 @@ alias lg="lazygit"
 alias gcz="git cz --disable-emoji"
 alias clock="tty-clock -c -s"
 alias ani="ani-cli"
+alias ybr="yabai --stop-service && yabai --start-service"
+
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+
+# Cd on exit for fff
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
