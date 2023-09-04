@@ -9,7 +9,7 @@ env:
 window:
   dynamic_padding: true
   opacity: 1
-  decorations: buttonless
+  decorations: none
   startup_mode: Windowed
 
   dimensions:
@@ -17,8 +17,8 @@ window:
     lines: 23
 
   padding:
-    x: 20
-    y: 20
+    x: 30
+    y: 30
 
 ##### Scrolling #####
 scrolling:
@@ -45,4 +45,4 @@ font:
     family: CartographCF Nerd Font
     style: Bold Italic
 
-  size: 16.0
+  size: 14

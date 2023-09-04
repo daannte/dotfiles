@@ -17,8 +17,11 @@ shift + ctrl - m : yabai -m window --toggle zoom-fullscreen
 shift + ctrl - e : yabai -m space --balance
 
 # Toggle if the window should be tiled and center it
-shift + ctrl - f : yabai -m window --toggle float;\
-                   yabai -m window --grid 4:4:1:1:2:2
+shift + ctrl - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Toggle terminal to watch anime
+shift + ctrl - a : yabai -m window --toggle float --grid 4:4:1:0:2:1
+
 
 # Open Alacritty
 ctrl - return : open -na /Applications/Alacritty.app 

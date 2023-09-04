@@ -38,54 +38,28 @@ breeze: &breeze
     cyan: "0x186c60"
     white: "0x63686d"
 
-rosePine: &rose_pine
+gruvbox_material: &gruvbox_material
   primary:
-    background: "0x191724"
-    foreground: "0xe0def4"
-
-  cursor:
-    text: "0xe0def4"
-    cursor: "0x524f67"
-
-  vi_mode_cursor:
-    text: "0xe0def4"
-    cursor: "0x524f67"
-
-  line_indicator:
-    foreground: None
-    background: None
-
-  selection:
-    text: "0xe0def4"
-    background: "0x403d52"
-
-  normal:
-    black: "0x26233a"
-    red: "0xeb6f92"
-    green: "0x31748f"
-    yellow: "0xf6c177"
-    blue: "0x9ccfd8"
-    magenta: "0xc4a7e7"
-    cyan: "0xebbcba"
-    white: "0xe0def4"
-
+    foreground: "0xd4be98"
+    background: "0x282828"
+    normal:
+    black: "0x3c3836"
+    red: "#E76861"
+    green: "0xa9b665"
+    yellow: "0xd8a657"
+    blue: "0x7daea3"
+    magenta: "0xd3869b"
+    cyan: "0x89b482"
+    white: "0xd4be98"
   bright:
-    black: "0x6e6a86"
-    red: "0xeb6f92"
-    green: "0x31748f"
-    yellow: "0xf6c177"
-    blue: "0x9ccfd8"
-    magenta: "0xc4a7e7"
-    cyan: "0xebbcba"
-    white: "0xe0def4"
-
-  hints:
-    start:
-      foreground: "#908caa"
-      background: "#1f1d2e"
-    end:
-      foreground: "#6e6a86"
-      background: "#1f1d2e"
+    black: "0x3c3836"
+    red: "#E76861"
+    green: "0xa9b665"
+    yellow: "0xd8a657"
+    blue: "0x7daea3"
+    magenta: "0xd3869b"
+    cyan: "0x89b482"
+    white: "0xd4be98"
 
 tokyoNight: &tokyoNight
   primary:
@@ -166,7 +140,7 @@ gruvbox: &gruvbox
 
 hord: &hord
   primary:
-    background: "#181f21"
+    background: "#1D2426"
     foreground: "#dadada"
 
   bright:
@@ -189,4 +163,33 @@ hord: &hord
     cyan: "#C5C6C8"
     white: "#FFFFFF"
 
-colors: *hord
+everblush: &everblush
+  primary:
+    background: "0x141b1e"
+    foreground: "0xdadada"
+
+  cursor:
+    text: "0xdadada"
+    cursor: "0xdadada"
+
+  normal:
+    black: "0x232a2d"
+    red: "0xe57474"
+    green: "0x8ccf7e"
+    yellow: "0xe5c76b"
+    blue: "0x67b0e8"
+    magenta: "0xc47fd5"
+    cyan: "0x6cbfbf"
+    white: "0xb3b9b8"
+
+  bright:
+    black: "0x2d3437"
+    red: "0xef7e7e"
+    green: "0x96d988"
+    yellow: "0xf4d67a"
+    blue: "0x71baf2"
+    magenta: "0xce89df"
+    cyan: "0x67cbe7"
+    white: "0xbdc3c2"
+
+colors: *everblush
