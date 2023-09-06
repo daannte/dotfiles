@@ -46,6 +46,7 @@ o.scrolloff = 5
 -- Disable Default Status Line
 o.laststatus = 0
 o.ruler = false
+o.showmode = false
 
 -- Mouse
 o.mouse = 'a'
@@ -98,4 +99,3 @@ local builtins = {
 for _, plugin in ipairs(builtins) do
   g["loaded_" .. plugin] = 1
 end
-

@@ -11,6 +11,12 @@ local plugins = {
     config = function() require('plugins.utils.nvim-tree') end
   },
 
+  -- Statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    config = function() require('plugins.ui.lualine') end
+  },
+
   -- Split Window Navigation
   {
     'christoomey/vim-tmux-navigator',
