@@ -1,50 +1,27 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Prompt
+setopt PROMPT_SUBST
+PROMPT='$([[ $PWD != $HOME ]] && echo "%F{blue}%~%f ")%F{yellow}$%f '
 
-#Path to your oh-my-zsh installation.
+# Change cd to use zoxide instead
+\builtin alias cd=__zoxide_z
+eval "$(zoxide init zsh)"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+# Oh my zsh stuff
 plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+  git
+  zsh-autosuggestions
 )
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-eval "$(zoxide init zsh)"
+# Aliases
 alias zsh="nvim ~/.zshrc"
 alias n="nvim"
-alias ls="exa --icons"
+alias ls="exa --icons -1"
 alias cat="bat"
 alias fetch="pfetch"
-alias ga="git add -A"
-alias gs="git status"
-alias gcm="git commit -m"
-alias gc="git clone"
-alias gch="git checkout"
 alias lg="lazygit"
 alias gcz="git cz --disable-emoji"
 alias clock="tty-clock -c -s"
 alias ani="ani-cli"
 alias ybr="yabai --stop-service && yabai --start-service"
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-
-# Cd on exit for fff
-f() {
-    fff "$@"
-    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-}
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[ -f "/Users/dantekirsman/.ghcup/env" ] && source "/Users/dantekirsman/.ghcup/env" # ghcup-env
