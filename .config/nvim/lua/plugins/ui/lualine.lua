@@ -23,10 +23,10 @@ lualine.setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = {},
-    lualine_c = { 'filename' },
+    lualine_c = {},
     lualine_x = { 'branch' },
     lualine_y = { 'diagnostics' },
-    lualine_z = { 'location' }
+    lualine_z = {}
   },
   inactive_sections = {
     lualine_a = {},
