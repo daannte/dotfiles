@@ -1,53 +1,49 @@
-function Map(mode, keys, cmd, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, keys, cmd, options)
-end
+local mapkey = require("util.keymapper").mapkey
 
--- map Insert mode to Normal mode to jk and kj
-Map('i', 'jk', '<ESC>')
-Map('i', 'kj', '<ESC>')
+-- Map insert mode to normal mode to jk or kj
+mapkey("i", "jk", "<ESC>")
+mapkey("i", "kj", "<ESC>")
 
--- Remove highlight after searching
-Map('n', '<leader>nh', ':nohl<CR>')
-
--- Deleting a character won't copy it
-Map('n', 'x', '"_x')
-
--- Increment and Decrement Numbers
-Map('n', '+', '<C-a>')
-Map('n', '-', '<C-x>')
-
--- Delete a word backwards
-Map('n', 'dw', 'vb"_d')
-
--- Split Windows
-Map('n', '<leader>sh', '<C-w>s')
-Map('n', '<leader>sv', '<C-w>v')
-Map('n', '<leader>se', '<C-w>=')
-Map('n', '<leader>sx', ':close<CR>')
+-- Split windows
+mapkey("n", "<leader>sh", ":split") -- Horizontal split
+mapkey("n", "<leader>sv", ":vsplit") -- Vertical split
+mapkey("n", "<leader>sx", ":close") -- Close current split
+mapkey("n", "<leader>se", "<C-w>=") -- Resize equally
 
 -- Tabs
-Map('n', '<leader>tn', ':tabnew<CR>')
-Map('n', '<leader>tx', ':tabclose<CR>')
-Map('n', '<Tab>', ':tabn<CR>')
-Map('n', '<S-Tab>', ':tabp<CR>')
+mapkey("n", "<leader>tn", ":tabnew") -- Create new tab
+mapkey("n", "<leader>tx", ":tabclose") -- Close current tab
+mapkey("n", "<Tab>", ":tabn") -- Switch to next tab
+mapkey("n", "<S-Tab>", ":tabp") -- Switch to previous tab
+
+-- Remove highlight after searching
+mapkey("n", "<leader>nh", ":nohl")
+
+-- Deleting a character won't copy it
+mapkey("n", "x", '"_x')
+
+-- Increment and Decrement Numbers
+mapkey("n", "+", "<C-a>")
+mapkey("n", "-", "<C-x>")
+
+-- Delete a word backwards
+mapkey("n", "dw", 'vb"_d')
 
 -- Select All
-Map('n', '<C-a>', 'gg<S-v>G')
+mapkey("n", "<C-a>", "gg<S-v>G")
 
--- Plugin keymaps
+--------------------
+-- Plugin keymaps --
+--------------------
 
 -- NvimTree Toggle
-Map('n', '<leader>e', ':NvimTreeToggle<CR>')
+mapkey("n", "<leader>e", ":NvimTreeToggle")
 
 -- Telescope
-Map('n', '<leader>ff', ':Telescope find_files<CR>')
-Map('n', '<leader>fr', ':Telescope live_grep<CR>')
-Map('n', '<leader>fc', ':Telescope grep_string<CR>')
-Map('n', '<leader>fd', ':Telescope diagnostics<CR>')
+mapkey("n", "<leader>ff", ":Telescope find_files")
+mapkey("n", "<leader>fr", ":Telescope live_grep")
+mapkey("n", "<leader>fs", ":Telescope grep_string")
+mapkey("n", "<leader>fd", ":Telescope diagnostics")
 
 -- Zen Mode
-Map('n', '<leader>zm', ':ZenMode<CR>')
+mapkey("n", "<leader>zm", ":ZenMode")

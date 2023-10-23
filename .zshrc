@@ -1,15 +1,18 @@
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='$([[ $PWD != $HOME ]] && echo "%F{blue}%~%f ")%F{yellow}$%f '
+# PROMPT='$([[ $PWD != $HOME ]] && echo "%F{blue}%~%f ")%F{yellow}>%f '
+PROMPT='%F{blue}%~%f
+%F{yellow}>%f '
 
-# Change cd to use zoxide instead
-\builtin alias cd=__zoxide_z
+precmd() { print "" }
+
 eval "$(zoxide init zsh)"
 
 # Oh my zsh stuff
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
