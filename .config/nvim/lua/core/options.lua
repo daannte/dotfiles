@@ -19,7 +19,8 @@ o.autoindent = true
 o.smartindent = true
 
 -- Line numbers
-o.number = true
+-- o.number = true
+o.relativenumber = false
 o.numberwidth = 4
 
 -- Line wrap
@@ -49,7 +50,7 @@ o.ruler = false
 o.showmode = false
 
 -- Mouse
-o.mouse = 'a'
+o.mouse = "a"
 
 -- Cursor line
 o.cursorline = true
@@ -60,42 +61,41 @@ o.signcolumn = "yes"
 -- Command line height
 o.cmdheight = 1
 
-
 -- Disable built in plugins
 local builtins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "logipat",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
-  "archlinux",
-  "fzf",
-  "tutor_mode_plugin",
-  "sleuth",
-  "vimgrep"
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
+	"logipat",
+	"tutor",
+	"rplugin",
+	"syntax",
+	"synmenu",
+	"optwin",
+	"compiler",
+	"bugreport",
+	"ftplugin",
+	"archlinux",
+	"fzf",
+	"tutor_mode_plugin",
+	"sleuth",
+	"vimgrep",
 }
 
 for _, plugin in ipairs(builtins) do
-  g["loaded_" .. plugin] = 1
+	g["loaded_" .. plugin] = 1
 end
