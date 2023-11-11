@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias zsh="nvim ~/.zshrc"
 alias n="nvim"
-alias ls="exa --icons -1"
+alias ls="eza --icons -1"
 alias cat="bat"
 alias fetch="pfetch"
 alias lg="lazygit"
