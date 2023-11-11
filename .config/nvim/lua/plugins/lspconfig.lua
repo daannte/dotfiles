@@ -2,7 +2,7 @@ local on_attach = require("util.lsp").on_attach
 local diagnostic_signs = require("util.lsp").diagnostic_signs
 
 local config = function()
-	local cmp_nvim_lsp = require('cmp_nvim_lsp')
+	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local lspconfig = require("lspconfig")
 
 	for type, icon in pairs(diagnostic_signs) do
@@ -50,16 +50,44 @@ local config = function()
 		},
 	})
 
+	-- cpp
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "cpp", "c" },
+	})
+
+	lspconfig.bashls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "sh" },
+	})
+
+	-- Latex
+	lspconfig.texlab.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
+	-- local cpplint = require("efmls-configs.linters.cpplint")
+	local clang_format = require("efmls-configs.formatters.clang_format")
+	local latexindent = require("efmls-configs.formatters.latexindent")
+	local vale = require("efmls-configs.linters.vale")
+	local shfmt = require("efmls-configs.formatters.shfmt")
+	local shellcheck = require("efmls-configs.linters.shellcheck")
 
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
 			"lua",
 			"python",
+			"tex",
+			"cpp",
+			"sh",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -73,6 +101,9 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { flake8, black },
+				latex = { latexindent, vale },
+				cpp = { clang_format },
+				sh = { shfmt, shellcheck },
 			},
 		},
 	})
