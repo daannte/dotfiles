@@ -42,8 +42,6 @@ return {
           vim.list_extend(names, lint.linters_by_ft["_"] or {})
         end
 
-        vim.list_extend(names, lint.linters_by_ft["*"] or {})
-
         local ctx = { filename = vim.api.nvim_buf_get_name(0) }
         ctx.dirname = vim.fn.fnamemodify(ctx.filename, ":h")
         names = vim.tbl_filter(function(name)

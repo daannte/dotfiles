@@ -14,7 +14,6 @@ return {
         },
       },
     },
-    ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
@@ -139,7 +138,7 @@ return {
       },
       setup = {
         rust_analyzer = function(_, opts)
-          local rust_tools_opts = require("lazyvim.util").opts("rust-tools.nvim")
+          local rust_tools_opts = require("util").opts("rust-tools.nvim")
           require("rust-tools").setup(vim.tbl_deep_extend("force", rust_tools_opts or {}, { server = opts }))
           return true
         end,
