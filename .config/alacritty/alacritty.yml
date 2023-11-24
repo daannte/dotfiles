@@ -1,6 +1,7 @@
 ##### Import Colour Scheme #####
 import:
   - ~/.config/alacritty/colours.yml
+  - ~/.config/alacritty/fonts.yml
 
 env:
   TERM: alacritty
@@ -24,25 +25,3 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-  # faux_multiplier: 3
-  # auto_scroll: false
-
-##### Set Font #####
-font:
-  normal:
-    family: CartographCF Nerd Font
-    style: Regular
-
-  bold:
-    family: CartographCF Nerd Font
-    style: Bold
-
-  italic:
-    family: CartographCF Nerd Font
-    style: Italic
-
-  bold_italic:
-    family: CartographCF Nerd Font
-    style: Bold Italic
-
-  size: 14
