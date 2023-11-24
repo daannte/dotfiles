@@ -105,7 +105,7 @@ return {
       },
     },
     opts = {
-      timeout = 3000,
+      timeout = 100,
       max_height = function()
         return math.floor(vim.o.lines * 0.75)
       end,
@@ -115,6 +115,7 @@ return {
       on_open = function(win)
         vim.api.nvim_win_set_config(win, { zindex = 100 })
       end,
+      render = "minimal",
     },
     init = function()
       -- when noice is not enabled, install notify on VeryLazy

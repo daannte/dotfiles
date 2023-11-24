@@ -1,22 +1,7 @@
 local LazyUtil = require("lazy.core.util")
 
----@class lazyvim.util: LazyUtilCore
----@field ui lazyvim.util.ui
----@field lsp lazyvim.util.lsp
----@field root lazyvim.util.root
----@field telescope lazyvim.util.telescope
----@field terminal lazyvim.util.terminal
----@field toggle lazyvim.util.toggle
----@field format lazyvim.util.format
----@field plugin lazyvim.util.plugin
----@field extras lazyvim.util.extras
----@field inject lazyvim.util.inject
----@field news lazyvim.util.news
----@field json lazyvim.util.json
----@field lualine lazyvim.util.lualine
 local M = {}
 
----@type table<string, string|string[]>
 local deprecated = {
   get_clients = "lsp",
   on_attach = "lsp",
@@ -53,12 +38,10 @@ function M.is_win()
   return vim.loop.os_uname().sysname:find("Windows") ~= nil
 end
 
----@param plugin string
 function M.has(plugin)
   return require("lazy.core.config").spec.plugins[plugin] ~= nil
 end
 
----@param fn fun()
 function M.on_very_lazy(fn)
   vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
@@ -68,7 +51,6 @@ function M.on_very_lazy(fn)
   })
 end
 
----@param name string
 function M.opts(name)
   local plugin = require("lazy.core.config").plugins[name]
   if not plugin then
@@ -148,7 +130,6 @@ end
 -- It will also set `silent` to true by default.
 function M.safe_keymap_set(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
   local modes = type(mode) == "string" and { mode } or mode
 
   ---@param m string
