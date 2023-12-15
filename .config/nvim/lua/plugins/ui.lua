@@ -34,10 +34,18 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     config = function()
+      local custom_theme = require("lualine.themes.everforest")
+      custom_theme.normal.c.bg = nil
+      custom_theme.insert.c.bg = nil
+      custom_theme.command.c.bg = nil
+      custom_theme.inactive.c.bg = nil
+      custom_theme.visual.c.bg = nil
+      custom_theme.replace.c.bg = nil
+
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = "auto",
+          theme = custom_theme,
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = {
@@ -54,17 +62,17 @@ return {
           },
         },
         sections = {
-          lualine_a = { "mode" },
-          lualine_b = {},
+          lualine_a = { { "mode", color = { bg = "", fg = "#7FBBB3" } } },
+          lualine_b = { { "filename", color = { bg = "", fg = "#83C092" } } },
           lualine_c = {},
-          lualine_x = { "branch" },
-          lualine_y = { "diagnostics" },
-          lualine_z = {},
+          lualine_x = { { "branch", icons_enabled = false, color = { bg = "", fg = "#D3C6AA" } } },
+          lualine_y = { { "diagnostics", color = { bg = "" } } },
+          lualine_z = { { "%l", color = { bg = "", fg = "#CE94B0" } } },
         },
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = { "filename" },
+          lualine_c = {},
           lualine_x = {},
           lualine_y = {},
           lualine_z = {},
@@ -89,6 +97,7 @@ return {
           show_buffer_close_icons = false,
           show_close_icon = false,
           truncate_names = true,
+          always_show_bufferline = false,
         },
       })
     end,
@@ -162,6 +171,16 @@ return {
         command_palette = true,
         long_message_to_split = true,
         inc_rename = true,
+      },
+      cmdline = {
+        format = {
+          cmdline = {
+            icon = ">",
+          },
+          help = {
+            icon = "?",
+          },
+        },
       },
     },
   },
