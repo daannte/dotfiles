@@ -42,13 +42,23 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     priority = 999,
     keys = {
       { "<leader>cl", ":Telescope colorscheme<CR>", desc = "Select Colourscheme" },
     },
     config = function()
       vim.cmd.colorscheme("catppuccin")
+    end,
+  },
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 999,
+    config = function()
+      require("everforest").setup({})
+      vim.cmd.colorscheme("everforest")
     end,
   },
 }

@@ -18,14 +18,17 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias zsh="nvim ~/.zshrc"
 alias n="nvim"
+alias vim="nvim"
 alias ls="eza --icons -1"
-alias cat="bat --theme=Catppuccin-macchiato"
+alias cat="bat"
 alias fetch="pfetch"
 alias lg="lazygit"
 alias gcz="git cz --disable-emoji"
 alias clock="tty-clock -c -s"
 alias ani="ani-cli"
 alias ybr="yabai --stop-service && yabai --start-service"
+alias ytaudio="yt-dlp -f 'ba' -x --audio-format mp3"
+alias music="ncmpcpp"
 
 # shell stuff
 eval "$(starship init zsh)"

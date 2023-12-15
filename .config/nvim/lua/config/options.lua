@@ -33,6 +33,7 @@ o.smartcase = true
 -- Appearance
 o.termguicolors = true
 o.background = "dark"
+o.fillchars:append({ eob = " " }) -- disable "~" indicator
 
 -- Use System Clipboard
 o.clipboard = "unnamedplus"

@@ -2,26 +2,4 @@
 import:
   - ~/.config/alacritty/colours.yml
   - ~/.config/alacritty/fonts.yml
-
-env:
-  TERM: alacritty
-
-##### Set Window Preferences #####
-window:
-  dynamic_padding: true
-  opacity: 1
-  decorations: none
-  startup_mode: Windowed
-
-  dimensions:
-    columns: 82
-    lines: 23
-
-  padding:
-    x: 40
-    y: 40
-
-##### Scrolling #####
-scrolling:
-  history: 10000
-  multiplier: 3
+  - ~/.config/alacritty/config.yml

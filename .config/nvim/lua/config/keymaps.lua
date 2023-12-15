@@ -38,3 +38,6 @@ keymap("n", "dw", 'vb"_d', opts)
 
 -- Select All
 keymap("n", "<C-a>", "gg<S-v>G", opts)
+
+-- Toggle line numbers
+keymap("n", "<leader>n", ":set number!<cr>", opts)
