@@ -180,6 +180,9 @@ return {
       ensure_installed = {
         "stylua",
         "shfmt",
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
       },
     },
     config = function(_, opts)

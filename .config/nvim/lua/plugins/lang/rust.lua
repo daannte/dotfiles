@@ -1,5 +1,4 @@
 return {
-
   -- Extend auto completion
   {
     "hrsh7th/nvim-cmp",
@@ -42,7 +41,6 @@ return {
       end
     end,
   },
-
   {
     "simrat39/rust-tools.nvim",
     lazy = true,

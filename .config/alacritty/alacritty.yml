@@ -1,5 +1,0 @@
-##### Import Colour Scheme #####
-import:
-  - ~/.config/alacritty/colours.yml
-  - ~/.config/alacritty/fonts.yml
-  - ~/.config/alacritty/config.yml
