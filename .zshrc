@@ -29,6 +29,7 @@ alias ani="ani-cli"
 alias ybr="yabai --stop-service && yabai --start-service"
 alias ytaudio="yt-dlp -f 'ba' -x --audio-format mp3"
 alias music="ncmpcpp"
+alias bonsai="cbonsai -S"
 
 # shell stuff
 eval "$(starship init zsh)"
