@@ -30,6 +30,7 @@ return {
           local argv = { ... }
           timer:start(ms, 0, function()
             timer:stop()
+            ---@diagnostic disable-next-line
             vim.schedule_wrap(fn)(unpack(argv))
           end)
         end

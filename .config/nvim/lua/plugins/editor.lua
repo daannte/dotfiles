@@ -3,7 +3,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     keys = {
-      { "<leader>e", ":Neotree toggle<CR>", desc = "Open Neotree" },
+      { "<leader>e", ":Neotree toggle<CR>", desc = "Open Neotree", silent = true },
     },
     config = function()
       vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
