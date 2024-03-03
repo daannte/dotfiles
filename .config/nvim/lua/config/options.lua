@@ -57,44 +57,52 @@ o.mouse = "a"
 o.cursorline = true
 
 -- Always show signcolumn
-o.signcolumn = "yes"
+o.signcolumn = "yes:2"
 
 -- Command line height
-o.cmdheight = 1
+o.cmdheight = 0
 
 -- Disable built in plugins
 local builtins = {
   "2html_plugin",
+  "archlinux",
+  "bugreport",
+  "compiler",
+  "ftplugin",
+  "fzf",
+  "sleuth",
+  "syntax",
+  "synmenu",
+  "spellfile",
+  "spellfile_plugin",
+  "optwin",
+  "matchit",
+  -- "matchparen",
+  "rrhelper",
+  "rplugin",
+  "logipat",
+  "gtags",
   "getscript",
   "getscriptPlugin",
+  "man",
+  "tutor",
+  "tutor_mode_plugin",
+  "tar",
+  "tarPlugin",
+  "zip",
+  "zipPlugin",
   "gzip",
-  "logipat",
+  "vimball",
+  "vimballPlugin",
+  "vimgrep",
   "netrw",
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "logipat",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
-  "archlinux",
-  "fzf",
-  "tutor_mode_plugin",
-  "sleuth",
-  "vimgrep",
+  "node_provider",
+  "ruby_provider",
+  "python3_provider",
+  "perl_provider",
 }
 
 for _, plugin in ipairs(builtins) do

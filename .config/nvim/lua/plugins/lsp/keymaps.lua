@@ -7,7 +7,6 @@ function M.get()
     return M._keys
   end
   M._keys = {
-    { "<leader>lsp", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
     {
       "gd",
       function()
