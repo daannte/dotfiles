@@ -20,6 +20,10 @@ yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
+# Automatically float and center terminal
+yabai -m rule --add app="^Alacritty" manage=off grid=6:8:1:1:6:4
+
+
 # Disabled apps
 yabai -m rule --add app="^System Settings$"  manage=off
 yabai -m rule --add app="^Finder"            manage=off
@@ -27,3 +31,4 @@ yabai -m rule --add app="^OpenEmu"           manage=off
 yabai -m rule --add app="^Shottr"            manage=off
 yabai -m rule --add app="^IINA"              manage=off
 yabai -m rule --add app="^Numi"              manage=off
+yabai -m rule --add app="^Anki"              manage=off

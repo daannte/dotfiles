@@ -92,7 +92,7 @@ return {
           keys = {
             { "K", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
             { "<leader>ca", "<cmd>RustCodeAction<cr>", desc = "Code Action (Rust)" },
-            { "<leader>dr", "<cmd>RustDebuggables<cr>", desc = "Run Debuggables (Rust)" },
+            { "<leader>rd", "<cmd>RustDebuggables<cr>", desc = "Run Debuggables (Rust)" },
           },
           settings = {
             ["rust-analyzer"] = {
