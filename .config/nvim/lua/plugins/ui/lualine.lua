@@ -30,12 +30,12 @@ return {
         },
       },
       sections = {
-        lualine_a = { { "mode", color = { bg = "", fg = "#7FBBB3" } } },
-        lualine_b = { { "filename", color = { bg = "", fg = "#83C092" } } },
+        lualine_a = { { "mode", color = { bg = "", fg = "#8AACAB" } } },
+        lualine_b = { { "filename", color = { bg = "", fg = "#8AAC8B" } } },
         lualine_c = {},
-        lualine_x = { { "branch", icons_enabled = false, color = { bg = "", fg = "#D3C6AA" } } },
+        lualine_x = { { "branch", icons_enabled = false, color = { bg = "", fg = "#F0F0F0" } } },
         lualine_y = { { "diagnostics", color = { bg = "" } } },
-        lualine_z = { { "%l", color = { bg = "", fg = "#CE94B0" } } },
+        lualine_z = { { "%l", color = { bg = "", fg = "#AC8AAC" } } },
       },
       inactive_sections = {
         lualine_a = {},

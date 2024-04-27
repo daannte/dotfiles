@@ -62,6 +62,9 @@ o.signcolumn = "yes:2"
 -- Command line height
 o.cmdheight = 0
 
+-- Undo file
+o.undofile = true
+
 -- Disable built in plugins
 local builtins = {
   "2html_plugin",

@@ -9,9 +9,24 @@ return {
         desc = "Preview Hunk",
       },
       {
+        "<leader>g]",
+        "<cmd>Gitsigns next_hunk<cr>",
+        desc = "Next Hunk",
+      },
+      {
+        "<leader>g[",
+        "<cmd>Gitsigns prev_hunk<cr>",
+        desc = "Previous Hunk",
+      },
+      {
         "<leader>gt",
         "<cmd>Gitsigns toggle_current_line_blame<cr>",
         desc = "Toggle Line Blame",
+      },
+      {
+        "<leader>gr",
+        "<cmd>Gitsigns reset_hunk<cr>",
+        desc = "Reset Hunk",
       },
     },
     config = function()

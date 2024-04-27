@@ -1,10 +1,3 @@
-# Prompt
-# setopt PROMPT_SUBST
-# PROMPT='$([[ $PWD != $HOME ]] && echo "%F{blue}%~%f ")
-# %F{yellow}>%f '
-
-precmd() { print "" }
-
 # Oh my zsh stuff
 plugins=(
   zsh-autosuggestions

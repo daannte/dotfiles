@@ -14,4 +14,4 @@ unfocused_hollow = false
 
 [cursor.style]
 blinking = "Off"
-shape = "Underline"
+shape = "Block"
