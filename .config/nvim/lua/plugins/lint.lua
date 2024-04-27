@@ -4,9 +4,9 @@ return {
     event = "VeryLazy",
     opts = {
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-      linters_by_ft = {
-        lua = { "luacheck" },
-      },
+      -- linters_by_ft = {
+      --   lua = { "luacheck" },
+      -- },
       linters = {},
     },
     config = function(_, opts)

@@ -1,43 +1,50 @@
-local keymap = vim.keymap.set
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Map insert mode to normal mode to jk or kj
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+-- Keep cursor centered when scrolling
+map("n", "<C-u>", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
+
+-- Move line / block up or down
+map("v", "J", ":m '>+1<CR>gv=gv", opts)
+map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Split windows
-keymap("n", "<leader>sh", ":split<cr>", opts) -- Horizontal split
-keymap("n", "<leader>sv", ":vsplit<cr>", opts) -- Vertical split
-keymap("n", "<leader>sx", ":close<cr>", opts) -- Close current split
-keymap("n", "<leader>se", "<C-w>=<cr>", opts) -- Resize equally
+map("n", "<leader>sh", ":split<cr>", opts) -- Horizontal split
+map("n", "<leader>sv", ":vsplit<cr>", opts) -- Vertical split
+map("n", "<leader>sx", ":close<cr>", opts) -- Close current split
+map("n", "<leader>se", "<C-w>=<cr>", opts) -- Resize equally
 
 -- Tabs
-keymap("n", "<leader>tn", ":tabnew<cr>", opts) -- Create new tab
-keymap("n", "<leader>tx", ":tabclose<cr>", opts) -- Close current tab
-keymap("n", "<Tab>", ":tabn<cr>", opts) -- Switch to next tab
-keymap("n", "<S-Tab>", ":tabp<cr>", opts) -- Switch to previous tab
+map("n", "<leader>tn", ":tabnew<cr>", opts) -- Create new tab
+map("n", "<leader>tx", ":tabclose<cr>", opts) -- Close current tab
+map("n", "<Tab>", ":tabn<cr>", opts) -- Switch to next tab
+map("n", "<S-Tab>", ":tabp<cr>", opts) -- Switch to previous tab
 
 -- Switch windows
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
 -- Remove highlight after searching
-keymap("n", "<leader>nh", ":nohl<cr>", opts)
+map("n", "<leader>nh", ":nohl<cr>", opts)
 
 -- Deleting a character won't copy it
-keymap("n", "x", '"_x', opts)
+map("n", "x", '"_x', opts)
 
 -- Increment and Decrement Numbers
-keymap("n", "+", "<C-a>", opts)
-keymap("n", "-", "<C-x>", opts)
+map("n", "+", "<C-a>", opts)
+map("n", "-", "<C-x>", opts)
 
 -- Delete a word backwards
-keymap("n", "dw", 'vb"_d', opts)
+map("n", "dw", 'vb"_d', opts)
 
 -- Select All
-keymap("n", "<C-a>", "gg<S-v>G", opts)
+map("n", "<C-a>", "gg<S-v>G", opts)
 
 -- Toggle line numbers
-keymap("n", "<leader>n", ":set number!<cr>", opts)
+map("n", "<leader>n", ":set number!<cr>", opts)
+
+-- Undo Tree
+map("n", "<leader>ut", ":UndotreeToggle | :UndotreeFocus<cr>", opts)

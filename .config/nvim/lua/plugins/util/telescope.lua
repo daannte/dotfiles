@@ -30,24 +30,30 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
-        prompt_prefix = " > ",
+        preview = false,
+        results_title = "",
         layout_config = {
-          horizontal = {
-            preview_width = 0.50,
-            -- results_width = 0.8,
-          },
+          width = 0.4,
+          height = 0.5,
         },
-        border = {},
+        prompt_prefix = " ",
         borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
         path_display = { "truncate" },
         mappings = {
-          n = {
-            ["q"] = "close",
-          },
           i = {
+            ["<ESC>"] = "close",
             ["<C-j>"] = "move_selection_next",
             ["<C-k>"] = "move_selection_previous",
           },
+        },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--trim",
         },
       },
     })

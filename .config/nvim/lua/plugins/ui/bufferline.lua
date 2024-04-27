@@ -12,6 +12,9 @@ return {
         show_close_icon = false,
         truncate_names = true,
         always_show_bufferline = false,
+        indicator = {
+          style = "none",
+        },
       },
     })
   end,

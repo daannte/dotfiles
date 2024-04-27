@@ -1,26 +1,21 @@
-palette = "catppuccin_macchiato"
-
 format = """
-$directory
+$directory\
 $character"""
 right_format = "$git_branch"
 
 [character]
-success_symbol = "[>](yellow)"
-error_symbol = "[>](yellow)"
+format = " "
 
 [directory]
-style = "blue"
+format = "[ [$read_only]($read_only_style)$path ]($style)"
+style = "bg:black"
+truncation_symbol = "<"
+truncation_length = 3
+read_only = "󰌾 "
+read_only_style = "fg:red bg:black"
 
 [git_branch]
-symbol = '󰘬 '
 truncation_length = 20
 truncation_symbol = ''
-# ignore_branches = ['main']
-format = "[$symbol$branch]($style)"
-style = "sky"
-
-[palettes.catppuccin_macchiato]
-yellow = "#eed49f"
-sky = "#91d7e3"
-blue = "#8aadf4"
+format = "[ $branch(:$remote_branch) ]($style)"
+style = "bg:black"
