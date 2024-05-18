@@ -8,8 +8,7 @@ format = "-> "
 
 [directory]
 format = "$path $read_only"
-style = "fg:white"
-truncation_symbol = ".."
+truncation_symbol = "<"
 truncation_length = 3
 read_only = "󰌾 "
 read_only_style = "fg:red"
