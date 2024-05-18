@@ -1,25 +1,33 @@
-# Oh my zsh stuff
-plugins=(
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
+# Options
+setopt auto_list
+setopt hist_find_no_dups
+setopt hist_ignore_dups
 
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+# Plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Aliases
 alias n="nvim"
 alias vim="nvim"
-alias ls="eza --icons -1"
+alias ls="eza --icons"
 alias cp="cp -iv"
 alias cat="bat"
 alias ani="ani-cli"
-alias ybr="yabai --stop-service && yabai --start-service"
-alias skhdr="skhd --stop-service && skhd --start-service"
+alias ryb="yabai --stop-service && yabai --start-service"
+alias rskhd="skhd --stop-service && skhd --start-service"
+alias rzsh='source ~/.zshrc'
 alias ytaudio="yt-dlp -f 'ba' -x --audio-format mp3"
 
+# History
+HISTFILE=~/.zsh/.zsh_history
+HISTSIZE=1000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+bindkey -v
+
 # shell stuff
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"

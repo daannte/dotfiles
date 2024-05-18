@@ -25,6 +25,13 @@ return {
       end,
       desc = "Grep String",
     },
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "Buffers",
+    },
   },
 
   config = function()
@@ -54,6 +61,11 @@ return {
           "--line-number",
           "--column",
           "--trim",
+        },
+      },
+      pickers = {
+        find_files = {
+          disable_devicons = true,
         },
       },
     })

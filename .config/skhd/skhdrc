@@ -1,27 +1,17 @@
 # Change windows
-shift + ctrl - l : yabai -m window --focus east
-shift + ctrl - k : yabai -m window --focus north
-shift + ctrl - j : yabai -m window --focus south
-shift + ctrl - h : yabai -m window --focus west
-
-# Swap Windows
-shift + alt - l : yabai -m window --swap east
-shift + alt - k : yabai -m window --swap north
-shift + alt - j : yabai -m window --swap south
-shift + alt - h : yabai -m window --swap west
+hyper - l : yabai -m window --focus east
+hyper - k : yabai -m window --focus north
+hyper - j : yabai -m window --focus south
+hyper - h : yabai -m window --focus west
 
 # Maximize app
-shift + ctrl - m : yabai -m window --toggle zoom-fullscreen
+hyper - f : yabai -m window --toggle zoom-fullscreen
 
 # Balance apps
-shift + ctrl - e : yabai -m space --balance
+hyper - e : yabai -m space --balance
 
-# Toggle if the window should be tiled and center it
-shift + ctrl - f : yabai -m window --toggle float --grid 6:8:1:1:6:4
-
-# Toggle terminal to watch anime
-shift + ctrl - a : yabai -m window --toggle float --grid 4:4:1:0:2:1
-
+# Toggle if the window should float and center it
+hyper - space : yabai -m window --toggle float --grid 6:8:1:1:6:4
 
 # Open Alacritty
 ctrl - return : open -na /Applications/Alacritty.app 

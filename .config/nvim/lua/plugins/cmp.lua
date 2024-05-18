@@ -41,7 +41,7 @@ return {
           { name = "buffer" },
         }),
         formatting = {
-          fields = { "abbr", "menu", "kind" },
+          fields = { "abbr", "kind", "menu" },
           format = function(entry, vim_item)
             vim_item.menu = ({
               buffer = "[Buf]",

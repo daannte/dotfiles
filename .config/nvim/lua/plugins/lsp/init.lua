@@ -75,10 +75,10 @@ return {
 
       -- diagnostics
       local diagnostic_signs = {
-        Error = " ",
-        Warn = " ",
-        Hint = "",
-        Info = " ",
+        Error = "x ",
+        Warn = "! ",
+        Hint = "# ",
+        Info = "i ",
       }
       for name, icon in pairs(diagnostic_signs) do
         name = "DiagnosticSign" .. name
