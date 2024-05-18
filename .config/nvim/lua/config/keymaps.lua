@@ -15,11 +15,9 @@ map("n", "<leader>sv", ":vsplit<cr>", opts) -- Vertical split
 map("n", "<leader>sx", ":close<cr>", opts) -- Close current split
 map("n", "<leader>se", "<C-w>=<cr>", opts) -- Resize equally
 
--- Tabs
-map("n", "<leader>tn", ":tabnew<cr>", opts) -- Create new tab
-map("n", "<leader>tx", ":tabclose<cr>", opts) -- Close current tab
-map("n", "<Tab>", ":tabn<cr>", opts) -- Switch to next tab
-map("n", "<S-Tab>", ":tabp<cr>", opts) -- Switch to previous tab
+-- Buffer Manipulation
+map("n", "<Tab>", ":bnext<cr>", opts) -- Switch to next tab
+map("n", "<S-Tab>", ":bprev<cr>", opts) -- Switch to previous tab
 
 -- Switch windows
 map("n", "<C-h>", "<C-w>h", opts)
@@ -32,6 +30,9 @@ map("n", "<leader>nh", ":nohl<cr>", opts)
 
 -- Deleting a character won't copy it
 map("n", "x", '"_x', opts)
+
+-- Deleting a line wont copy it
+map("n", "dd", '"_dd', opts)
 
 -- Increment and Decrement Numbers
 map("n", "+", "<C-a>", opts)

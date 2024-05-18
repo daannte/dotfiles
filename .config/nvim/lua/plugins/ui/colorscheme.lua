@@ -1,9 +1,9 @@
 return {
   {
-    "daannte/mountain.nvim",
+    -- "daannte/mountain.nvim",
     lazy = false,
     priority = 999,
-    -- dir = "~/Documents/projects/mountain/",
+    dir = "~/Documents/projects/mountain/",
     config = function()
       require("mountain").setup({})
       vim.cmd.colorscheme("mountain")

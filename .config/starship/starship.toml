@@ -1,21 +1,20 @@
 format = """
-$directory\
+$directory
 $character"""
 right_format = "$git_branch"
 
 [character]
-format = " "
+format = "-> "
 
 [directory]
-format = "[ [$read_only]($read_only_style)$path ]($style)"
-style = "bg:black"
-truncation_symbol = "<"
+format = "$path $read_only"
+style = "fg:white"
+truncation_symbol = ".."
 truncation_length = 3
 read_only = "󰌾 "
-read_only_style = "fg:red bg:black"
+read_only_style = "fg:red"
 
 [git_branch]
 truncation_length = 20
 truncation_symbol = ''
-format = "[ $branch(:$remote_branch) ]($style)"
-style = "bg:black"
+format = "$branch"

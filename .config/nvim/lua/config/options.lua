@@ -66,7 +66,7 @@ o.cmdheight = 0
 o.undofile = true
 
 -- Disable built in plugins
-local builtins = {
+local disable_builtin_plugins = {
   "2html_plugin",
   "archlinux",
   "bugreport",
@@ -108,6 +108,16 @@ local builtins = {
   "perl_provider",
 }
 
-for _, plugin in ipairs(builtins) do
+local disable_builtin_providers = {
+  "node",
+  "perl",
+  "ruby",
+}
+
+for _, plugin in ipairs(disable_builtin_plugins) do
   g["loaded_" .. plugin] = 1
+end
+
+for _, provider in ipairs(disable_builtin_providers) do
+  g[("loaded_" .. provider .. "_provider")] = 0
 end

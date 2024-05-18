@@ -1,7 +1,7 @@
 # bsp (yabai) or float (leave alone)
 yabai -m config layout bsp
 
-# Set padding to 12px
+# Set padding 
 yabai -m config top_padding                  20
 yabai -m config bottom_padding               20
 yabai -m config left_padding                 20
