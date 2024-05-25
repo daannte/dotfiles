@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   version = false,
-  lazy = false,
+  cmd = { "Telescope" },
   dependencies = { "nvim-lua/plenary.nvim" },
   keys = {
     {
@@ -39,13 +39,13 @@ return {
       defaults = {
         preview = false,
         results_title = "",
-        layout_config = {
-          width = 0.4,
-          height = 0.5,
-        },
+        -- layout_config = {
+        --   width = 0.4,
+        --   height = 0.5,
+        -- },
         prompt_prefix = " ",
         borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-        path_display = { "truncate" },
+        path_display = { "filename_first" },
         mappings = {
           i = {
             ["<ESC>"] = "close",
@@ -66,6 +66,16 @@ return {
       pickers = {
         find_files = {
           disable_devicons = true,
+        },
+        buffers = {
+          mappings = {
+            i = {
+              ["<c-d>"] = require("telescope.actions").delete_buffer,
+            },
+            n = {
+              ["<c-d>"] = require("telescope.actions").delete_buffer,
+            },
+          },
         },
       },
     })

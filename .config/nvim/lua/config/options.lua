@@ -1,123 +1,50 @@
-local g = vim.g
-local o = vim.opt
+-- Set <space> as the leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Set leader
-g.mapleader = " "
-g.maplocalleader = " "
-
--- Timing stuff
-o.timeoutlen = 500
-o.updatetime = 300
-o.timeout = true
-o.ttimeoutlen = 10
-
--- Tabs
-o.tabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
-o.autoindent = true
-o.smartindent = true
-
--- Line numbers
--- o.number = true
-o.relativenumber = false
-o.numberwidth = 4
-
--- Line wrap
-o.wrap = false
+-- Use indentation of 2 spaces
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
 
 -- Search Settings
-o.ignorecase = true
-o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
--- Appearance
-o.termguicolors = true
-o.background = "dark"
-o.fillchars:append({ eob = " " }) -- disable "~" indicator
+-- Cursor Settings
+vim.opt.cursorline = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 -- Use System Clipboard
-o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
--- Split Windows
-o.splitright = true
-o.splitbelow = true
+vim.opt.undofile = true
 
--- Set scrolloff
-o.scrolloff = 5
-
--- Disable Default Status Line
-o.laststatus = 0
-o.ruler = false
-o.showmode = false
-
--- Mouse
-o.mouse = "a"
-
--- Cursor line
-o.cursorline = true
-
--- Always show signcolumn
-o.signcolumn = "yes:2"
-
--- Command line height
-o.cmdheight = 0
-
--- Undo file
-o.undofile = true
-
--- Disable built in plugins
-local disable_builtin_plugins = {
-  "2html_plugin",
-  "archlinux",
-  "bugreport",
-  "compiler",
-  "ftplugin",
-  "fzf",
-  "sleuth",
-  "syntax",
-  "synmenu",
-  "spellfile",
-  "spellfile_plugin",
-  "optwin",
-  "matchit",
-  -- "matchparen",
-  "rrhelper",
-  "rplugin",
-  "logipat",
-  "gtags",
-  "getscript",
-  "getscriptPlugin",
-  "man",
-  "tutor",
-  "tutor_mode_plugin",
-  "tar",
-  "tarPlugin",
-  "zip",
-  "zipPlugin",
-  "gzip",
-  "vimball",
-  "vimballPlugin",
-  "vimgrep",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "node_provider",
-  "ruby_provider",
-  "python3_provider",
-  "perl_provider",
+-- Disable some chars, makes it more minimal
+vim.opt.fillchars = {
+  eob = " ",
+  fold = " ",
+  horiz = " ",
+  horizup = " ",
+  horizdown = " ",
+  vert = " ",
+  vertleft = " ",
+  vertright = " ",
+  verthoriz = " ",
 }
 
-local disable_builtin_providers = {
-  "node",
-  "perl",
-  "ruby",
-}
+-- Status line
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 0
+vim.opt.ruler = false
+vim.opt.showmode = false
 
-for _, plugin in ipairs(disable_builtin_plugins) do
-  g["loaded_" .. plugin] = 1
-end
+-- Splitting windows on the right and/or below
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-for _, provider in ipairs(disable_builtin_providers) do
-  g[("loaded_" .. provider .. "_provider")] = 0
-end
+-- Completion options
+vim.opt.completeopt = "menuone,noselect"
+
+vim.opt.signcolumn = "yes:2"

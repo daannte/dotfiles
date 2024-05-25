@@ -10,7 +10,6 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     opts = function()
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
       return {
@@ -31,7 +30,7 @@ return {
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<Esc>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-;>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "luasnip" },
@@ -44,12 +43,11 @@ return {
           fields = { "abbr", "kind", "menu" },
           format = function(entry, vim_item)
             vim_item.menu = ({
-              buffer = "[Buf]",
-              path = "[Path]",
-              nvim_lsp = "[Lsp]",
-              luasnip = "[Snip]",
-              cmdline = "[Cmd]",
-              nvim_lua = "[Lua]",
+              buffer = "",
+              path = "",
+              nvim_lsp = "",
+              luasnip = "",
+              nvim_lua = "",
             })[entry.source.name]
             return vim_item
           end,
@@ -72,6 +70,7 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
+    event = { "InsertEnter" },
     dependencies = {
       "rafamadriz/friendly-snippets",
       config = function()
