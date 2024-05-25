@@ -1,6 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
   keys = {
     { "<leader>e", ":Neotree toggle<CR>", desc = "Open Neotree", silent = true },
   },
@@ -22,17 +26,11 @@ return {
             deleted = "-",
             renamed = "󰁕",
 
-            -- Status type
-            -- untracked = "",
-            -- ignored = "",
-            -- unstaged = "",
-            -- staged = "",
-            -- conflict = "",
-            untracked = "",
-            ignored = "",
-            unstaged = "",
-            staged = "",
-            conflict = "",
+            untracked = " ",
+            ignored = " ",
+            unstaged = " ",
+            staged = " ",
+            conflict = " ",
           },
         },
         file_size = {
@@ -54,8 +52,4 @@ return {
       },
     })
   end,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
 }

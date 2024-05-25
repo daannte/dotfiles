@@ -1,6 +1,5 @@
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
@@ -9,23 +8,23 @@ return {
       s = {
         name = "Split",
       },
-      z = {
-        name = "Zen and Zathura",
-      },
+      -- z = {
+      -- 	name = "Zen and Zathura",
+      -- },
       f = {
         name = "Telescope",
       },
       t = {
-        name = "Trouble, Tabs & Terminal",
+        name = "Trouble & Terminal",
       },
       c = {
         name = "Code Action",
       },
-      r = {
-        name = "Rename",
-      },
+      -- r = {
+      -- 	name = "Rename",
+      -- },
       g = {
-        name = "Git Stuff",
+        name = "Git",
       },
     }, { prefix = "<leader>" })
   end,

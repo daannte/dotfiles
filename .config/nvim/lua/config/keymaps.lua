@@ -16,8 +16,8 @@ map("n", "<leader>sx", ":close<cr>", opts) -- Close current split
 map("n", "<leader>se", "<C-w>=<cr>", opts) -- Resize equally
 
 -- Buffer Manipulation
-map("n", "<Tab>", ":bnext<cr>", opts) -- Switch to next tab
-map("n", "<S-Tab>", ":bprev<cr>", opts) -- Switch to previous tab
+map("n", "<Tab>", ":bnext<cr>", opts) -- Switch to next buffer
+map("n", "<S-Tab>", ":bprev<cr>", opts) -- Switch to previous buffer
 
 -- Switch windows
 map("n", "<C-h>", "<C-w>h", opts)
@@ -28,11 +28,13 @@ map("n", "<C-l>", "<C-w>l", opts)
 -- Remove highlight after searching
 map("n", "<leader>nh", ":nohl<cr>", opts)
 
--- Deleting a character won't copy it
+-- Deleting won't copy it
 map("n", "x", '"_x', opts)
-
--- Deleting a line wont copy it
 map("n", "dd", '"_dd', opts)
+
+-- Cursor Movements
+map({ "n", "v" }, "L", "$")
+map({ "n", "v" }, "H", "0")
 
 -- Increment and Decrement Numbers
 map("n", "+", "<C-a>", opts)
@@ -46,6 +48,3 @@ map("n", "<C-a>", "gg<S-v>G", opts)
 
 -- Toggle line numbers
 map("n", "<leader>n", ":set number!<cr>", opts)
-
--- Undo Tree
-map("n", "<leader>ut", ":UndotreeToggle | :UndotreeFocus<cr>", opts)
