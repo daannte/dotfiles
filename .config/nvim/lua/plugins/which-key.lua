@@ -17,9 +17,9 @@ return {
       t = {
         name = "Trouble & Terminal",
       },
-      c = {
-        name = "Code Action",
-      },
+      -- c = {
+      --   name = "Code Action",
+      -- },
       -- r = {
       -- 	name = "Rename",
       -- },

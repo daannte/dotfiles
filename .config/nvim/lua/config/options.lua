@@ -20,6 +20,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.undofile = true
+vim.opt.wrap = false
 
 -- Disable some chars, makes it more minimal
 vim.opt.fillchars = {

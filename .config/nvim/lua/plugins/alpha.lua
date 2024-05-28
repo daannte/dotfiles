@@ -29,8 +29,9 @@ return {
     dashboard.section.header.val = vim.split(logo, "\n")
 
     dashboard.section.buttons.val = {
-      dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <cr>"),
-      dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
+      dashboard.button("f", "Find file", "<cmd>Telescope find_files<cr>"),
+      dashboard.button("e", "Find Explorer", "<cmd>Neotree<cr>"),
+      dashboard.button("q", "Quit", "<cmd>qa<cr>"),
     }
 
     dashboard.config.opts.noautocmd = true

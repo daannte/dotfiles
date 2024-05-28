@@ -30,7 +30,7 @@ return {
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<Esc>"] = cmp.mapping.abort(),
-          ["<C-;>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-e>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "luasnip" },
@@ -80,6 +80,15 @@ return {
     opts = {
       history = true,
       delete_check_events = "TextChanged",
+    },
+  },
+  {
+    "echasnovski/mini.pairs",
+    event = "InsertEnter",
+    opts = {
+      mappings = {
+        ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\`].", register = { cr = false } },
+      },
     },
   },
 }

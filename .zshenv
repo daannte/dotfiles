@@ -11,6 +11,8 @@ export PATH=${PATH}:/usr/local/mysql/bin/
 export GOPATH=/Users/dantekirsman/go
 export PATH=$PATH:$GOPATH/bin 
 
+export PYTHONPATH=$PYTHONPATH:$HOME/Documents/cpsc-383-development/src/
+
 # Java 18
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home
 
