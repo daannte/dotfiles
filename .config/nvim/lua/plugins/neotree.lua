@@ -5,6 +5,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  cmd = "Neotree",
   keys = {
     { "<leader>e", ":Neotree toggle<CR>", desc = "Open Neotree", silent = true },
   },
