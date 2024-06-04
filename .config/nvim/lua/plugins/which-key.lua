@@ -8,21 +8,12 @@ return {
       s = {
         name = "Split",
       },
-      -- z = {
-      -- 	name = "Zen and Zathura",
-      -- },
       f = {
         name = "Telescope",
       },
       t = {
         name = "Trouble & Terminal",
       },
-      -- c = {
-      --   name = "Code Action",
-      -- },
-      -- r = {
-      -- 	name = "Rename",
-      -- },
       g = {
         name = "Git",
       },

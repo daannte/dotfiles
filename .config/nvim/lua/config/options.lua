@@ -49,3 +49,6 @@ vim.opt.splitbelow = true
 vim.opt.completeopt = "menuone,noselect"
 
 vim.opt.signcolumn = "yes:2"
+
+-- Disable Mouse
+vim.opt.mouse = ""

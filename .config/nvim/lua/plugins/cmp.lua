@@ -30,7 +30,7 @@ return {
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<Esc>"] = cmp.mapping.abort(),
-          ["<C-e>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "luasnip" },

@@ -2,7 +2,6 @@
 size = 18
 
 [font.normal]
-# family = "CommitMono Nerd Font"
 family = "Iosevka Nerd Font"
 style = "Light"
 

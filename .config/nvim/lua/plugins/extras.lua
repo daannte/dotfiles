@@ -18,4 +18,27 @@ return {
       end
     end,
   },
+  {
+    "echasnovski/mini.move",
+    event = "VeryLazy",
+    version = "*",
+    config = function()
+      require("mini.move").setup({
+        mappings = {
+          down = "J",
+          up = "K",
+          left = "",
+          right = "",
+
+          line_left = "",
+          line_right = "",
+          line_up = "",
+          line_down = "",
+        },
+        options = {
+          reindent_linewise = false,
+        },
+      })
+    end,
+  },
 }
