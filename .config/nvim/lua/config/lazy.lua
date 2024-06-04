@@ -12,9 +12,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = "plugins"
+-- local plugins = {}
 
 local opts = {
+  spec = {
+    { import = "plugins" },
+    { import = "plugins.lang" },
+  },
   default = { lazy = true },
   change_detection = {
     notify = false,
@@ -65,4 +69,4 @@ local opts = {
   },
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(opts)
