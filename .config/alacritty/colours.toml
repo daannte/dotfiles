@@ -1,1 +1,1 @@
-import = ["~/.config/alacritty/colours/japandi.toml"]
+import = ["~/.config/alacritty/colours/gruvbox.toml"]

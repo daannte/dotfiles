@@ -16,7 +16,8 @@ alias cat="bat"
 alias ani="ani-cli"
 alias ryb="yabai --stop-service && yabai --start-service"
 alias rskhd="skhd --stop-service && skhd --start-service"
-alias rzsh='source ~/.zshrc'
+alias rzsh='source ~/.zsh/.zshrc'
+alias lg="lazygit"
 alias ytaudio="yt-dlp -f 'ba' -x --audio-format mp3"
 
 # History
