@@ -132,6 +132,9 @@ return {
       ensure_installed = {
         "stylua",
         "prettier",
+        -- "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
       },
     },
     config = function(_, opts)
