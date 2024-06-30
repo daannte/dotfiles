@@ -1,8 +1,8 @@
 [font]
-size = 17
+size = 16
 
 [font.normal]
-family = "CartographCF Nerd Font"
+family = "Maple Mono NF"
 style = "Light"
 
 [font.bold]

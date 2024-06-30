@@ -5,35 +5,41 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
     local logo = [[
-                 ▄▄██████████▄▄             
-                 ▀▀▀   ██   ▀▀▀             
-         ▄██▄   ▄▄████████████▄▄   ▄██▄     
-       ▄███▀  ▄████▀▀▀    ▀▀▀████▄  ▀███▄   
-      ████▄ ▄███▀              ▀███▄ ▄████  
-     ███▀█████▀▄████▄      ▄████▄▀█████▀███ 
-     ██▀  ███▀ ██████      ██████ ▀███  ▀██ 
-      ▀  ▄██▀  ▀████▀  ▄▄  ▀████▀  ▀██▄  ▀  
-         ███           ▀▀           ███     
-         ██████████████████████████████     
-     ▄█  ▀██  ███   ██    ██   ███  ██▀  █▄ 
-     ███  ███ ███   ██    ██   ███▄███  ███ 
-     ▀██▄████████   ██    ██   ████████▄██▀ 
-      ▀███▀ ▀████   ██    ██   ████▀ ▀███▀  
-       ▀███▄  ▀███████    ███████▀  ▄███▀   
-         ▀███    ▀▀██████████▀▀▀   ███▀     
-           ▀    ▄▄▄    ██    ▄▄▄    ▀       
-                 ▀████████████▀             
+                     ; ; ;                                 
+                   ;        ;  ;     ;;    ;               
+                ;                 ;         ;  ;           
+                               ;               ;;         
+               ;            ';,        ;               ;   
+               ;             'b      *                   
+                ;              '$    ;;                ;;  
+               ;    ;           $:   ;:              ;    
+                         ;     :@,@):   ,;**:'   ;        
+              ;      ;,         :@@*: ;;**'      ;   ;     
+                       ';o;    ;:(@';@*"'  ;               
+                          ,p$q8,:@)'  ;p*'      ;          
+                   ;       ' ; '@@Pp@@*'    ;  ;           
+                    ;  ; ;;      Y7'.'     ;  ;            
+                                 :@):.                     
+                              .::(@:.                      
+        _'-.--*_-'-_*'.'-*_---'-----*_'-.*_--'-'-'_*:.'*-  
     ]]
 
-    logo = string.rep("\n", 8) .. logo .. "\n\n"
+    local function button(key, icon, name, command)
+      local b = dashboard.button(key, " " .. icon .. "  " .. name, "<cmd>" .. command .. "<CR>")
+      b.opts.hl = "AlphaButtons"
+      b.opts.hl_shortcut = "AlphaShortcut"
+      b.opts.position = "center"
+      b.opts.width = 25
+      return b
+    end
+
     dashboard.section.header.val = vim.split(logo, "\n")
-
     dashboard.section.buttons.val = {
-      dashboard.button("f", "Find file", "<cmd>Telescope find_files<cr>"),
-      dashboard.button("e", "Find Explorer", "<cmd>Neotree<cr>"),
-      dashboard.button("q", "Quit", "<cmd>qa<cr>"),
+      button("f", "", "Find File", "Telescope find_files"),
+      button("e", "", "File Explorer", "Neotree"),
+      button("q", "", "Quit", "qa!"),
     }
-
+    dashboard.section.footer.val = "♥"
     dashboard.config.opts.noautocmd = true
 
     alpha.setup(dashboard.config)
