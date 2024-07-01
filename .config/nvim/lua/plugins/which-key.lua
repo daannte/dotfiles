@@ -25,5 +25,8 @@ return {
       breadcrumb = "=",
       separator = "->",
     },
+    window = {
+      border = "double",
+    },
   },
 }

@@ -138,7 +138,7 @@ return {
       },
     },
     config = function(_, opts)
-      require("mason").setup(opts)
+      require("mason").setup({ ui = { border = "double" } }, opts)
       local mr = require("mason-registry")
       mr:on("package:install:success", function()
         vim.defer_fn(function()

@@ -17,7 +17,7 @@ return {
 
     require("neo-tree").setup({
       close_if_last_window = true,
-      popup_border_style = "solid",
+      popup_border_style = "double",
       default_component_configs = {
         git_status = {
           symbols = {
