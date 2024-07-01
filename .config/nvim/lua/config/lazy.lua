@@ -12,8 +12,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- local plugins = {}
-
 local opts = {
   spec = {
     { import = "plugins" },
@@ -22,6 +20,9 @@ local opts = {
   default = { lazy = true },
   change_detection = {
     notify = false,
+  },
+  ui = {
+    border = "double",
   },
   performance = {
     rtp = {
