@@ -1,0 +1,169 @@
+/**
+ * @name Gruvbox
+ * @description Gruvbox Theme 
+ * @author dannte. 
+*/
+
+:root {
+  --bg-0: #494949;
+  --background-primary: #282828;
+  --bg-overlay-chat: #202020;
+  --background-secondary: #202020;
+  --background-secondary-alt: #202020;
+  --bg-overlay-2: #202020;
+  --channeltextarea-background: #212020;
+  --background-tertiary: var(--background-secondary);
+
+  --scrollbar-auto-thumb: #393939;
+  --scrollbar-auto-track: transparent;
+  --scrollbar-thin-thumb: #393939;
+  --scrollbar-thin-track: transparent;
+
+  --status-danger: #d67b76;
+  --text-link: #8daf87;
+  --text-normal: #ffffff;
+
+  --green-360: #a3ae6d;
+  --custom-channel-textarea-text-area-height: 48px;
+}
+
+/********** Message Text Area **********/
+
+/* Remove nitro and sticker from text area */
+button[aria-label*="gift"],
+button[aria-label*="sticker picker"] {
+  display: none;
+}
+
+.form_a7d72e {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.form_a7d72e:after,
+.form_a7d72e:before {
+  display: none !important;
+}
+
+[class^="form_"] [class^="channelTextArea_"] {
+  margin: 0;
+  margin-top: 4px;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+[class^="typing_"] {
+  order: -1;
+  position: static;
+}
+
+[class^="chatContent_"]:has([class^="typing_"]) > [class^="messagesWrapper_"] {
+  border-bottom: none;
+}
+
+.clipContainer_b11c5e {
+  margin-top: 0;
+}
+
+.textArea_d0696b {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.attachButton_f298d4 {
+  height: var(--custom-channel-textarea-text-area-height);
+}
+
+[class^="form_"] [class^="channelTextArea_"] {
+  border: 2px solid var(--bg-0);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/********** Header **********/
+
+/* remove help button that no one uses */
+div[class^="toolbar"] > .anchor_c8ddc0 {
+  display: none;
+}
+
+/* remove notification settings */
+div[class^="toolbar"] > div[aria-label*="Notification"] {
+  display: none;
+}
+
+/* remove weird column in header  */
+.children__32014:after {
+  display: none;
+}
+
+/********** Sidebar **********/
+
+.wrapper_a7e7a8 .scroller__3d071,
+.titleBar__01af6 {
+  background-color: var(--background-secondary);
+}
+
+/********** Search Bar A Button **********/
+
+.search_ac353c:not(.open_d3ab4e) > .searchBar__5a20a {
+  width: 22px;
+  background: transparent;
+}
+
+.searchBarComponent__8f95f {
+  background: transparent;
+}
+
+.search_ac353c:not(.open_d3ab4e) .iconLayout__9d9a4 {
+  cursor: pointer;
+}
+
+.search_ac353c:not(.open_d3ab4e) .iconContainer__9f124 {
+  transform: scale(1.4);
+}
+
+.search_ac353c:not(.open_d3ab4e) .icon__5c8c7 {
+  color: var(--interactive-normal);
+}
+
+.search_ac353c:not(.open_d3ab4e):hover .icon__5c8c7 {
+  color: var(--interactive-active);
+}
+
+/* remove rounding on some stuff */
+::-webkit-scrollbar-thumb,
+[class^="numberBadge_"],
+[class^="form_"] [class^="channelTextArea_"] {
+  border-radius: 0 !important;
+}
+
+/* better looking mentions */
+[class^="numberBadge_"] {
+  color: black;
+  border: 2px solid black;
+}
+
+/* Hide the black background thing behind server mentions */
+[class^="svg_"] > mask > use:not(:first-child) {
+  fill: none;
+}
+
+/* fix mention icon on servers */
+[class^="lowerBadge_"] {
+  bottom: -4px;
+  right: -4px;
+}
+
+[class^="upperBadge_"] {
+  top: -4px;
+  right: -4px;
+}
+
+/* outside edges padding */
+[class^="container_"] > [class^="base_"] {
+  margin-bottom: 16px;
+}
