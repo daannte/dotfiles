@@ -8,10 +8,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	-- Create bar
 	s.wibar = awful.wibar({
 		screen = s,
-		position = "left",
-		width = dpi(50),
-		height = s.geometry.height - beautiful.useless_gap * 2,
-		margins = beautiful.useless_gap,
+		position = "bottom",
+		height = dpi(50),
+		width = s.geometry.width - beautiful.useless_gap * 4,
+		margins = {
+			top = 0,
+			left = beautiful.useless_gap,
+			right = beautiful.useless_gap,
+			bottom = beautiful.useless_gap,
+		},
 		bg = beautiful.bg_normal .. "00",
 	})
 
@@ -19,7 +24,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	s.wibar:setup({
 		{
 			{
-				{ modules.taglist(s), modules.layout, spacing = dpi(10), layout = wibox.layout.fixed.vertical },
+				{ modules.taglist(s), modules.layout, spacing = dpi(4), layout = wibox.layout.fixed.horizontal },
 				widget = wibox.container.margin,
 				margins = dpi(8),
 			},
@@ -28,9 +33,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		},
 		nil,
 		{
-			{ modules.clock, layout = wibox.layout.fixed.vertical },
-			layout = wibox.layout.align.vertical,
+			{ modules.clock, layout = wibox.layout.fixed.horizontal },
+			layout = wibox.layout.align.horizontal,
 		},
-		layout = wibox.layout.align.vertical,
+		layout = wibox.layout.align.horizontal,
 	})
 end)

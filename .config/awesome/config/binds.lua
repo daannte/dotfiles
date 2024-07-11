@@ -39,16 +39,16 @@ awful.keyboard.append_global_keybindings({
 
 	-- XF86
 	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.spawn.spawn_with_shell("pamixer -d 5")
+		awful.spawn.with_shell("pamixer -d 5")
 	end, { description = "lower volume", group = "volume" }),
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.spawn.spawn_with_shell("pamixer -i 5")
+		awful.spawn.with_shell("pamixer -i 5")
 	end, { description = "raise volume", group = "volume" }),
 	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.spawn.spawn_with_shell("brightnessctl s 5%+")
+		awful.spawn.with_shell("brightnessctl s 5%+")
 	end, { description = "raise brightness", group = "brightness" }),
 	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.spawn.spawn_with_shell("brightnessctl s 5%-")
+		awful.spawn.with_shell("brightnessctl s 5%-")
 	end, { description = "lower brightness", group = "brightness" }),
 
 	-- Tags

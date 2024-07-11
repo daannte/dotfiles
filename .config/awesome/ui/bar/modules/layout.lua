@@ -25,8 +25,6 @@ local widget = {
 		widget = wibox.container.margin,
 		margins = dpi(6),
 	},
-	bg = beautiful.bg_focus,
-	forced_height = dpi(30),
 	widget = wibox.container.background,
 }
 

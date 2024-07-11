@@ -7,7 +7,7 @@ local create_taglist = function(s)
 	local taglist = awful.widget.taglist({
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
-		layout = wibox.layout.fixed.vertical,
+		layout = wibox.layout.fixed.horizontal,
 		buttons = {
 			awful.button({}, 1, function(t)
 				t:view_only()
@@ -21,7 +21,7 @@ local create_taglist = function(s)
 					align = "center",
 					valign = "center",
 				},
-				margins = dpi(2),
+				margins = dpi(4),
 				widget = wibox.container.margin,
 			},
 			id = "background_role",
