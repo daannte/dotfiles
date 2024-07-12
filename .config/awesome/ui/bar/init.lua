@@ -33,7 +33,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		},
 		nil,
 		{
-			{ modules.clock, layout = wibox.layout.fixed.horizontal },
+			{
+				modules.battery,
+				modules.clock,
+				spacing = dpi(10),
+				layout = wibox.layout.fixed.horizontal,
+			},
 			layout = wibox.layout.align.horizontal,
 		},
 		layout = wibox.layout.align.horizontal,

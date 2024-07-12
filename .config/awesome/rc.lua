@@ -12,7 +12,7 @@ end)
 require("awful.autofocus")
 require("config")
 require("ui")
--- require("signal")
+require("signal")
 
 local autostart = {
 	"pipewire",
