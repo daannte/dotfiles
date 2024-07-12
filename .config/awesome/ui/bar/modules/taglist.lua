@@ -7,7 +7,7 @@ local create_taglist = function(s)
 	local taglist = awful.widget.taglist({
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
-		layout = wibox.layout.fixed.horizontal,
+		layout = wibox.layout.fixed.vertical,
 		buttons = {
 			awful.button({}, 1, function(t)
 				t:view_only()
