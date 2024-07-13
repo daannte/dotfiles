@@ -8,3 +8,4 @@ Config.modkey = "Mod4"
 require("config.client")
 require("config.binds")
 require("config.rules")
+require("config.screenshot")

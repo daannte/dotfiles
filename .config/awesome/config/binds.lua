@@ -51,6 +51,11 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn.with_shell("brightnessctl s 5%-")
 	end, { description = "lower brightness", group = "brightness" }),
 
+	-- Screenshots
+	awful.key({ modkey, "Shift" }, "s", function()
+		awesome.emit_signal("util::screenshot")
+	end),
+
 	-- Tags
 	awful.key({
 		modifiers = { modkey },
