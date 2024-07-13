@@ -49,4 +49,10 @@ ruled.client.connect_signal("request::rules", function()
 		rule = { class = "Firefox" },
 		properties = { screen = 1, tag = "2" },
 	})
+
+	-- Set Discord to always map on the tag named '3' on screen 1.
+	ruled.client.append_rule({
+		rule = { class = "discord" },
+		properties = { screen = 1, tag = "3" },
+	})
 end)
