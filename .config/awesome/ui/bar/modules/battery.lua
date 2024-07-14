@@ -1,4 +1,5 @@
 local wibox = require("wibox")
+local awful = require("awful")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
@@ -13,6 +14,11 @@ local battery_bar = wibox.widget({
 
 local battery = wibox.widget({
 	bg = beautiful.bg_normal,
+	buttons = {
+		awful.button({}, 1, function()
+			require("ui.wigets.control_center").toggle()
+		end),
+	},
 	widget = wibox.container.background,
 	{
 		battery_bar,

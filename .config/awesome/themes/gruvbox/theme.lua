@@ -9,7 +9,7 @@ theme.font_name = "Maple Mono NF "
 
 theme.bg_normal = "#282828"
 theme.bg_focus = "#323232"
-theme.bg_subtle = "#e3e5ea"
+theme.bg_subtle = "#252525"
 theme.bg_urgent = "#323232"
 theme.bg_minimize = "#323232"
 theme.bg_dark = "#323232"
@@ -39,11 +39,6 @@ theme.taglist_fg_empty = theme.fg_minimize
 
 theme.slider_active_color = theme.fg_minimize
 theme.slider_handle_color = theme.fg_minimize
-
-theme.control_button_active_bg = theme.bg_focus
-theme.control_button_active_fg = theme.fg_normal
-theme.control_button_normal_bg = theme.bg_normal
-theme.control_button_normal_fg = theme.fg_normal
 
 theme.wallpaper = gears.filesystem.get_configuration_dir() .. "themes/gruvbox/street_london.jpg"
 gears.wallpaper.maximized(theme.wallpaper)

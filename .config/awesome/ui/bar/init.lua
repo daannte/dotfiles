@@ -24,7 +24,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	s.wibar:setup({
 		{
 			{
-				{ modules.taglist(s), spacing = dpi(4), layout = wibox.layout.fixed.vertical },
+				{ modules.taglist(s), modules.layout, spacing = dpi(4), layout = wibox.layout.fixed.vertical },
 				widget = wibox.container.margin,
 				margins = dpi(8),
 			},

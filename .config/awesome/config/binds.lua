@@ -56,6 +56,11 @@ awful.keyboard.append_global_keybindings({
 		awesome.emit_signal("util::screenshot")
 	end),
 
+	-- Control Center
+	awful.key({ modkey, "Shift" }, "c", function()
+		require("ui.wigets.control_center").toggle()
+	end),
+
 	-- Tags
 	awful.key({
 		modifiers = { modkey },
