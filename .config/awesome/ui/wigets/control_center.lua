@@ -29,6 +29,7 @@ local cal = wibox.widget({
 	},
 	shape = gears.shape.rounded_rect,
 	bg = beautiful.bg_normal,
+	fg = beautiful.fg_minimize,
 	widget = wibox.container.background,
 })
 
