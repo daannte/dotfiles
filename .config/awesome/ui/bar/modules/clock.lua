@@ -1,5 +1,4 @@
 local wibox = require("wibox")
-local awful = require("awful")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
@@ -19,14 +18,6 @@ local clock = wibox.widget({
 	},
 	widget = wibox.container.background,
 	bg = beautiful.bg_normal,
-})
-
--- Show date on hover
-awful.tooltip({
-	objects = { clock },
-	timer_function = function()
-		return os.date("%B %d, %Y")
-	end,
 })
 
 return clock
