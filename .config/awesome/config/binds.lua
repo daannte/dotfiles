@@ -1,4 +1,5 @@
 local awful = require("awful")
+local beautiful = require("beautiful")
 local modkey = Config.modkey
 
 awful.keyboard.append_global_keybindings({
@@ -123,6 +124,11 @@ client.connect_signal("request::default_keybindings", function()
 			{ description = "toggle floating", group = "client" }
 		),
 		awful.key({ modkey }, "m", function(c)
+			if c.maximized then
+				awful.screen.focused().padding = 0
+			else
+				awful.screen.focused().padding = beautiful.useless_gap * 2
+			end
 			c.maximized = not c.maximized
 			c:raise()
 		end, { description = "maximize", group = "client" }),
