@@ -23,5 +23,5 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		})
 	end)
 
-	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[0])
+	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
 end)

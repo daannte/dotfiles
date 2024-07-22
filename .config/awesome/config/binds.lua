@@ -30,11 +30,11 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(Config.terminal)
 	end, { description = "open a terminal", group = "launcher" }),
-	awful.key({ modkey }, "r", function()
+	awful.key({ modkey }, "d", function()
 		awful.spawn.with_shell("rofi -show drun")
 	end, { description = "run prompt", group = "launcher" }),
-	awful.key({ modkey }, "w", function()
-		awful.spawn.with_shell("rofi -show window")
+	awful.key({ modkey }, "r", function()
+		awful.spawn.with_shell("rofi -show run")
 	end, { description = "show windows", group = "launcher" }),
 
 	-- XF86

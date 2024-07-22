@@ -21,10 +21,9 @@ theme.fg_urgent = "#d4be98"
 theme.fg_minimize = "#727269"
 
 theme.useless_gap = dpi(15)
-theme.border_width = dpi(0)
-theme.border_color_normal = theme.bg_normal
-theme.border_color_active = theme.bg_normal
-theme.border_color_marked = theme.bg_normal
+
+theme.border_width = dpi(6)
+theme.border_color = theme.bg_minimize
 
 theme.blue = "#82a9a0"
 
@@ -40,8 +39,7 @@ theme.taglist_fg_empty = theme.fg_minimize
 theme.slider_active_color = theme.fg_minimize
 theme.slider_handle_color = theme.fg_minimize
 
-theme.wallpaper = gears.filesystem.get_configuration_dir() .. "themes/gruvbox/street_london.jpg"
-gears.wallpaper.maximized(theme.wallpaper)
+theme.wallpaper = gears.filesystem.get_configuration_dir() .. "themes/gruvbox/a_flower_in_a_window.jpg"
 
 theme.layout_floating = iconpath .. "floating.png"
 theme.layout_tile = iconpath .. "tile.png"

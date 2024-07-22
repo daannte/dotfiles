@@ -3,8 +3,10 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local modules = require("ui.bar.modules")
+local gears = require("gears")
 
 screen.connect_signal("request::desktop_decoration", function(s)
+	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 	-- Create bar
 	s.wibar = awful.wibar({
 		screen = s,

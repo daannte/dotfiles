@@ -13,11 +13,3 @@ require("awful.autofocus")
 require("config")
 require("ui")
 require("signal")
-
-local autostart = {
-	"pipewire",
-}
-
-for _, command in ipairs(autostart) do
-	require("awful").spawn.easy_async_with_shell(command)
-end
