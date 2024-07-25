@@ -1,5 +1,6 @@
 local autostart = {
 	"pipewire",
+	"kanata -c ~/.config/kanata/config.kbd",
 	-- "mpd",
 }
 
