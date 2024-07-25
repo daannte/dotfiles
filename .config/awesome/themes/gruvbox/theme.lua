@@ -22,7 +22,7 @@ theme.fg_minimize = "#727269"
 
 theme.useless_gap = dpi(15)
 
-theme.border_width = dpi(6)
+theme.border_width = dpi(8)
 theme.border_color = theme.bg_minimize
 
 theme.blue = "#82a9a0"
