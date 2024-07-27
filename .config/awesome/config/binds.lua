@@ -133,13 +133,10 @@ client.connect_signal("request::default_keybindings", function()
 			c:raise()
 		end, { description = "maximize", group = "client" }),
 		awful.key({ modkey }, "c", function(c)
-			c.width = 1300
-			c.height = 700
+			c.width = 1000
+			c.height = 600
 			awful.placement.centered(c, { honor_workarea = true })
 		end, { description = "resize and center window", group = "client" }),
-		awful.key({ modkey, "Shift" }, "c", function(c)
-			awful.placement.centered(c, { honor_workarea = true })
-		end, { description = "center window", group = "client" }),
 	})
 end)
 

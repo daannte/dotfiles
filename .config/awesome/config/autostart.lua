@@ -1,7 +1,6 @@
 local autostart = {
 	"pipewire",
-	"kanata -c ~/.config/kanata/config.kbd",
-	-- "mpd",
+	"kanata -n -c ~/.config/kanata/config.kbd",
 }
 
 for _, command in ipairs(autostart) do
