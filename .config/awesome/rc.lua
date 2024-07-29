@@ -11,5 +11,6 @@ end)
 
 require("awful.autofocus")
 require("config")
+require("themes")
 require("ui")
 require("signal")

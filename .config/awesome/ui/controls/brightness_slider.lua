@@ -6,10 +6,10 @@ local dpi = beautiful.xresources.apply_dpi
 local slider = wibox.widget({
 	bar_height = dpi(25),
 	forced_height = dpi(25),
-	handle_width = dpi(12),
-	bar_color = "#00000000",
-	bar_active_color = beautiful.slider_active_color,
-	handle_color = beautiful.slider_handle_color,
+	handle_width = dpi(8),
+	bar_color = beautiful.slider .. "22",
+	bar_active_color = beautiful.slider .. "77",
+	handle_color = beautiful.slider,
 	widget = wibox.widget.slider,
 })
 

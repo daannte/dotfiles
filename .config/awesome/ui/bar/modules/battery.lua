@@ -16,7 +16,7 @@ local battery = wibox.widget({
 	bg = beautiful.bg_normal,
 	buttons = {
 		awful.button({}, 1, function()
-			require("ui.wigets.control_center").toggle()
+			require("ui.widgets.control_center").toggle()
 		end),
 	},
 	widget = wibox.container.background,
@@ -31,9 +31,9 @@ awesome.connect_signal("signal::battery", function(capacity)
 	local fill_color = beautiful.green
 
 	if capacity >= 11 and capacity <= 20 then
-		fill_color = beautiful.warn
+		fill_color = beautiful.yellow
 	elseif capacity <= 10 then
-		fill_color = beautiful.critical
+		fill_color = beautiful.red
 	end
 
 	battery_bar.value = capacity

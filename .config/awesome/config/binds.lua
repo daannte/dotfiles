@@ -59,7 +59,7 @@ awful.keyboard.append_global_keybindings({
 
 	-- Control Center
 	awful.key({ modkey, "Shift" }, "c", function()
-		require("ui.wigets.control_center").toggle()
+		require("ui.widgets.control_center").toggle()
 	end),
 
 	-- Tags

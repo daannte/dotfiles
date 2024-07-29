@@ -7,7 +7,7 @@ local textclock = wibox.widget({
 	refresh = 20,
 	align = "center",
 	format = "<span>%H\n%M</span>",
-	font = beautiful.font_name .. "Bold",
+	font = beautiful.font .. " Bold",
 })
 
 local clock = wibox.widget({
