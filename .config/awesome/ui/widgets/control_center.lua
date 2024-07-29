@@ -28,7 +28,7 @@ local cal = wibox.widget({
 		margins = dpi(20),
 	},
 	shape = gears.shape.rounded_rect,
-	bg = beautiful.bg_focus,
+	bg = beautiful.blue .. "10",
 	fg = beautiful.fg_minimize,
 	widget = wibox.container.background,
 })
@@ -64,7 +64,7 @@ local sliders = wibox.widget({
 	},
 	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
-	bg = beautiful.bg_focus,
+	bg = beautiful.blue .. "11",
 })
 
 local buttons = wibox.widget({
@@ -84,7 +84,7 @@ local buttons = wibox.widget({
 	},
 	shape = gears.shape.rounded_rect,
 	widget = wibox.container.background,
-	bg = beautiful.bg_focus,
+	bg = beautiful.blue .. "11",
 })
 
 local control_center = awful.popup({
@@ -108,7 +108,7 @@ local control_center = awful.popup({
 	shape = gears.shape.rounded_rect,
 	visible = false,
 	ontop = true,
-	bg = beautiful.bg_subtle,
+	bg = beautiful.bg_normal,
 	placement = function(c)
 		(awful.placement.bottom_left)(c, { margins = { bottom = dpi(20), left = dpi(80) } })
 	end,

@@ -22,7 +22,7 @@ local wifi = wibox.widget({
 		margins = dpi(14),
 	},
 	widget = wibox.container.background,
-	bg = beautiful.bg_normal,
+	bg = beautiful.mab,
 	shape = gears.shape.rounded_rect,
 })
 

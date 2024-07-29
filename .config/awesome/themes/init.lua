@@ -16,6 +16,7 @@ theme.bg_normal = colors.bg
 theme.bg_focus = colors.mbg
 theme.bg_urgent = colors.bg
 theme.bg_minimize = colors.bg
+theme.mab = colors.mab
 
 theme.fg_normal = colors.fg
 theme.fg_focus = colors.fg
