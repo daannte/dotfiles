@@ -1,0 +1,5 @@
+@import "colors/serenity.rasi"
+
+* {
+    font: "MapleMonoNF Bold 12";
+}
