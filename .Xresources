@@ -1,0 +1,65 @@
+! Rose
+#define BG #191724
+#define FG #e0def4
+#define BL #6e6a86
+#define WH #e0def4
+#define R #ea9a97
+#define G #3e8fb0
+#define Y #f6c177
+#define B #9ccfd8
+#define M #ebbcba
+#define C #75b5aa
+
+! Gruvbox
+/*#define BG #282828*/
+/*#define FG #d4be98*/
+/*#define BL #454545*/
+/*#define WH #FBF1C7*/
+/*#define R #d67b76*/
+/*#define G #a3ae6d*/
+/*#define Y #cba364*/
+/*#define B #82a9a0 */
+/*#define M #C49EC4*/
+/*#define C #9EC3C4*/
+
+
+Xcursor.theme: bibata
+
+st.font: MapleMonoNF:size=12
+st.borderpx: 40 
+
+! special
+*.foreground:   FG
+*.background:   BG
+
+! black
+*.color0:       BL
+*.color8:       BL
+
+! red
+*.color1:       R
+*.color9:       R
+
+! green
+*.color2:       G
+*.color10:      G
+
+! yellow
+*.color3:       Y
+*.color11:      Y
+
+! blue
+*.color4:       B
+*.color12:      B
+
+! magenta
+*.color5:       M
+*.color13:      M
+
+! cyan
+*.color6:       C
+*.color14:      C
+
+! white
+*.color7:       WH
+*.color15:      WH
