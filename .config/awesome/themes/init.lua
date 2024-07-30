@@ -31,7 +31,7 @@ theme.transparent = "#00000000"
 
 theme.useless_gap = dpi(15)
 theme.border_width = dpi(8)
-theme.border_color = theme.bg_focus
+theme.border_color = colors.border
 
 theme.taglist_bg = theme.bg_normal .. "00"
 theme.taglist_bg_focus = theme.bg_normal

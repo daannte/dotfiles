@@ -16,4 +16,6 @@ c.ok = "#3e8fb0"
 c.err = "#ea9a97"
 c.warn = "#f6c177"
 
+c.border = c.bg3
+
 return c
