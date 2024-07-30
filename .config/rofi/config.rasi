@@ -103,6 +103,7 @@ element normal.active {
     text-color:                  var(normal-foreground);
 }
 element selected.normal {
+    background-color:            var(selected-normal-background);
     text-color:                  var(selected-normal-foreground);
 }
 element selected.active {
