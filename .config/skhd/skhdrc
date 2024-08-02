@@ -14,4 +14,4 @@ hyper - e : yabai -m space --balance
 hyper - space : yabai -m window --toggle float --grid 6:8:1:1:6:4
 
 # Open Alacritty
-ctrl - return : open -na /Applications/Alacritty.app 
+hyper - return : open -na /Applications/Alacritty.app 
