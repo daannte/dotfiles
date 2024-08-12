@@ -74,6 +74,8 @@ alt-shift-l = 'move right'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
+alt-ctrl-shift-cmd-f = "fullscreen"
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-ctrl-shift-cmd-1 = 'workspace 1'
 alt-ctrl-shift-cmd-2 = 'workspace 2'
