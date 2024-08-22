@@ -90,6 +90,11 @@ awful.keyboard.append_global_keybindings({
 		require("ui.widgets.control_center").toggle()
 	end),
 
+	-- Lock
+	awful.key({ modkey }, "BackSpace", function()
+		awesome.emit_signal("toggle::lock")
+	end),
+
 	-- Tags
 	awful.key({
 		modifiers = { modkey },
