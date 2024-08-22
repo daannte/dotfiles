@@ -6,12 +6,40 @@ awful.keyboard.append_global_keybindings({
 	-- General keybinds
 	awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
+
+	-- Focus
 	awful.key({ modkey }, "Tab", function()
 		awful.client.focus.byidx(1)
 	end, { description = "focus next by index", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "Tab", function()
 		awful.client.focus.byidx(-1)
 	end, { description = "focus previous by index", group = "awesome" }),
+	awful.key({ modkey }, "h", function()
+		awful.client.focus.bydirection("left")
+	end, { description = "focus left", group = "awesome" }),
+	awful.key({ modkey }, "j", function()
+		awful.client.focus.bydirection("down")
+	end, { description = "focus down", group = "awesome" }),
+	awful.key({ modkey }, "k", function()
+		awful.client.focus.bydirection("up")
+	end, { description = "focus up", group = "awesome" }),
+	awful.key({ modkey }, "l", function()
+		awful.client.focus.bydirection("right")
+	end, { description = "focus right", group = "awesome" }),
+
+	-- Swap
+	awful.key({ modkey, "Shift" }, "h", function()
+		awful.client.swap.bydirection("left")
+	end, { description = "swap left", group = "awesome" }),
+	awful.key({ modkey, "Shift" }, "j", function()
+		awful.client.swap.bydirection("down")
+	end, { description = "swap down", group = "awesome" }),
+	awful.key({ modkey, "Shift" }, "k", function()
+		awful.client.swap.bydirection("up")
+	end, { description = "swap up", group = "awesome" }),
+	awful.key({ modkey, "Shift" }, "l", function()
+		awful.client.swap.bydirection("right")
+	end, { description = "swap right", group = "awesome" }),
 
 	-- Layout
 	awful.key({ modkey }, "z", function()
@@ -20,10 +48,10 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, "Shift" }, "z", function()
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" }),
-	awful.key({ modkey }, "l", function()
+	awful.key({ modkey, "Control" }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
-	awful.key({ modkey }, "h", function()
+	awful.key({ modkey, "Control" }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
 
