@@ -1,5 +1,0 @@
-import = [
-  "~/.config/alacritty/config.toml",
-  "~/.config/alacritty/fonts.toml",
-  "~/.config/alacritty/colours.toml",
-]
