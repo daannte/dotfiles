@@ -30,13 +30,16 @@ theme.red = colors.err
 theme.transparent = "#00000000"
 
 theme.useless_gap = dpi(15)
-theme.border_width = dpi(8)
+theme.border_width = dpi(0)
 theme.border_color = colors.border
 
 theme.taglist_bg = theme.bg_normal .. "00"
 theme.taglist_bg_focus = theme.bg_normal
 theme.taglist_fg_focus = theme.blue
 theme.taglist_fg_empty = colors.comm
+
+theme.titlebar_bg_focus = colors.mbg
+theme.titlebar_bg_normal = colors.mab
 
 theme.slider = theme.fg_minimize
 
