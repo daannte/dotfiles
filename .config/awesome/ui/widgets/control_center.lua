@@ -3,6 +3,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local gears = require("gears")
 local dpi = beautiful.xresources.apply_dpi
+local helpers = require("helpers")
 
 local controls = require("ui.controls")
 
@@ -27,7 +28,7 @@ local cal = wibox.widget({
 		widget = wibox.container.margin,
 		margins = dpi(20),
 	},
-	shape = gears.shape.rounded_rect,
+	shape = helpers.rrect(8),
 	bg = beautiful.blue .. "10",
 	fg = beautiful.fg_minimize,
 	widget = wibox.container.background,
