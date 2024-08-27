@@ -8,7 +8,6 @@ local auth = function(password)
 	return pam.auth_current_user(password)
 end
 
--- Clock
 local textclock = wibox.widget({
 	widget = wibox.widget.textclock,
 	refresh = 20,
@@ -24,7 +23,6 @@ local clock = wibox.widget({
 	margins = dpi(8),
 })
 
--- Background
 local background = wibox({
 	width = dpi(1920),
 	height = dpi(1080),
@@ -35,7 +33,6 @@ local background = wibox({
 
 awful.placement.centered(background)
 
--- Prompt box
 local box = wibox({
 	width = dpi(320),
 	height = dpi(180),
