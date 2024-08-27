@@ -7,16 +7,17 @@ local helpers = require("helpers")
 
 local createHandle = function()
 	return function(cr)
-		gears.shape.rounded_rect(cr, 17, 17, 15)
+		gears.shape.rounded_rect(cr, 16, 16, 15)
 	end
 end
 
 local slider = wibox.widget({
-	bar_height = dpi(17),
+	bar_height = dpi(12),
 	forced_height = dpi(35),
-	handle_width = dpi(20),
+	handle_width = dpi(16),
 	bar_shape = helpers.rrect(25),
 	handle_shape = createHandle(),
+	handle_margins = { top = dpi(1) },
 	bar_color = beautiful.slider .. "22",
 	bar_active_color = beautiful.slider .. "77",
 	handle_color = beautiful.slider,
