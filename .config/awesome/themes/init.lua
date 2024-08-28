@@ -2,15 +2,16 @@ local beautiful = require("beautiful")
 local dpi = require("beautiful").xresources.apply_dpi
 local gears = require("gears")
 local themes_path = gears.filesystem.get_configuration_dir() .. "themes/"
+local settings = require("setup").settings
 local theme = {}
 
 ----- Font & Wallpaper -----
-theme.wallpaper = themes_path .. "walls/" .. Config.theme .. ".png"
+theme.wallpaper = themes_path .. "walls/" .. settings.theme .. ".png"
 theme.mono = "Maple Mono NF"
 theme.font = theme.mono .. " 12"
 
 ----- General Settings -----
-local colors = loadfile(themes_path .. "colors/" .. Config.theme .. ".lua")()
+local colors = loadfile(themes_path .. "colors/" .. settings.theme .. ".lua")()
 
 theme.bg_normal = colors.bg
 theme.bg_focus = colors.mbg

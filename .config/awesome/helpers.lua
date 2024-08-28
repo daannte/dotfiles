@@ -10,4 +10,26 @@ helpers.rrect = function(radius)
 	end
 end
 
+helpers.file_exists = function(name)
+	local f = io.open(name, "r")
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
+	end
+end
+
+helpers.read_dir = function(path)
+	local items = {}
+	local pdir = io.popen("ls " .. path)
+	if pdir then
+		for file in pdir:lines() do
+			table.insert(items, file)
+		end
+		pdir:close()
+	end
+	return items
+end
+
 return helpers

@@ -2,7 +2,6 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-local helpers = require("helpers")
 local pam = require("liblua_pam")
 local auth = function(password)
 	return pam.auth_current_user(password)

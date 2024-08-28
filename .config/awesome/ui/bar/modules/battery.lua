@@ -16,7 +16,7 @@ local battery = wibox.widget({
 	bg = beautiful.bg_normal,
 	buttons = {
 		awful.button({}, 1, function()
-			require("ui.widgets.control_center").toggle()
+			awesome.emit_signal("toggle::control")
 		end),
 	},
 	widget = wibox.container.background,
