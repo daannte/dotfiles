@@ -8,19 +8,20 @@ local auth = function(password)
 	return pam.auth_current_user(password)
 end
 
-local textclock = wibox.widget({
+local clock = wibox.widget({
 	widget = wibox.widget.textclock,
-	refresh = 20,
 	align = "center",
 	valign = "center",
-	format = "<span>%H:%M</span>",
-	font = beautiful.mono .. " Bold 48",
+	format = "%H:%M",
+	font = beautiful.mono .. " Bold 110",
 })
 
-local clock = wibox.widget({
-	textclock,
-	widget = wibox.container.margin,
-	margins = dpi(8),
+local date = wibox.widget({
+	widget = wibox.widget.textclock,
+	align = "center",
+	valign = "center",
+	format = "%a, %B %d",
+	font = beautiful.mono .. " Light 32",
 })
 
 local background = wibox({
@@ -34,19 +35,18 @@ local background = wibox({
 awful.placement.centered(background)
 
 local box = wibox({
-	width = dpi(320),
-	height = dpi(180),
+	width = dpi(1000),
+	height = dpi(900),
 	ontop = true,
 	visible = false,
-	shape = helpers.rrect(8),
+	bg = beautiful.transparent,
 })
 
-awful.placement.centered(box)
-
 local prompt = wibox.widget({
-	font = beautiful.font,
+	font = beautiful.mono .. " 16",
 	align = "center",
-	markup = "Password...",
+	valign = "center",
+	markup = "Password Here",
 	widget = wibox.widget.textbox,
 })
 
@@ -59,7 +59,7 @@ local chars = 0
 
 local reset = function()
 	chars = 0
-	prompt.markup = "Password..."
+	prompt.markup = "Password Here"
 end
 
 local fail = function()
@@ -89,7 +89,7 @@ local function grab()
 					prompt.markup = string.rep("*", chars)
 				else
 					chars = 0
-					prompt.markup = "Password..."
+					prompt.markup = "Password Here"
 				end
 			end
 		end,
@@ -129,44 +129,30 @@ local overlay = wibox.widget({
 	opacity = 0.8,
 })
 
-box:setup({
-	{
-		{
-			{
-				clock,
-				layout = wibox.layout.fixed.horizontal,
-			},
-			widget = wibox.container.margin,
-			margins = dpi(5),
-		},
-		{
-			{
-				{
-					{
-						prompt,
-						layout = wibox.layout.align.horizontal,
-					},
-					widget = wibox.container.margin,
-					left = dpi(15),
-					forced_width = dpi(160),
-					forced_height = dpi(40),
-				},
-				widget = wibox.container.background,
-				bg = beautiful.bg_focus,
-				shape = helpers.rrect(8),
-			},
-			widget = wibox.container.margin,
-			margin = dpi(5),
-		},
-		layout = wibox.layout.align.vertical,
-	},
-	widget = wibox.container.place,
-	valign = "top",
-	halign = "center",
-})
-
 background:setup({
 	wall,
 	overlay,
 	layout = wibox.layout.stack,
 })
+
+box:setup({
+	{
+		{
+			clock,
+			date,
+			{
+				prompt,
+				layout = wibox.container.margin,
+				top = dpi(50),
+			},
+			layout = wibox.layout.fixed.vertical,
+			spacing = dpi(10),
+		},
+		widget = wibox.container.margin,
+		margins = dpi(5),
+	},
+	widget = wibox.container.place,
+	valign = "center",
+})
+
+awful.placement.centered(box)

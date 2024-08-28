@@ -4,9 +4,8 @@ local dpi = beautiful.xresources.apply_dpi
 
 local textclock = wibox.widget({
 	widget = wibox.widget.textclock,
-	refresh = 20,
 	align = "center",
-	format = "<span>%H\n%M</span>",
+	format = "%H\n%M",
 	font = beautiful.font .. " Bold",
 })
 
