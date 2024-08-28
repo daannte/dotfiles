@@ -1,6 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
-local modkey = Config.modkey
+local apps = require("config.apps")
+local modkey = "Mod4"
 
 awful.keyboard.append_global_keybindings({
 	-- General keybinds
@@ -57,7 +58,7 @@ awful.keyboard.append_global_keybindings({
 
 	-- Launcher
 	awful.key({ modkey }, "Return", function()
-		awful.spawn(Config.terminal)
+		awful.spawn(apps.terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "d", function()
 		awful.spawn.with_shell("rofi -show drun")
@@ -87,12 +88,17 @@ awful.keyboard.append_global_keybindings({
 
 	-- Control Center
 	awful.key({ modkey, "Shift" }, "c", function()
-		require("ui.widgets.control_center").toggle()
+		awesome.emit_signal("toggle::control")
 	end),
 
 	-- Lock
 	awful.key({ modkey }, "BackSpace", function()
 		awesome.emit_signal("toggle::lock")
+	end),
+
+	-- Settings
+	awful.key({ modkey }, "Escape", function()
+		awesome.emit_signal("toggle::settings")
 	end),
 
 	-- Tags
