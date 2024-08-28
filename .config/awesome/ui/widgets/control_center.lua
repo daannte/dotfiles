@@ -18,7 +18,7 @@ local cal = wibox.widget({
 			},
 			{
 				align = "center",
-				format = "%A, %B %e",
+				format = "%a, %B %e",
 				refresh = 1,
 				widget = wibox.widget.textclock,
 			},
