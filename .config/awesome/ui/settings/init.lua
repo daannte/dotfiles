@@ -13,6 +13,21 @@ local settings = wibox({
 	visible = false,
 })
 
+settings:setup({
+	{
+		{
+			font = beautiful.mono .. " 12",
+			align = "center",
+			valign = "center",
+			markup = "Settings",
+			widget = wibox.widget.textbox,
+		},
+		layout = wibox.layout.align.horizontal,
+	},
+	widget = wibox.container.margin,
+	margins = dpi(20),
+})
+
 awful.placement.centered(settings, { honor_workarea = true })
 
 awesome.connect_signal("toggle::settings", function()

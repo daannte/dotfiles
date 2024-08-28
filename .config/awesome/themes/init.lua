@@ -7,6 +7,7 @@ local theme = {}
 
 ----- Font & Wallpaper -----
 theme.wallpaper = themes_path .. "walls/" .. settings.theme .. ".png"
+theme.scheme = settings.theme
 theme.mono = "Maple Mono NF"
 theme.font = theme.mono .. " 12"
 
