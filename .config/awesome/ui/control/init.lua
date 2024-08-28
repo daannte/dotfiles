@@ -5,7 +5,7 @@ local gears = require("gears")
 local dpi = beautiful.xresources.apply_dpi
 local helpers = require("helpers")
 
-local controls = require("ui.controls")
+local modules = require("ui.control.modules")
 
 local cal = wibox.widget({
 	{
@@ -28,7 +28,7 @@ local cal = wibox.widget({
 		margins = dpi(20),
 	},
 	shape = helpers.rrect(8),
-	bg = beautiful.blue .. "10",
+	bg = beautiful.blue .. "11",
 	fg = beautiful.fg_minimize,
 	widget = wibox.container.background,
 })
@@ -42,7 +42,7 @@ local sliders = wibox.widget({
 					stylesheet = " * { fill: " .. beautiful.fg_normal .. " }",
 					widget = wibox.widget.imagebox,
 				},
-				controls.volume_slider,
+				modules.volume_slider,
 				layout = wibox.layout.fixed.horizontal,
 				spacing = dpi(10),
 			},
@@ -52,7 +52,7 @@ local sliders = wibox.widget({
 					stylesheet = " * { fill: " .. beautiful.fg_normal .. " }",
 					widget = wibox.widget.imagebox,
 				},
-				controls.brightness_slider,
+				modules.brightness_slider,
 				layout = wibox.layout.fixed.horizontal,
 				spacing = dpi(10),
 			},
@@ -70,9 +70,9 @@ local sliders = wibox.widget({
 local buttons = wibox.widget({
 	{
 		{
-			controls.wifi,
-			controls.bluetooth,
-			controls.volume,
+			modules.wifi,
+			modules.bluetooth,
+			modules.volume,
 			spacing = dpi(10),
 			layout = wibox.layout.flex.horizontal,
 		},
@@ -87,35 +87,33 @@ local buttons = wibox.widget({
 	bg = beautiful.blue .. "11",
 })
 
-local control_center = awful.popup({
-	widget = {
+local control = wibox({
+	shape = helpers.rrect(8),
+	width = dpi(270),
+	height = dpi(340),
+	bg = beautiful.bg_normal,
+	ontop = true,
+	visible = false,
+})
+
+control:setup({
+	{
 		{
-			{
-				cal,
-				layout = wibox.layout.flex.vertical,
-				spacing = dpi(20),
-			},
-			sliders,
-			buttons,
+			cal,
 			layout = wibox.layout.flex.vertical,
 			spacing = dpi(20),
 		},
-		widget = wibox.container.margin,
-		margins = dpi(20),
-		forced_width = dpi(270),
-		forced_height = dpi(340),
+		sliders,
+		buttons,
+		layout = wibox.layout.flex.vertical,
+		spacing = dpi(20),
 	},
-	shape = gears.shape.rounded_rect,
-	visible = false,
-	ontop = true,
-	bg = beautiful.bg_normal,
-	placement = function(c)
-		(awful.placement.bottom_left)(c, { margins = { bottom = dpi(20), left = dpi(80) } })
-	end,
+	widget = wibox.container.margin,
+	margins = dpi(20),
 })
 
-control_center.toggle = function()
-	control_center.visible = not control_center.visible
-end
+awful.placement.bottom_left(control, { honor_workarea = true, margins = { bottom = dpi(30), left = dpi(10) } })
 
-return control_center
+awesome.connect_signal("toggle::control", function()
+	control.visible = not control.visible
+end)
