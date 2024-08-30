@@ -1,3 +1,4 @@
+local awful = require("awful")
 local json = require("mods.json")
 local helpers = require("helpers")
 local gears = require("gears")
@@ -23,6 +24,7 @@ function M:generate()
 		local settings = json.decode(t)
 		M.settings = settings
 	end
+	awful.spawn.with_shell("xrdb -merge ~/.themes/" .. M.settings.theme .. " && kill -USR1 $(pidof st)")
 end
 
 return M

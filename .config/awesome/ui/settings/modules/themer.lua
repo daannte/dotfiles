@@ -7,7 +7,6 @@ local dpi = beautiful.xresources.apply_dpi
 
 local themes = helpers.read_themes(gears.filesystem.get_configuration_dir() .. "themes/colors/")
 local index = helpers.findIndex(themes, beautiful.scheme)
-local naughty = require("naughty")
 
 local M = {
 	current = beautiful.scheme,
