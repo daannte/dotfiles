@@ -1,40 +1,26 @@
-Xcursor.theme: bibata
-
-st.font: MapleMonoNF:size=12
-st.borderpx: 32 
-
-! special
 *.foreground:   #e0def4
 *.background:   #191724
 
-! black
 *.color0:       #6e6a86
 *.color8:       #6e6a86
 
-! red
 *.color1:       #ea9a97
 *.color9:       #ea9a97
 
-! green
 *.color2:       #3e8fb0
 *.color10:      #3e8fb0
 
-! yellow
 *.color3:       #f6c177
 *.color11:      #f6c177
 
-! blue
 *.color4:       #9ccfd8
 *.color12:      #9ccfd8
 
-! magenta
 *.color5:       #ebbcba
 *.color13:      #ebbcba
 
-! cyan
 *.color6:       #75b5aa
 *.color14:      #75b5aa
 
-! white
 *.color7:       #e0def4
 *.color15:      #e0def4

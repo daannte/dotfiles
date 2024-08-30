@@ -45,4 +45,9 @@ theme.titlebar_bg_normal = colors.mab
 
 theme.slider = theme.fg_minimize
 
+theme.back_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/back.svg"
+theme.next_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/next.svg"
+theme.close_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/x.svg"
+theme.check_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/check.svg"
+
 beautiful.init(theme)

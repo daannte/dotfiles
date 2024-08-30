@@ -20,9 +20,9 @@ helpers.file_exists = function(name)
 	end
 end
 
-helpers.read_dir = function(path)
+helpers.read_themes = function(path)
 	local items = {}
-	local pdir = io.popen("ls " .. path)
+	local pdir = io.popen("ls " .. path .. " | cut -d '.' -f 1")
 	if pdir then
 		for file in pdir:lines() do
 			table.insert(items, file)

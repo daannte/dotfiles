@@ -13,13 +13,7 @@ M.path = gears.filesystem.get_cache_dir() .. "settings.json"
 function M:generate()
 	if not helpers.file_exists(self.path) then
 		local w = assert(io.open(self.path, "w"))
-		w:write(
-			json.encode(
-				self.defaultData,
-				nil,
-				{ pretty = true, indent = "	", align_keys = false, array_newline = true }
-			)
-		)
+		w:write(json.encode(self.defaultData))
 		w:close()
 		M.settings = self.defaultData
 	else
