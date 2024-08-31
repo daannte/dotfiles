@@ -13,19 +13,27 @@ local battery_bar = wibox.widget({
 })
 
 local battery = wibox.widget({
-	bg = beautiful.bg_normal,
-	buttons = {
-		awful.button({}, 1, function()
-			awesome.emit_signal("toggle::control")
-		end),
-	},
-	widget = wibox.container.background,
 	{
 		battery_bar,
 		widget = wibox.container.margin,
 		margins = dpi(8),
 	},
+	bg = beautiful.bg_normal,
+	widget = wibox.container.background,
+	buttons = {
+		awful.button({}, 1, function()
+			awesome.emit_signal("toggle::control")
+		end),
+	},
 })
+
+awesome.connect_signal("theme::reload", function()
+	battery.bg = beautiful.bg_normal
+	awful.spawn.easy_async_with_shell("cat /sys/class/power_supply/BAT1/capacity", function(stdout)
+		local capacity = tonumber(stdout)
+		awesome.emit_signal("signal::battery", capacity)
+	end)
+end)
 
 awesome.connect_signal("signal::battery", function(capacity)
 	local fill_color = beautiful.green

@@ -1,4 +1,3 @@
-local beautiful = require("beautiful")
 local dpi = require("beautiful").xresources.apply_dpi
 local gears = require("gears")
 local themes_path = gears.filesystem.get_configuration_dir() .. "themes/"
@@ -50,4 +49,4 @@ theme.next_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/next
 theme.close_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/x.svg"
 theme.check_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/check.svg"
 
-beautiful.init(theme)
+return theme

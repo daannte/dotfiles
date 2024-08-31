@@ -1,5 +1,4 @@
 require("ui.bar")
 require("ui.lock")
-require("ui.titlebar")
 require("ui.control")
 require("ui.settings")

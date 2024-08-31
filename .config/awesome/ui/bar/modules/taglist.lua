@@ -29,6 +29,10 @@ local create_taglist = function(s)
 		},
 	})
 
+	awesome.connect_signal("theme::reload", function()
+		taglist._do_taglist_update_now()
+	end)
+
 	return taglist
 end
 

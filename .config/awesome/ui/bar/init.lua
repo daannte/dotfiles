@@ -3,10 +3,8 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local modules = require("ui.bar.modules")
-local gears = require("gears")
 
 screen.connect_signal("request::desktop_decoration", function(s)
-	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 	-- Create bar
 	s.wibar = awful.wibar({
 		screen = s,
@@ -30,6 +28,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				widget = wibox.container.margin,
 				margins = dpi(8),
 			},
+			id = "taglist",
 			widget = wibox.container.background,
 			bg = beautiful.bg_normal,
 		},
@@ -45,4 +44,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		},
 		layout = wibox.layout.align.vertical,
 	})
+
+	awesome.connect_signal("theme::reload", function()
+		s.wibar:set_fg(beautiful.fg_normal)
+		s.wibar:get_children_by_id("taglist")[1].bg = beautiful.bg_normal
+	end)
 end)

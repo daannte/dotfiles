@@ -19,4 +19,8 @@ local clock = wibox.widget({
 	bg = beautiful.bg_normal,
 })
 
+awesome.connect_signal("theme::reload", function()
+	clock.bg = beautiful.bg_normal
+end)
+
 return clock

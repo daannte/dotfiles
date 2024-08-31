@@ -8,6 +8,24 @@ local dpi = beautiful.xresources.apply_dpi
 
 local modules = require("ui.settings.modules")
 
+local function reloadNvim()
+	local themes = {
+		["gruvbox"] = "catppuccin",
+		["rose"] = "rose-pine",
+	}
+	awful.spawn.easy_async_with_shell("ls -1 /run/user/1000/ | grep nvim ", function(stdout)
+		for line in stdout:gmatch("[^\n]+") do
+			awful.spawn(
+				"nvim --server /run/user/1000/"
+					.. line
+					.. " --remote-send ':colorscheme '"
+					.. themes[modules.themer.current]
+					.. "<CR>"
+			)
+		end
+	end)
+end
+
 local function setTheme()
 	awful.spawn.with_shell("xrdb -merge ~/.themes/" .. modules.themer.current .. " && kill -USR1 $(pidof st)")
 	awful.spawn.with_shell(
@@ -16,6 +34,7 @@ local function setTheme()
 	awful.spawn.with_shell(
 		'sed -i \'/theme =/s/"[^"]*"/"' .. modules.themer.current .. "\"/' ~/.config/nvim/lua/plugins/colorscheme.lua"
 	)
+	reloadNvim()
 end
 
 local function writeData()
@@ -26,7 +45,10 @@ local function writeData()
 	w:write(json.encode(data))
 	w:close()
 	setTheme()
-	awesome.restart()
+
+	require("setup"):generate()
+	beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/init.lua")
+	awesome.emit_signal("theme::reload")
 end
 
 local close_icon = wibox.widget({
@@ -122,4 +144,11 @@ awful.placement.centered(settings, { honor_workarea = true })
 
 awesome.connect_signal("toggle::settings", function()
 	settings.visible = not settings.visible
+end)
+
+awesome.connect_signal("theme::reload", function()
+	settings:set_bg(beautiful.bg_focus)
+	settings:set_fg(beautiful.fg_normal)
+	check.bg = beautiful.green .. "11"
+	close.bg = beautiful.red .. "11"
 end)
