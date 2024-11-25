@@ -50,7 +50,7 @@ outer.right =      20
 
 # All possible modifiers: cmd, alt, ctrl, shift
 
-alt-ctrl-shift-cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+alt-ctrl-shift-cmd-enter = 'exec-and-forget open -n /Applications/kitty.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -75,6 +75,7 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 alt-ctrl-shift-cmd-f = "fullscreen"
+alt-ctrl-shift-cmd-space = "layout floating tiling"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-ctrl-shift-cmd-1 = 'workspace 1'
@@ -111,10 +112,6 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
-
-[[on-window-detected]]
-if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'

@@ -2,8 +2,8 @@
 size = 16
 
 [font.normal]
-family = "CartographCF Nerd Font"
-style = "Regular"
+family = "Iosevka Nerd Font"
+style = "Light"
 
 [font.bold]
 style = "Bold"

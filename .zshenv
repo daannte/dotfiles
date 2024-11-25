@@ -1,4 +1,5 @@
 . "$HOME/.cargo/env"
+. "/Users/dantekirsman/.deno/env"
 
 export LANG=en_CA.UTF-8
 export PF_ASCII="linux"
