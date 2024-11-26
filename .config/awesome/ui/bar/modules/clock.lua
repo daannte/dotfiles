@@ -1,26 +1,44 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
+local helpers = require("helpers")
 
 local textclock = wibox.widget({
 	widget = wibox.widget.textclock,
 	align = "center",
-	format = "%H\n%M",
-	font = beautiful.font .. " Bold",
+	valign = "center",
+	format = "%H:%M",
+})
+
+local date = wibox.widget({
+	widget = wibox.widget.textclock,
+	align = "center",
+	valign = "center",
+	format = "%B %d",
 })
 
 local clock = wibox.widget({
 	{
-		textclock,
+		{
+			{
+				textclock,
+				widget = wibox.container.place,
+				valign = "center",
+			},
+			{
+				date,
+				widget = wibox.container.place,
+				valign = "center",
+			},
+			layout = wibox.layout.fixed.horizontal,
+			spacing = dpi(10),
+		},
 		widget = wibox.container.margin,
-		margins = dpi(8),
+		margins = { left = dpi(10), right = dpi(10) },
 	},
 	widget = wibox.container.background,
-	bg = beautiful.bg_normal,
+	bg = beautiful.bg_focus,
+	shape = helpers.rrect(2),
 })
-
-awesome.connect_signal("theme::reload", function()
-	clock.bg = beautiful.bg_normal
-end)
 
 return clock

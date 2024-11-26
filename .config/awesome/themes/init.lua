@@ -7,7 +7,7 @@ local theme = {}
 ----- Font & Wallpaper -----
 theme.wallpaper = themes_path .. "walls/" .. settings.theme .. ".png"
 theme.scheme = settings.theme
-theme.mono = "Maple Mono NF"
+theme.mono = "Iosevka"
 theme.font = theme.mono .. " 12"
 
 ----- General Settings -----
@@ -35,12 +35,15 @@ theme.border_width = dpi(0)
 theme.border_color = colors.border
 
 theme.taglist_bg = theme.bg_normal .. "00"
-theme.taglist_bg_focus = theme.bg_normal
-theme.taglist_fg_focus = theme.blue
-theme.taglist_fg_empty = colors.comm
+theme.taglist_bg_focus = theme.blue
+theme.taglist_fg_focus = theme.fg_normal
+theme.taglist_bg_empty = theme.fg_minimize .. "33"
+theme.taglist_fg_empty = theme.fg_normal
+theme.taglist_bg_occupied = theme.fg_minimize .. "33"
+theme.taglist_fg_occupied = theme.fg_normal
 
-theme.titlebar_bg_focus = colors.mbg
-theme.titlebar_bg_normal = colors.mab
+theme.titlebar_bg_focus = theme.bg_focus
+theme.titlebar_bg_normal = theme.mab
 
 theme.slider = theme.fg_minimize
 

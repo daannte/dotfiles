@@ -2,51 +2,68 @@ local wibox = require("wibox")
 local awful = require("awful")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
+local helpers = require("helpers")
 local modules = require("ui.bar.modules")
 
 screen.connect_signal("request::desktop_decoration", function(s)
 	-- Create bar
 	s.wibar = awful.wibar({
 		screen = s,
-		position = "left",
-		width = dpi(50),
-		height = s.geometry.height - beautiful.useless_gap * 4,
-		margins = {
-			top = beautiful.useless_gap,
-			left = beautiful.useless_gap,
-			right = 0,
-			bottom = beautiful.useless_gap,
-		},
-		bg = beautiful.bg_normal .. "00",
+		position = "bottom",
+		width = dpi(1920),
+		height = dpi(40),
+		bg = beautiful.bg_normal,
+		fg = beautiful.fg_normal,
 	})
 
 	-- Setup the bar
 	s.wibar:setup({
 		{
 			{
-				{ modules.taglist(s), spacing = dpi(4), layout = wibox.layout.fixed.vertical },
-				widget = wibox.container.margin,
-				margins = dpi(8),
+				{
+					modules.dash,
+					{
+						modules.taglist(s),
+						layout = wibox.layout.align.horizontal,
+					},
+					spacing = dpi(15),
+					layout = wibox.layout.fixed.horizontal,
+				},
+				widget = wibox.container.place,
+				valign = "center",
 			},
-			id = "taglist",
-			widget = wibox.container.background,
-			bg = beautiful.bg_normal,
+			widget = wibox.container.margin,
+			left = dpi(15),
 		},
 		nil,
 		{
 			{
-				modules.battery,
+				{
+					{
+						{
+							modules.battery,
+							modules.wifi,
+							modules.bluetooth,
+							spacing = dpi(15),
+							layout = wibox.layout.fixed.horizontal,
+						},
+						widget = wibox.container.margin,
+						top = dpi(10),
+						bottom = dpi(10),
+						left = dpi(10),
+						right = dpi(10),
+					},
+					widget = wibox.container.background,
+					shape = helpers.rrect(5),
+					bg = beautiful.bg_focus,
+				},
 				modules.clock,
+				layout = wibox.layout.align.horizontal,
 				spacing = dpi(10),
-				layout = wibox.layout.fixed.vertical,
 			},
-			layout = wibox.layout.align.vertical,
+			widget = wibox.container.place,
+			valign = "center",
 		},
-		layout = wibox.layout.align.vertical,
+		layout = wibox.layout.align.horizontal,
 	})
-
-	awesome.connect_signal("theme::reload", function()
-		s.wibar:set_fg(beautiful.fg_normal)
-		s.wibar:get_children_by_id("taglist")[1].bg = beautiful.bg_normal
-	end)
 end)

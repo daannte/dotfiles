@@ -6,7 +6,7 @@ local gears = require("gears")
 local M = {}
 
 M.defaultData = {
-	theme = "rose",
+	theme = "kizu",
 }
 
 M.path = gears.filesystem.get_cache_dir() .. "settings.json"

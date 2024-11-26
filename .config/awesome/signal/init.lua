@@ -1,3 +1,5 @@
 require("signal.battery")
 require("signal.volume")
 require("signal.brightness")
+require("signal.connection.bluetooth")
+require("signal.connection.wifi")

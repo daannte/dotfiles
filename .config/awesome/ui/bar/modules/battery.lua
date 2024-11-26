@@ -1,51 +1,51 @@
 local wibox = require("wibox")
-local awful = require("awful")
 local beautiful = require("beautiful")
+local helpers = require("helpers")
 local dpi = beautiful.xresources.apply_dpi
-
-local battery_bar = wibox.widget({
-	value = 10,
-	max_value = 100,
-	min_value = 0,
-	widget = wibox.widget.progressbar,
-	background_color = beautiful.bg_focus,
-	forced_height = dpi(10),
-})
 
 local battery = wibox.widget({
 	{
-		battery_bar,
-		widget = wibox.container.margin,
-		margins = dpi(8),
+		max_value = 100,
+		value = 69,
+		id = "prog",
+		forced_height = dpi(22),
+		forced_width = dpi(45),
+		paddings = 3,
+		border_color = beautiful.fg_normal .. "99",
+		background_color = beautiful.bg_focus,
+		bar_shape = helpers.rrect(3),
+		color = beautiful.blue,
+		border_width = 1.25,
+		shape = helpers.rrect(5),
+		widget = wibox.widget.progressbar,
 	},
-	bg = beautiful.bg_normal,
-	widget = wibox.container.background,
-	buttons = {
-		awful.button({}, 1, function()
-			awesome.emit_signal("toggle::control")
-		end),
+	{
+		{
+			bg = beautiful.fg_focus .. "99",
+			forced_height = dpi(10),
+			forced_width = dpi(2),
+			shape = helpers.rrect(10),
+			widget = wibox.container.background,
+		},
+		widget = wibox.container.place,
+		valign = "center",
 	},
+	spacing = dpi(3),
+	layout = wibox.layout.fixed.horizontal,
 })
 
-awesome.connect_signal("theme::reload", function()
-	battery.bg = beautiful.bg_normal
-	awful.spawn.easy_async_with_shell("cat /sys/class/power_supply/BAT1/capacity", function(stdout)
-		local capacity = tonumber(stdout)
-		awesome.emit_signal("signal::battery", capacity)
-	end)
-end)
-
 awesome.connect_signal("signal::battery", function(capacity)
+	local b = battery:get_children_by_id("prog")[1]
 	local fill_color = beautiful.green
 
-	if capacity >= 11 and capacity <= 20 then
+	if capacity >= 11 and capacity <= 30 then
 		fill_color = beautiful.yellow
 	elseif capacity <= 10 then
 		fill_color = beautiful.red
 	end
 
-	battery_bar.value = capacity
-	battery_bar.color = fill_color
+	b.value = capacity
+	b.color = fill_color
 end)
 
 return battery
