@@ -2,6 +2,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
 local wibox = require("wibox")
+local helpers = require("helpers")
 local dpi = beautiful.xresources.apply_dpi
 
 local bluetooth_on = gears.filesystem.get_configuration_dir() .. "themes/icons/bluetooth.svg"
@@ -17,26 +18,43 @@ local icon = wibox.widget({
 
 local bluetooth = wibox.widget({
 	{
-		icon,
-		widget = wibox.container.margin,
-		margins = dpi(14),
+		{
+			icon,
+			widget = wibox.container.margin,
+			margins = dpi(16),
+		},
+		{
+			markup = "Bluetooth",
+			id = "name",
+			widget = wibox.widget.textbox,
+			valign = "center",
+			align = "center",
+		},
+		layout = wibox.layout.fixed.vertical,
 	},
 	widget = wibox.container.background,
-	bg = beautiful.mab,
-	shape = gears.shape.rounded_rect,
+	id = "back",
+	bg = beautiful.bg_focus,
+	shape = helpers.rrect(8),
 })
 
-local on = true
-bluetooth:connect_signal("button::press", function()
-	on = not on
-	if on then
+awesome.connect_signal("signal::bluetooth", function(status)
+	if status then
 		icon.image = bluetooth_on
-		icon.stylesheet = " * { fill: " .. beautiful.fg_normal .. " }"
-		awful.spawn.with_shell("bluetoothctl power on")
+		bluetooth:get_children_by_id("back")[1].bg = beautiful.blue
+		bluetooth:get_children_by_id("name")[1].markup = helpers.colorizeText("Bluetooth", beautiful.bg_normal)
+		icon.stylesheet = " * { fill: " .. beautiful.bg_normal .. " }"
+		bluetooth:buttons(gears.table.join(awful.button({}, 1, function()
+			awful.spawn.with_shell("bluetoothctl power off")
+		end)))
 	else
 		icon.image = bluetooth_off
-		icon.stylesheet = " * { fill: " .. beautiful.fg_minimize .. " }"
-		awful.spawn.with_shell("bluetoothctl power off")
+		bluetooth:get_children_by_id("back")[1].bg = beautiful.bg_focus
+		bluetooth:get_children_by_id("name")[1].markup = helpers.colorizeText("Bluetooth", beautiful.fg_normal .. "cc")
+		icon.stylesheet = " * { fill: " .. beautiful.fg_normal .. "cc" .. " }"
+		bluetooth:buttons(gears.table.join(awful.button({}, 1, function()
+			awful.spawn.with_shell("bluetoothctl power on")
+		end)))
 	end
 end)
 

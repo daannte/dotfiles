@@ -38,7 +38,9 @@ awesome.connect_signal("signal::battery", function(capacity)
 	local b = battery:get_children_by_id("prog")[1]
 	local fill_color = beautiful.green
 
-	if capacity >= 11 and capacity <= 30 then
+	if capacity <= 60 then
+		fill_color = beautiful.blue
+	elseif capacity >= 11 and capacity <= 30 then
 		fill_color = beautiful.yellow
 	elseif capacity <= 10 then
 		fill_color = beautiful.red

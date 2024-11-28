@@ -56,6 +56,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
 					widget = wibox.container.background,
 					shape = helpers.rrect(5),
 					bg = beautiful.bg_focus,
+					buttons = {
+						awful.button({}, 1, function()
+							awesome.emit_signal("toggle::control")
+						end),
+					},
 				},
 				modules.clock,
 				layout = wibox.layout.align.horizontal,

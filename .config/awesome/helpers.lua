@@ -41,4 +41,12 @@ helpers.findIndex = function(t, value)
 	return nil
 end
 
+helpers.colorizeText = function(txt, fg)
+	if fg == "" then
+		fg = "#ffffff"
+	end
+
+	return "<span foreground='" .. fg .. "'>" .. txt .. "</span>"
+end
+
 return helpers
