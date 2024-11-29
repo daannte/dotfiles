@@ -4,6 +4,9 @@ local themes_path = gears.filesystem.get_configuration_dir() .. "themes/"
 local settings = require("setup").settings
 local theme = {}
 
+----- User Sutff -----
+theme.pfp = themes_path .. "images/pfp.png"
+
 ----- Font & Wallpaper -----
 theme.wallpaper = themes_path .. "walls/" .. settings.theme .. ".png"
 theme.scheme = settings.theme
@@ -45,7 +48,7 @@ theme.taglist_fg_occupied = theme.fg_normal
 theme.titlebar_bg_focus = theme.bg_focus
 theme.titlebar_bg_normal = theme.mab
 
-theme.slider = theme.fg_minimize
+-- theme.slider = theme.fg_minimize
 
 theme.back_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/back.svg"
 theme.next_icon = gears.filesystem.get_configuration_dir() .. "themes/icons/next.svg"

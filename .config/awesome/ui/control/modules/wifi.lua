@@ -14,23 +14,29 @@ local icon = wibox.widget({
 	stylesheet = " * { fill: " .. beautiful.fg_normal .. " }",
 	valign = "center",
 	halign = "center",
+	forced_height = dpi(32),
+	forced_width = dpi(32),
 })
 
 local wifi = wibox.widget({
 	{
 		{
-			icon,
-			widget = wibox.container.margin,
-			margins = dpi(16),
+			{
+				icon,
+				widget = wibox.container.margin,
+				margins = dpi(16),
+			},
+			{
+				markup = "Network",
+				id = "name",
+				widget = wibox.widget.textbox,
+				valign = "center",
+				align = "center",
+			},
+			layout = wibox.layout.fixed.vertical,
 		},
-		{
-			markup = "Network",
-			id = "name",
-			widget = wibox.widget.textbox,
-			valign = "center",
-			align = "center",
-		},
-		layout = wibox.layout.fixed.vertical,
+		widget = wibox.container.margin,
+		bottom = dpi(16),
 	},
 	widget = wibox.container.background,
 	id = "back",

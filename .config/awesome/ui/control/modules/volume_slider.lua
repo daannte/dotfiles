@@ -5,6 +5,8 @@ local dpi = beautiful.xresources.apply_dpi
 local gears = require("gears")
 local helpers = require("helpers")
 
+local volume2 = gears.filesystem.get_configuration_dir() .. "themes/icons/volume-2.svg"
+
 local createHandle = function()
 	return function(cr)
 		gears.shape.rounded_rect(cr, 16, 16, 15)
@@ -12,28 +14,76 @@ local createHandle = function()
 end
 
 local slider = wibox.widget({
-	bar_height = dpi(12),
-	forced_height = dpi(35),
-	handle_width = dpi(16),
-	bar_shape = helpers.rrect(25),
+	bar_shape = helpers.rrect(15),
+	bar_height = dpi(3),
+	handle_color = beautiful.bg_normal,
+	bar_color = beautiful.bg_normal .. "00",
+	bar_active_color = beautiful.fg_normal,
 	handle_shape = createHandle(),
-	handle_margins = { top = dpi(1) },
-	bar_color = beautiful.slider .. "22",
-	bar_active_color = beautiful.slider .. "77",
-	handle_color = beautiful.slider,
+	handle_border_width = dpi(2),
+	handle_margins = { top = dpi(9) },
+	handle_border_color = beautiful.fg_normal,
+	value = 25,
+	forced_height = dpi(35),
+	maximum = 100,
 	widget = wibox.widget.slider,
 })
 
-local vol_slider = wibox.widget({
+local label = wibox.widget({
+	font = beautiful.font .. " Bold",
+	markup = "86" .. "%",
+	valign = "center",
+	widget = wibox.widget.textbox,
+})
+
+local labelBox = wibox.widget({
+	label,
+	widget = wibox.container.margin,
+	margins = { left = dpi(16) },
+})
+
+local icon = wibox.widget({
 	{
-		max_value = 100,
-		value = slider.value,
-		forced_height = dpi(35),
-		background_color = beautiful.transparent,
-		widget = wibox.widget.progressbar,
+		widget = wibox.widget.imagebox,
+		image = volume2,
+		stylesheet = " * { fill: " .. beautiful.fg_normal .. " }",
+		valign = "center",
+		halign = "center",
+		forced_height = dpi(24),
+		forced_width = dpi(24),
 	},
-	slider,
-	layout = wibox.layout.stack,
+	widget = wibox.container.margin,
+})
+
+local vol_slider = wibox.widget({
+	nil,
+	{
+		{
+			icon,
+			widget = wibox.container.place,
+			valign = "center",
+			halign = "left",
+		},
+		{
+			{
+				{
+					widget = wibox.container.background,
+					forced_height = dpi(2),
+					shape = helpers.rrect(10),
+					bg = beautiful.bg_focus,
+				},
+				widget = wibox.container.place,
+				content_fill_horizontal = true,
+				valign = "center",
+			},
+			slider,
+			layout = wibox.layout.stack,
+		},
+		layout = wibox.layout.fixed.horizontal,
+		spacing = dpi(20),
+	},
+	nil,
+	layout = wibox.layout.align.horizontal,
 })
 
 awesome.connect_signal("signal::volume", function(value)

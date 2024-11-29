@@ -6,23 +6,18 @@ local modules = require("ui.control.modules")
 local helpers = require("helpers")
 local dpi = beautiful.xresources.apply_dpi
 
+local sliders = wibox.widget({
+	modules.brightness_slider,
+	modules.volume_slider,
+	layout = wibox.layout.fixed.vertical,
+	spacing = dpi(25),
+})
+
 local buttons = wibox.widget({
-	{
-		{
-			modules.wifi,
-			modules.bluetooth,
-			spacing = dpi(20),
-			layout = wibox.layout.flex.horizontal,
-		},
-		widget = wibox.container.margin,
-		top = dpi(20),
-		bottom = dpi(20),
-		right = dpi(15),
-		left = dpi(15),
-	},
-	shape = gears.shape.rounded_rect,
-	widget = wibox.container.background,
-	bg = beautiful.blue .. "11",
+	modules.wifi,
+	modules.bluetooth,
+	layout = wibox.layout.flex.horizontal,
+	spacing = dpi(20),
 })
 
 local control = wibox({
@@ -36,12 +31,24 @@ local control = wibox({
 
 control:setup({
 	{
-		buttons,
-		layout = wibox.layout.flex.vertical,
-		spacing = dpi(20),
+		{
+			{
+				modules.header,
+				widget = wibox.container.margin,
+				top = dpi(10),
+			},
+			sliders,
+			buttons,
+			layout = wibox.layout.fixed.vertical,
+			spacing = dpi(25),
+		},
+		widget = wibox.container.margin,
+		left = dpi(20),
+		right = dpi(20),
 	},
-	widget = wibox.container.margin,
-	margins = dpi(20),
+	widget = wibox.container.background,
+	shape = helpers.rrect(12),
+	bg = beautiful.bg_normal,
 })
 
 awful.placement.bottom_right(control, { honor_workarea = true, margins = 20 })
