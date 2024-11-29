@@ -5,7 +5,8 @@ local dpi = beautiful.xresources.apply_dpi
 local gears = require("gears")
 local helpers = require("helpers")
 
-local volume2 = gears.filesystem.get_configuration_dir() .. "themes/icons/volume-2.svg"
+local volume_on = gears.filesystem.get_configuration_dir() .. "themes/icons/volume.svg"
+local volume_off = gears.filesystem.get_configuration_dir() .. "themes/icons/volume-off.svg"
 
 local createHandle = function()
 	return function(cr)
@@ -30,7 +31,7 @@ local slider = wibox.widget({
 })
 
 local label = wibox.widget({
-	font = beautiful.font .. " Bold",
+	font = beautiful.mono .. " Bold 12",
 	markup = "86" .. "%",
 	valign = "center",
 	widget = wibox.widget.textbox,
@@ -44,8 +45,9 @@ local labelBox = wibox.widget({
 
 local icon = wibox.widget({
 	{
+		id = "icon",
 		widget = wibox.widget.imagebox,
-		image = volume2,
+		image = volume_on,
 		stylesheet = " * { fill: " .. beautiful.fg_normal .. " }",
 		valign = "center",
 		halign = "center",
@@ -82,12 +84,21 @@ local vol_slider = wibox.widget({
 		layout = wibox.layout.fixed.horizontal,
 		spacing = dpi(20),
 	},
-	nil,
+	labelBox,
 	layout = wibox.layout.align.horizontal,
 })
 
 awesome.connect_signal("signal::volume", function(value)
+	local i = icon:get_children_by_id("icon")[1]
+	if value > 0 then
+		i.image = volume_on
+		i.stylesheet = " * { fill: " .. beautiful.fg_normal .. " }"
+	else
+		i.image = volume_off
+		i.stylesheet = " * { fill: " .. beautiful.fg_minimize .. "99" .. " }"
+	end
 	slider.value = value
+	label.markup = value .. "%"
 end)
 
 slider:connect_signal("property::value", function(_, value)

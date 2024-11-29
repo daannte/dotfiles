@@ -30,7 +30,7 @@ local slider = wibox.widget({
 })
 
 local label = wibox.widget({
-	font = beautiful.font .. " Bold",
+	font = beautiful.mono .. " Bold 12",
 	markup = "86" .. "%",
 	valign = "center",
 	widget = wibox.widget.textbox,
@@ -82,12 +82,13 @@ local brightness_slider = wibox.widget({
 		layout = wibox.layout.fixed.horizontal,
 		spacing = dpi(20),
 	},
-	nil,
+	labelBox,
 	layout = wibox.layout.align.horizontal,
 })
 
 awesome.connect_signal("signal::brightness", function(value)
 	slider.value = value
+	label.markup = value .. "%"
 end)
 
 slider:connect_signal("property::value", function(_, value)
