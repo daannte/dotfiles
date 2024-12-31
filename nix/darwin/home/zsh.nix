@@ -14,7 +14,7 @@
       ani = "ani-cli";
       lg = "lazygit";
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
-      switch = "darwin-rebuild switch --flake ~/nix";
+      switch = "darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
     };
     history = {
       expireDuplicatesFirst = true;

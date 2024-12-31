@@ -22,9 +22,9 @@
     home-manager,
     ...
   }: let
-    username = "dantekirsman";
+    username = "dante";
     system = "aarch64-darwin";
-    hostname = "Dante-Macbook";
+    hostname = "Dantes-MacBook-Pro";
 
     specialArgs =
       inputs

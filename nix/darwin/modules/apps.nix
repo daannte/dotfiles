@@ -32,6 +32,7 @@
       "iina"
       "kitty"
       "obsidian"
+      "pearcleaner"
     ];
     onActivation = {
       cleanup = "zap";
