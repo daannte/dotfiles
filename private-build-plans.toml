@@ -1,0 +1,10 @@
+[buildPlans.Iosevka]
+family = "Iosevka"
+spacing = "term"
+serifs = "sans"
+noCvSs = true
+exportGlyphNames = false
+noLigation = true
+
+  [buildPlans.Iosevka.variants]
+  inherits = "ss07"
