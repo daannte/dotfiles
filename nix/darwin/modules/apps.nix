@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     alejandra
     bat
+    cargo
     deno
     gh
     go
@@ -9,6 +10,7 @@
     neovim
     python313
     ripgrep
+    rustc
     tmux
     zoxide
   ];
@@ -25,11 +27,16 @@
 
   homebrew = {
     enable = true;
+    taps = [
+      "nikitabobko/tap"
+    ];
     casks = [
+      "aerospace"
       "alfred"
       "discord"
       "firefox"
       "iina"
+      "karabiner-elements"
       "kitty"
       "obsidian"
       "pearcleaner"
