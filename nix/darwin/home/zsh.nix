@@ -15,6 +15,7 @@
       lg = "lazygit";
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
       switch = "darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
+      kattis = "~/.cargo/bin/kitty";
     };
     history = {
       expireDuplicatesFirst = true;
