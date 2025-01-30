@@ -18,6 +18,7 @@
     ./home/starship.nix
     (import ./home/tmux.nix {inherit pkgs;})
     ./home/zsh.nix
+    ./home/zathura.nix
   ];
 
   # Add any user-specific packages here if needed

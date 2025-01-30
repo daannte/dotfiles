@@ -5,7 +5,7 @@
     extraConfig = {
       user = {
         name = "Dante";
-        email = "dkirsman@proton.me";
+        email = "dkirsman@gmail.com";
       };
       init = {
         defaultBranch = "main";
