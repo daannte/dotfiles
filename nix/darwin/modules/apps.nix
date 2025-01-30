@@ -3,6 +3,7 @@
     alejandra
     awscli
     bat
+    basedpyright
     cargo
     deno
     gh
@@ -15,7 +16,9 @@
     ripgrep
     rustc
     terraform
+    texliveFull
     tmux
+    zathura
     zoxide
   ];
 
@@ -41,6 +44,7 @@
       "obsidian"
       "pearcleaner"
     ];
+    brews = [];
     onActivation = {
       cleanup = "zap";
       autoUpdate = true;
