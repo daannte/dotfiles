@@ -14,6 +14,7 @@
     python312
     python313
     ripgrep
+    ruff
     rustc
     terraform
     texliveFull
