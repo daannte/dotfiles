@@ -27,7 +27,7 @@
       unbind '"'
       bind v split-window -h
 
-      set -g mode-style "bg=default,fg=default"
+      set -g mode-style "fg=default,bg=default,reverse"
       set -g status-position bottom
       set -sa terminal-overrides ",*:dim=\\E[2m"
       set -g status-justify centre

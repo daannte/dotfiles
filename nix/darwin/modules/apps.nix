@@ -36,6 +36,7 @@
       "aerospace"
       "alfred"
       "discord"
+      "docker"
       "firefox"
       "iina"
       "karabiner-elements"
