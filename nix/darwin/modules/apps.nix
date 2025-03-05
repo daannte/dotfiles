@@ -5,17 +5,23 @@
     bat
     basedpyright
     cargo
+    cmake
+    delta
     deno
+    fd
     gh
     go
+    gopls
     lazygit
     neovim
     nodejs_23
+    pkg-config
     python312
     python313
     ripgrep
     ruff
     rustc
+    rustup
     terraform
     texliveFull
     tmux
@@ -25,6 +31,7 @@
   environment.variables = {
     LANG = "en_CA.UTF-8";
     EDITOR = "nvim";
+    PATH = "$HOME/go/bin:$PATH";
   };
 
   homebrew = {
@@ -44,8 +51,14 @@
       "mos"
       "obsidian"
       "pearcleaner"
+      "webex"
+      "zen-browser"
+      "zoom"
     ];
-    brews = [];
+    brews = [
+      "gcc"
+      "sevenzip"
+    ];
     onActivation = {
       cleanup = "zap";
       autoUpdate = true;
