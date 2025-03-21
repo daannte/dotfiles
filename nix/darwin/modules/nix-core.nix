@@ -3,6 +3,5 @@
     experimental-features = ["nix-command" "flakes"];
   };
   nixpkgs.config.allowUnfree = true;
-  services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 }
