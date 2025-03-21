@@ -88,7 +88,7 @@
 
       # Evergarden
       foreground               #dddecf
-      background               #1c2225
+      background               #1D2428
       selection_foreground     #dddecf
       selection_background     #3d494d
 
