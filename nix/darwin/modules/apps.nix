@@ -12,8 +12,9 @@
     gh
     go
     gopls
-    lazygit
+    jdk23
     neovim
+    lazygit
     nodejs_23
     pkg-config
     python312
@@ -25,6 +26,9 @@
     terraform
     texliveFull
     tmux
+    tinymist
+    typst
+    typstyle
     zoxide
   ];
 
@@ -51,6 +55,7 @@
       "mos"
       "obsidian"
       "pearcleaner"
+      "steam"
       "webex"
       "zen-browser"
       "zoom"
