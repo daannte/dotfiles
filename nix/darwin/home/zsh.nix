@@ -15,6 +15,7 @@
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
       switch = "darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
       kattis = "~/.cargo/bin/kitty";
+      icat = "kitty icat";
     };
     history = {
       expireDuplicatesFirst = true;
