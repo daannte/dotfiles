@@ -56,7 +56,7 @@
       "obsidian"
       "pearcleaner"
       "steam"
-      "webex"
+      "whisky"
       "zen-browser"
       "zoom"
     ];
