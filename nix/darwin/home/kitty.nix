@@ -22,42 +22,6 @@
       cursor_blink true
       modify_font cell_height 140%
 
-      # Gruvbox
-      # background  #282828
-      # foreground  #d4be98
-      #
-      # # Black
-      # color0   #867970
-      # color8   #867970
-      #
-      # # Red
-      # color1   #d67b76
-      # color9   #d67b76
-      #
-      # # Green
-      # color2   #a3ae6d
-      # color10  #a3ae6d
-      #
-      # # Yellow
-      # color3   #cba364
-      # color11  #cba364
-      #
-      # # Blue
-      # color4   #82a9a0
-      # color12  #82a9a0
-      #
-      # # Magenta
-      # color5   #cb8e9e
-      # color13  #cb8e9e
-      #
-      # # Cyan
-      # color6   #8daf87
-      # color14  #8daf87
-      #
-      # # White
-      # color7   #d7c5a7
-      # color15  #d7c5a7
-
       # Base 16 metal
       # background #000000
       # foreground #c1c1c1
@@ -87,56 +51,95 @@
       # color15   #999999
 
       # Evergarden
-      foreground               #dddecf
-      background               #1D2428
-      selection_foreground     #dddecf
-      selection_background     #3d494d
+      # foreground               #dddecf
+      # background               #1D2428
+      # selection_foreground     #dddecf
+      # selection_background     #3d494d
+      #
+      # wayland_titlebar_color   #171c1f
+      # macos_titlebar_color     #171c1f
+      #
+      # cursor                   #93C9A1
+      # cursor_text_color        #171c1f
+      #
+      # url_color                #9bb5cf
+      #
+      # active_tab_foreground    #171c1f
+      # active_tab_background    #93C9A1
+      #
+      # inactive_tab_foreground  #738a8b
+      # inactive_tab_background  #171c1f
+      #
+      # # black
+      # color0   #1c2225
+      # color8   #313b40
+      #
+      # # red
+      # color1   #e67e80
+      # color9   #e67e80
+      #
+      # # green
+      # color2   #b2c98f
+      # color10  #b2c98f
+      #
+      # # yellow
+      # color3   #dbbc7f
+      # color11  #dbbc7f
+      #
+      # # blue
+      # color4   #9bb5cf
+      # color12  #9bb5cf
+      #
+      # # purple
+      # color5   #e3a8d1
+      # color13  #e3a8d1
+      #
+      # # aqua
+      # color6   #93c9a1
+      # color14  #93c9a1
+      #
+      # # white
+      # color7   #dddecf
+      # color15  #94aaa0
 
-      wayland_titlebar_color   #171c1f
-      macos_titlebar_color     #171c1f
+      background #181616
+      foreground #c5c9c5
+      selection_background #2D4F67
+      selection_foreground #C8C093
+      url_color #72A7BC
+      cursor #C8C093
 
-      cursor                   #93C9A1
-      cursor_text_color        #171c1f
+      # Tabs
+      active_tab_background #12120f
+      active_tab_foreground #C8C093
+      inactive_tab_background  #12120f
+      inactive_tab_foreground #a6a69c
+      #tab_bar_background #15161E
 
-      url_color                #9bb5cf
+      # normal
+      color0 #0d0c0c
+      color1 #c4746e
+      color2 #8a9a7b
+      color3 #c4b28a
+      color4 #8ba4b0
+      color5 #a292a3
+      color6 #8ea4a2
+      color7 #C8C093
 
-      active_tab_foreground    #171c1f
-      active_tab_background    #93C9A1
+      # bright
+      color8  #a6a69c
+      color9  #E46876
+      color10 #87a987
+      color11 #E6C384
+      color12 #7FB4CA
+      color13 #938AA9
+      color14 #7AA89F
+      color15 #c5c9c5
 
-      inactive_tab_foreground  #738a8b
-      inactive_tab_background  #171c1f
 
-      # black
-      color0   #1c2225
-      color8   #313b40
-
-      # red
-      color1   #e67e80
-      color9   #e67e80
-
-      # green
-      color2   #b2c98f
-      color10  #b2c98f
-
-      # yellow
-      color3   #dbbc7f
-      color11  #dbbc7f
-
-      # blue
-      color4   #9bb5cf
-      color12  #9bb5cf
-
-      # purple
-      color5   #e3a8d1
-      color13  #e3a8d1
-
-      # aqua
-      color6   #93c9a1
-      color14  #93c9a1
-
-      # white
-      color7   #dddecf
-      color15  #94aaa0
+      # extended colors
+      color16 #b6927b
+      color17 #b98d7b
     '';
   };
 }
