@@ -17,7 +17,6 @@
     lazygit
     nodejs_23
     pkg-config
-    python312
     python313
     ripgrep
     ruff
@@ -40,11 +39,9 @@
 
   homebrew = {
     enable = true;
-    taps = [
-      "nikitabobko/tap"
-    ];
+    taps = [];
     casks = [
-      "aerospace"
+      "nikitabobko/tap/aerospace"
       "alfred"
       "discord"
       "docker"
@@ -56,12 +53,14 @@
       "obsidian"
       "pearcleaner"
       "steam"
-      "whisky"
+      "mhaeuser/mhaeuser/battery-toolkit"
       "zen-browser"
       "zoom"
     ];
     brews = [
       "gcc"
+      "lima"
+      "python@3.12"
       "sevenzip"
     ];
     onActivation = {
