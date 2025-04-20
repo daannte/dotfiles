@@ -17,7 +17,6 @@
     ./home/kitty.nix
     ./home/starship.nix
     (import ./home/tmux.nix {inherit pkgs;})
-    ./home/yazi.nix
     ./home/zsh.nix
     ./home/zathura.nix
   ];
