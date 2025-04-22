@@ -17,7 +17,6 @@
     lazygit
     nodejs_23
     pkg-config
-    python313
     ripgrep
     ruff
     rustc
@@ -60,8 +59,8 @@
     brews = [
       "gcc"
       "lima"
-      "python@3.12"
       "sevenzip"
+      "uv"
     ];
     onActivation = {
       cleanup = "zap";
