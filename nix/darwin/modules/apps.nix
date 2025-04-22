@@ -33,7 +33,7 @@
   environment.variables = {
     LANG = "en_CA.UTF-8";
     EDITOR = "nvim";
-    PATH = "$HOME/go/bin:$PATH";
+    PATH = "$HOME/go/bin:/Users/dante/.local/bin:$PATH";
   };
 
   homebrew = {
