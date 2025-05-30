@@ -4,7 +4,6 @@
     awscli
     bat
     basedpyright
-    cargo
     cmake
     delta
     deno
@@ -15,16 +14,17 @@
     jdk23
     neovim
     lazygit
-    nodejs_23
+    lua-language-server
+    nodejs_24
     pkg-config
+    pnpm
     ripgrep
     ruff
-    rustc
-    rustup
-    terraform
+    tailwindcss-language-server
     texliveFull
     tmux
     tinymist
+    typescript-language-server
     typst
     typstyle
     zoxide
@@ -33,15 +33,19 @@
   environment.variables = {
     LANG = "en_CA.UTF-8";
     EDITOR = "nvim";
-    PATH = "$HOME/go/bin:/Users/dante/.local/bin:$PATH";
+    PATH = "$HOME/go/bin:$HOME/.cargo/bin:/Users/dante/.local/bin:$PATH";
   };
 
   homebrew = {
     enable = true;
-    taps = [];
+    taps = [
+      "mhaeuser/mhaeuser" # Battery Toolkit Tap
+      "nikitabobko/tap" # Aerospace Tap
+    ];
     casks = [
-      "nikitabobko/tap/aerospace"
+      "aerospace"
       "alfred"
+      "battery-toolkit"
       "discord"
       "docker"
       "firefox"
@@ -51,9 +55,10 @@
       "mos"
       "obsidian"
       "pearcleaner"
+      "protonvpn"
       "steam"
-      "mhaeuser/mhaeuser/battery-toolkit"
-      "zen-browser"
+      "virtualbox"
+      "zen"
       "zoom"
     ];
     brews = [
@@ -61,6 +66,14 @@
       "lima"
       "sevenzip"
       "uv"
+      "curl"
+      "grep"
+      "aria2"
+      "ffmpeg"
+      "git"
+      "fzf"
+      "yt-dlp"
+      "wireguard-tools"
     ];
     onActivation = {
       cleanup = "zap";
