@@ -13,9 +13,11 @@
       cat = "bat";
       lg = "lazygit";
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
-      switch = "darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
+      switch = "sudo darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
       kattis = "~/.cargo/bin/kitty";
       icat = "kitty icat";
+      home-up = "wg-quick up Dante-Mac";
+      home-down = "wg-quick down Dante-Mac";
     };
     history = {
       expireDuplicatesFirst = true;
@@ -24,7 +26,7 @@
       save = 512;
       share = true;
     };
-    initExtra = ''
+    initContent = ''
       bindkey -v
     '';
   };

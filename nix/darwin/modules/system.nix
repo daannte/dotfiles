@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   system = {
+    primaryUser = "dante";
     stateVersion = 5;
     defaults = {
       dock = {
