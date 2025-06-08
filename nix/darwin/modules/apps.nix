@@ -4,22 +4,28 @@
     awscli
     bat
     basedpyright
+    binwalk
     cmake
+    vscode-langservers-extracted
     delta
     deno
+    exiftool
     fd
     gh
     go
     gopls
+    imagemagick
     jdk23
     neovim
     lazygit
     lua-language-server
+    luarocks
     nodejs_24
     pkg-config
     pnpm
     ripgrep
     ruff
+    steghide
     tailwindcss-language-server
     texliveFull
     tmux
@@ -28,6 +34,7 @@
     typst
     typstyle
     zoxide
+    zsteg
   ];
 
   environment.variables = {
@@ -49,11 +56,11 @@
       "discord"
       "docker"
       "firefox"
+      "font-aporetic"
       "iina"
       "karabiner-elements"
       "kitty"
       "mos"
-      "obsidian"
       "pearcleaner"
       "protonvpn"
       "steam"
@@ -63,7 +70,6 @@
     ];
     brews = [
       "gcc"
-      "lima"
       "sevenzip"
       "uv"
       "curl"
@@ -73,6 +79,7 @@
       "git"
       "fzf"
       "yt-dlp"
+      "wallpaper"
       "wireguard-tools"
     ];
     onActivation = {
