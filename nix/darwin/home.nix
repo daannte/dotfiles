@@ -14,7 +14,6 @@
   imports = [
     ./home/extras.nix
     ./home/git.nix
-    ./home/kitty.nix
     ./home/starship.nix
     (import ./home/tmux.nix {inherit pkgs;})
     ./home/zsh.nix
