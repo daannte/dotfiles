@@ -6,5 +6,4 @@ IMAGE=$(find "$WALLPAPERS" -type f \( -iname '*.jpg' -o -iname '*.png' \) | fzf 
 # Exit if nothing selected
 [ -z "$IMAGE" ] && echo "No image selected." && exit 1
 
-matugen -c ~/.config/matugen/config.toml image "$IMAGE"
 wallpaper set "$IMAGE"
