@@ -19,7 +19,6 @@
     imagemagick
     jdk23
     neovim
-    lazygit
     lua-language-server
     luarocks
     nodejs_24
