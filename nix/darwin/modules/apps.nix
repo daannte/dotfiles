@@ -9,11 +9,13 @@
     vscode-langservers-extracted
     delta
     deno
+    diff-so-fancy
     exiftool
     fd
     gh
     go
     gopls
+    gnupg
     imagemagick
     jdk23
     neovim
