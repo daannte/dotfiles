@@ -9,8 +9,6 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "screen-256color";
     extraConfig = ''
-      set -g renumber-windows on
-
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
@@ -20,25 +18,27 @@
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
-
-      unbind %
-      bind ] split-window -v
-
+      bind v split-window -v
+      bind - split-window -h
+      bind f resize-pane -Z
       unbind '"'
-      bind v split-window -h
+      unbind %
 
-      set -g mode-style "fg=default,bg=default,reverse"
-      set -g status-position bottom
-      set -sa terminal-overrides ",*:dim=\\E[2m"
-      set -g status-justify centre
-      set -g window-status-format "#[fg=magenta,bg=black] #I:#W #[bg=default,fg=black]"
-      set -g window-status-current-format "#[bg=magenta,fg=black] #I:#W #[bg=default,fg=black]"
-      set-option -g status-left ""
-      set-option -g status-right ""
+      set -g renumber-windows on
+      set -sg terminal-overrides ",*:RGB"
 
-      set -g status-bg default
-      set -g status-fg white
-      set -g status-style "fg=white,bg=default"
+      set -g status-style fg=brightblack,bg=default
+      set -g status-left ""
+      set -g status-right ""
+
+      set -g window-status-format "●"
+      set -g window-status-current-format "●"
+      set -g window-status-current-style "fg=magenta,nobold"
+      set -g window-status-bell-style "fg=red,nobold"
+
+      set -g pane-border-lines simple
+      set -g pane-border-style fg=brightblack
+      set -g pane-active-border-style fg=magenta
     '';
   };
 }
