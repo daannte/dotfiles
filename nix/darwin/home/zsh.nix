@@ -10,8 +10,8 @@
       vim = "nvim";
       ls = "eza --icons";
       cp = "cp -iv";
+      mv = "mv -iv";
       cat = "bat";
-      lg = "lazygit";
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
       switch = "sudo darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
       icat = "kitty icat";
@@ -23,12 +23,20 @@
       # Git
       ga = "git add";
       gap = "ga --patch";
+      gr = "git reset";
       gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
+      gds = "git diff --stages";
       gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(auto)  %D%n%s%n'";
       gs = "git status --short";
       gc = "git commit";
+      gce = "git commit --amend";
+      gca = "git commit --amend --no-edit";
       gu = "git pull";
       gp = "git push";
+      gb = "git branch";
+      gba = "gb --all";
+      gn = "git checkout -b";
+      gco = "git checkout";
     };
     history = {
       expireDuplicatesFirst = true;
