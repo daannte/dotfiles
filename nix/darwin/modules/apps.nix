@@ -23,6 +23,7 @@
     nodejs_24
     pkg-config
     pnpm
+    pwncat
     ripgrep
     ruff
     steghide
