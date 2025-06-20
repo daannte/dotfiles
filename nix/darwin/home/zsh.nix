@@ -27,8 +27,8 @@
       gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(auto)  %D%n%s%n'";
       gs = "git status --short";
       gc = "git commit";
-      gp = "git pull";
-      gu = "git push";
+      gu = "git pull";
+      gp = "git push";
     };
     history = {
       expireDuplicatesFirst = true;
