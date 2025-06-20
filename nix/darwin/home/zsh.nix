@@ -25,7 +25,7 @@
       gap = "ga --patch";
       gr = "git reset";
       gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
-      gds = "git diff --stages";
+      gds = "git diff --staged";
       gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(auto)  %D%n%s%n'";
       gs = "git status --short";
       gc = "git commit";
