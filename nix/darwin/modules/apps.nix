@@ -22,6 +22,7 @@
     lua-language-server
     luarocks
     nodejs_24
+    nmap
     pkg-config
     pnpm
     pwncat
