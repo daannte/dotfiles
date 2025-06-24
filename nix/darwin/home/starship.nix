@@ -7,12 +7,12 @@
       right_format = "$git_branch";
 
       character = {
-        format = "-> ";
+        format = "; ";
       };
       directory = {
-        format = "$path $read_only";
-        truncation_symbol = "<";
-        truncation_length = 3;
+        format = "$path/";
+        truncation_length = 1;
+        truncation_symbol = "";
         read_only = "󰌾 ";
         read_only_style = "fg:red";
       };
