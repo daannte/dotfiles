@@ -23,6 +23,7 @@
     luarocks
     nodejs_24
     nmap
+    openvpn
     pkg-config
     pnpm
     pwncat
