@@ -5,6 +5,7 @@
     bat
     basedpyright
     binwalk
+    bun
     cmake
     vscode-langservers-extracted
     delta
@@ -58,7 +59,7 @@
       "alfred"
       "battery-toolkit"
       "discord"
-      "docker"
+      "docker-desktop"
       "firefox"
       "font-aporetic"
       "iina"
