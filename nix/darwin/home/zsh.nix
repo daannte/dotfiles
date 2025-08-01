@@ -1,10 +1,10 @@
-{...}: {
+{ config, ...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
-    dotDir = ".zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     shellAliases = {
       n = "nvim";
       vim = "nvim";
@@ -35,8 +35,8 @@
       gp = "git push";
       gb = "git branch";
       gba = "gb --all";
-      gn = "git checkout -b";
-      gco = "git checkout";
+      gbn = "git switch -c";
+      gsw = "git switch";
     };
     history = {
       expireDuplicatesFirst = true;

@@ -27,6 +27,7 @@
     openvpn
     pkg-config
     pnpm
+    protobuf_29
     pwncat
     ripgrep
     ruff
@@ -38,6 +39,7 @@
     typescript-language-server
     typst
     typstyle
+    yarn
     zoxide
     zsteg
   ];
