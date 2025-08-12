@@ -24,10 +24,11 @@
     luarocks
     nodejs_24
     nmap
+    minikube
     openvpn
     pkg-config
     pnpm
-    protobuf_29
+    protobuf
     pwncat
     ripgrep
     ruff

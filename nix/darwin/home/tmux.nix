@@ -17,6 +17,7 @@
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+      bind-key g new-window -n "dash" -c "#{pane_current_path}" "gh dash"
 
       bind v split-window -v
       bind - split-window -h
