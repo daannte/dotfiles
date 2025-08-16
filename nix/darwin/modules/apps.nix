@@ -28,10 +28,12 @@
     openvpn
     pkg-config
     pnpm
+    postgresql
     protobuf
     pwncat
     ripgrep
     ruff
+    sqlite
     steghide
     tailwindcss-language-server
     texliveFull
