@@ -6,7 +6,7 @@
       user = {
         name = "Dante";
         email = "coho.funny_6i@icloud.com";
-        signingKey = "1D380ADC748F68FA";
+        signingKey = "41E7546CEEFB9B50";
       };
       commit = {
         gpgSign = true;
