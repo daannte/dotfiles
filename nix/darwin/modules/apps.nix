@@ -22,7 +22,9 @@
     neovim
     lua-language-server
     luarocks
+    nest-cli
     nodejs_24
+    node-gyp
     nmap
     minikube
     openvpn
@@ -62,15 +64,17 @@
     casks = [
       "aerospace"
       "alfred"
+      "anki"
       "battery-toolkit"
       "discord"
       "docker-desktop"
       "firefox"
       "font-aporetic"
+      "ghostty"
       "iina"
       "karabiner-elements"
-      "kitty"
       "mos"
+      "obsidian"
       "pearcleaner"
       "protonvpn"
       "steam"
