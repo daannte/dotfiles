@@ -6,5 +6,5 @@ noCvSs = true
 exportGlyphNames = false
 noLigation = true
 
-  [buildPlans.Iosevka.variants]
-  inherits = "ss07"
+[buildPlans.Iosevka.variants]
+inherits = "ss07"

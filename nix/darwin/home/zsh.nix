@@ -14,7 +14,6 @@
       cat = "bat";
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
       switch = "sudo darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
-      icat = "kitty icat";
 
       # Wireguard for home-server
       home-up = "wg-quick up Dante-Mac";

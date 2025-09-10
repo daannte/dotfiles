@@ -26,8 +26,8 @@
     nodejs_24
     node-gyp
     nmap
-    minikube
     openvpn
+    pandoc
     pkg-config
     pnpm
     postgresql
@@ -69,7 +69,6 @@
       "discord"
       "docker-desktop"
       "firefox"
-      "font-aporetic"
       "ghostty"
       "iina"
       "karabiner-elements"
@@ -93,7 +92,6 @@
       "git"
       "fzf"
       "yt-dlp"
-      "wallpaper"
       "wireguard-tools"
     ];
     onActivation = {
