@@ -5,7 +5,7 @@
     extraConfig = {
       user = {
         name = "Dante";
-        email = "coho.funny_6i@icloud.com";
+        email = "github.6p8ng@kironmail.com";
         signingKey = "41E7546CEEFB9B50";
       };
       commit = {

@@ -58,14 +58,12 @@
   homebrew = {
     enable = true;
     taps = [
-      "mhaeuser/mhaeuser" # Battery Toolkit Tap
       "nikitabobko/tap" # Aerospace Tap
     ];
     casks = [
       "aerospace"
       "alfred"
       "anki"
-      "battery-toolkit"
       "discord"
       "docker-desktop"
       "firefox"
@@ -76,6 +74,7 @@
       "obsidian"
       "pearcleaner"
       "protonvpn"
+      "proton-mail"
       "steam"
       "virtualbox"
       "zen"
