@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     ignores = [".DS_Store"];
-    extraConfig = {
+    settings = {
       user = {
         name = "Dante";
         email = "github.6p8ng@kironmail.com";

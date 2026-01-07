@@ -7,7 +7,7 @@
       right_format = "$git_branch";
 
       character = {
-        format = "; ";
+        format = "> ";
       };
       directory = {
         format = "$path/";

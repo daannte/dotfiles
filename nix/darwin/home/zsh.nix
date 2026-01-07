@@ -36,6 +36,7 @@
       gba = "gb --all";
       gbn = "git switch -c";
       gsw = "git switch";
+      gpr = "!f() { git fetch origin pull/$1/head:pr/$1 && git switch pr/$1; }; f";
     };
     history = {
       expireDuplicatesFirst = true;

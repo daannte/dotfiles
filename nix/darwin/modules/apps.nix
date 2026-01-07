@@ -3,7 +3,6 @@
     alejandra
     awscli
     bat
-    basedpyright
     binwalk
     bun
     cmake
@@ -14,15 +13,13 @@
     exiftool
     fd
     gh
-    go
-    gopls
     gnupg
     imagemagick
-    jdk23
+    javaPackages.compiler.openjdk21
+    jdt-language-server
     neovim
     lua-language-server
     luarocks
-    nest-cli
     nodejs_24
     node-gyp
     nmap
@@ -44,26 +41,27 @@
     typescript-language-server
     typst
     typstyle
+    unrar
     yarn
-    zoxide
     zsteg
   ];
 
   environment.variables = {
     LANG = "en_CA.UTF-8";
     EDITOR = "nvim";
-    PATH = "$HOME/go/bin:$HOME/.cargo/bin:/Users/dante/.local/bin:$PATH";
+    PATH = "$HOME/.cargo/bin:/Users/dante/.local/bin:$PATH";
   };
 
   homebrew = {
     enable = true;
     taps = [
       "nikitabobko/tap" # Aerospace Tap
+      "protonpass/tap"
     ];
     casks = [
       "aerospace"
-      "alfred"
       "anki"
+      "curseforge"
       "discord"
       "docker-desktop"
       "firefox"
@@ -72,26 +70,29 @@
       "karabiner-elements"
       "mos"
       "obsidian"
-      "pearcleaner"
       "protonvpn"
       "proton-mail"
+      "raycast"
+      "signal"
       "steam"
-      "virtualbox"
       "zen"
       "zoom"
     ];
     brews = [
+      "ente-cli"
+      "pass-cli"
       "gcc"
       "sevenzip"
       "uv"
+      "ty"
       "curl"
       "grep"
       "aria2"
       "ffmpeg"
       "git"
-      "fzf"
       "yt-dlp"
       "wireguard-tools"
+      "wget"
     ];
     onActivation = {
       cleanup = "zap";
