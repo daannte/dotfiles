@@ -14,7 +14,4 @@
   imports = [
     ./home
   ];
-
-  # Add any user-specific packages here if needed
-  home.packages = with pkgs; [];
 }
