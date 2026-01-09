@@ -51,11 +51,11 @@
     ];
     casks = [
       "aerospace"
+      "anki"
       "curseforge"
       "discord"
       "docker-desktop"
       "firefox"
-      "ghostty"
       "iina"
       "karabiner-elements"
       "mos"
