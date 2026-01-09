@@ -75,7 +75,6 @@
       "curl"
       "grep"
       "ffmpeg"
-      "git"
       "yt-dlp"
       "wireguard-tools"
       "wget"

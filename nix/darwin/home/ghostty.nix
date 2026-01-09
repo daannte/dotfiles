@@ -7,7 +7,7 @@
       font-family = "Maple Mono";
       font-size = 20;
       font-feature = "-calt, -liga, -dlig";
-      
+
       window-decoration = "none";
       window-padding-x = 40;
       window-padding-y = 40;
