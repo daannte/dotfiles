@@ -1,16 +1,12 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     alejandra
-    awscli
     bat
-    binwalk
     bun
     cmake
     vscode-langservers-extracted
     delta
-    deno
     diff-so-fancy
-    exiftool
     fd
     gh
     gnupg
@@ -22,18 +18,14 @@
     luarocks
     nodejs_24
     node-gyp
-    nmap
-    openvpn
     pandoc
     pkg-config
     pnpm
     postgresql
     protobuf
-    pwncat
     ripgrep
     ruff
     sqlite
-    steghide
     tailwindcss-language-server
     texliveFull
     tmux
@@ -43,7 +35,6 @@
     typstyle
     unrar
     yarn
-    zsteg
   ];
 
   environment.variables = {
@@ -60,7 +51,6 @@
     ];
     casks = [
       "aerospace"
-      "anki"
       "curseforge"
       "discord"
       "docker-desktop"
@@ -75,15 +65,12 @@
       "raycast"
       "signal"
       "steam"
-      "zen"
-      "zoom"
     ];
     brews = [
       "ente-cli"
       "pass-cli"
       "gcc"
       "sevenzip"
-      "uv"
       "ty"
       "curl"
       "grep"

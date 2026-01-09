@@ -12,13 +12,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./home/extras.nix
-    ./home/git.nix
-    ./home/mpv.nix
-    ./home/starship.nix
-    ./home/tmux.nix
-    ./home/zsh.nix
-    ./home/zathura.nix
+    ./home
   ];
 
   # Add any user-specific packages here if needed

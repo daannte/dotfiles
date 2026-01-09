@@ -17,4 +17,8 @@
       "--cmd cd"
     ];
   };
+
+  programs.uv = {
+    enable = true;
+  };
 }
