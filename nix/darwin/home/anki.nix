@@ -10,7 +10,7 @@
       (pkgs.anki-utils.buildAnkiAddon (finalAttrs: {
         pname = "Study Time Stats";
         version = "2.1.4";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "iamjustkoi";
           repo = "StudyTimeStats";
           rev = finalAttrs.version;
