@@ -1,3 +1,5 @@
+# Install mpv_websocket manually: https://github.com/kuroahna/mpv_websocket
+
 {pkgs, ...}: {
   programs.mpv = {
     enable = true;
