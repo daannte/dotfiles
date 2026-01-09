@@ -1,5 +1,8 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    curl
+    wget
+    gh
     bat
     fd
     ripgrep
@@ -9,7 +12,6 @@
     unrar
     wget
     curl
-    grep
-    sevenzip
+    _7zz
   ];
 }

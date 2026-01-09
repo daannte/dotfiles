@@ -21,4 +21,8 @@
   programs.uv = {
     enable = true;
   };
+
+  programs.yt-dlp = {
+    enable = true;
+  };
 }

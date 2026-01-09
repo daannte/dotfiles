@@ -38,6 +38,7 @@
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps
+        ./modules/env.nix
         ./modules/host-users.nix
         nix-homebrew.darwinModules.nix-homebrew
         {

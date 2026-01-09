@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   homebrew = {
     enable = true;
     taps = [
@@ -25,15 +25,9 @@
     brews = [
       "ente-cli"
       "pass-cli"
-      "gcc"
-      "sevenzip"
       "ty"
-      "curl"
-      "grep"
       "ffmpeg"
-      "yt-dlp"
       "wireguard-tools"
-      "wget"
     ];
     onActivation = {
       cleanup = "zap";
