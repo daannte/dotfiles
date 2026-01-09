@@ -87,7 +87,6 @@
       "ty"
       "curl"
       "grep"
-      "aria2"
       "ffmpeg"
       "git"
       "yt-dlp"

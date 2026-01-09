@@ -1,4 +1,4 @@
-{ config, ...}: {
+{config, ...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -18,6 +18,9 @@
       # Wireguard for home-server
       home-up = "wg-quick up Dante-Mac";
       home-down = "wg-quick down Dante-Mac";
+
+      # Texthooker
+      text = "open ~/Documents/japanese/texthooker/index.html";
 
       # Git
       ga = "git add";

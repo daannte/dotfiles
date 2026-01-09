@@ -14,9 +14,9 @@
   imports = [
     ./home/extras.nix
     ./home/git.nix
-    (import ./home/mpv.nix {inherit pkgs;})
+    ./home/mpv.nix
     ./home/starship.nix
-    (import ./home/tmux.nix {inherit pkgs;})
+    ./home/tmux.nix
     ./home/zsh.nix
     ./home/zathura.nix
   ];
