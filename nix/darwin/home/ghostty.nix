@@ -4,7 +4,7 @@
     package = pkgs.ghostty-bin;
     enableZshIntegration = true;
     settings = {
-      font-family = "Maple Mono";
+      font-family = "Cartograph CF";
       font-size = 20;
       font-feature = "-calt, -liga, -dlig";
 

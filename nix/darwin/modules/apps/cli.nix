@@ -11,7 +11,6 @@
     gnupg
     unrar
     wget
-    curl
     _7zz
   ];
 }

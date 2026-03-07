@@ -5,6 +5,7 @@
     yarn
     bun
     node-gyp
+    svelte-language-server
     typescript-language-server
     tailwindcss-language-server
 

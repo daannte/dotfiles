@@ -15,10 +15,6 @@
       ytaudio = "yt-dlp -f 'ba' -x --audio-format mp3";
       switch = "sudo darwin-rebuild switch --flake ~/dotfiles/nix/darwin";
 
-      # Wireguard for home-server
-      home-up = "wg-quick up Dante-Mac";
-      home-down = "wg-quick down Dante-Mac";
-
       # Texthooker
       text = "open ~/Documents/japanese/texthooker/index.html";
 

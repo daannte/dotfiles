@@ -8,7 +8,6 @@
     casks = [
       "aerospace"
       "anki"
-      "curseforge"
       "discord"
       "docker-desktop"
       "firefox"
@@ -21,13 +20,15 @@
       "raycast"
       "signal"
       "steam"
+      "tailscale-app"
+
+      "zoom"
     ];
     brews = [
       "ente-cli"
       "pass-cli"
       "ty"
       "ffmpeg"
-      "wireguard-tools"
     ];
     onActivation = {
       cleanup = "zap";
