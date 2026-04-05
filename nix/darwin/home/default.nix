@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./anki.nix
+    ./dash.nix
     ./extras.nix
     ./ghostty.nix
     ./git.nix
