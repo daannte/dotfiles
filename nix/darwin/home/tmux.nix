@@ -25,17 +25,19 @@
       unbind '"'
       unbind %
 
+      set-option -g history-limit 100000
+
       set -g renumber-windows on
       set -sg terminal-overrides ",*:RGB"
 
       set -g status-style fg=brightblack,bg=default
-      set -g status-left ""
       set -g status-right ""
 
-      set -g window-status-format "●"
-      set -g window-status-current-format "●"
+      # set -g window-status-format "●"
+      # set -g window-status-current-format "●"
+      set-window-option -g window-status-style "fg=#bdae93"
       set -g window-status-current-style "fg=magenta,nobold"
-      set -g window-status-bell-style "fg=red,nobold"
+      # set -g window-status-bell-style "fg=red,nobold"
 
       set -g pane-border-lines simple
       set -g pane-border-style fg=brightblack

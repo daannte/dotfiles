@@ -11,13 +11,15 @@
       window-decoration = "none";
       window-padding-x = 40;
       window-padding-y = 40;
+      window-height = 25;
+      window-width = 100;
 
       adjust-cell-height = "35%";
       cursor-style-blink = true;
       mouse-hide-while-typing = true;
       quit-after-last-window-closed = true;
 
-      theme = "catpuccin";
+      theme = "gruvbox";
     };
     themes = {
       catpuccin = {
@@ -46,6 +48,31 @@
         selection-background = "353749";
         selection-foreground = "cdd6f2";
         split-divider-color = "313244";
+      };
+      gruvbox = {
+        background = "#32302f";
+        foreground = "#d4be98";
+        cursor-color = "#d4be98";
+        palette = [
+          "0=252423"
+          "1=#ea6962"
+          "2=#a9b665"
+          "3=#d8a657"
+          "4=#7daea3"
+          "5=#d3869b"
+          "6=#89b482"
+          "7=#d4be98"
+          "8=#32302f"
+          "9=#ea6962"
+          "10=#a9b665"
+          "11=#d8a657"
+          "12=#7daea3"
+          "13=#d3869b"
+          "14=#89b482"
+          "15=#d4be98"
+        ];
+        selection-background = "#45403d";
+        selection-foreground = "#d4be98";
       };
     };
   };

@@ -3,7 +3,6 @@
     enable = true;
     taps = [
       "nikitabobko/tap" # Aerospace Tap
-      "protonpass/tap"
     ];
     casks = [
       "aerospace"
@@ -21,14 +20,14 @@
       "signal"
       "steam"
       "tailscale-app"
-
       "zoom"
     ];
     brews = [
-      "ente-cli"
-      "pass-cli"
+      "neovim"
       "ty"
       "ffmpeg"
+      "postgresql"
+      "tree-sitter-cli"
     ];
     onActivation = {
       cleanup = "zap";
