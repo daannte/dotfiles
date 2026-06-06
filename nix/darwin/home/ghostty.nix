@@ -4,7 +4,7 @@
     package = pkgs.ghostty-bin;
     enableZshIntegration = true;
     settings = {
-      font-family = "Cartograph CF";
+      font-family = "Iosevka";
       font-size = 20;
       font-feature = "-calt, -liga, -dlig";
 
@@ -12,7 +12,7 @@
       window-padding-x = 40;
       window-padding-y = 40;
       window-height = 25;
-      window-width = 100;
+      window-width = 130;
 
       adjust-cell-height = "35%";
       cursor-style-blink = true;
@@ -62,7 +62,7 @@
           "5=#d3869b"
           "6=#89b482"
           "7=#d4be98"
-          "8=#32302f"
+          "8=#4a4a4a"
           "9=#ea6962"
           "10=#a9b665"
           "11=#d8a657"
