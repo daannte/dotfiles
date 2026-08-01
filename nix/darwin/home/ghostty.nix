@@ -4,8 +4,8 @@
     package = pkgs.ghostty-bin;
     enableZshIntegration = true;
     settings = {
-      font-family = "Iosevka";
-      font-size = 20;
+      font-family = "SF Mono Medium";
+      font-size = 18;
       font-feature = "-calt, -liga, -dlig";
 
       window-decoration = "none";
@@ -19,7 +19,7 @@
       mouse-hide-while-typing = true;
       quit-after-last-window-closed = true;
 
-      theme = "gruvbox";
+      theme = "cendre";
     };
     themes = {
       catpuccin = {
@@ -73,6 +73,32 @@
         ];
         selection-background = "#45403d";
         selection-foreground = "#d4be98";
+      };
+      cendre = {
+        background = "#231f1d";
+        foreground = "#e6d5c2";
+        cursor-color = "#ea9875";
+        cursor-text = "#231f1d";
+        palette = [
+          "0=#2d2725"
+          "1=#d1766e"
+          "2=#99af6b"
+          "3=#fcba81"
+          "4=#58bdff"
+          "5=#9480ba"
+          "6=#4e89a2"
+          "7=#a09384"
+          "8=#73665b"
+          "9=#d25780"
+          "10=#43b16a"
+          "11=#f4a21c"
+          "12=#8bcfff"
+          "13=#a692cd"
+          "14=#20c9cb"
+          "15=#e6d5c2"
+        ];
+        selection-background = "#3d2b23";
+        selection-foreground = "#e6d5c2";
       };
     };
   };
