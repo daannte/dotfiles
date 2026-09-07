@@ -8,7 +8,7 @@
     shellAliases = {
       n = "nvim";
       vim = "nvim";
-      ls = "eza --icons";
+      ls = "eza --icons always";
       cp = "cp -iv";
       mv = "mv -iv";
       cat = "bat";
